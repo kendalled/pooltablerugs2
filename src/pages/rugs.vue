@@ -1,0 +1,151 @@
+<template>
+  <div class="rugroot bg-gray-100 antialiased xl:flex xl:flex-col">
+    <!-- <SiteHeader  /> -->
+    <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
+      <SearchFilters />
+      <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
+        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}">
+          <div class="px-4 xl:px-8">
+            <h3 class="text-gray-900 font-bolder text-xl">
+              {{ style.title }}
+            </h3>
+            <p class="text-gray-600">
+              {{ style.description }}
+            </p>
+          </div>
+          <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
+            <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
+              <div v-for="(item, j) in doc" :key="j" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+                <!--  <PropertyCard :property="item" /> -->
+                <RugCard :info="item" />
+              </div>
+
+              <!-- see more -->
+              <svg
+                id="Capa_1"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                class="h-12 w-auto mb-40 ml-8 hidden lg:block hover:cursor-pointer shadow-lg rounded-full"
+                viewBox="0 0 54 54"
+                style="enable-background:new 0 0 54 54;"
+                xml:space="preserve"
+              >
+                <g>
+                  <g>
+                    <path
+                      style="fill:#38a168;"
+                      d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0C53,41.359,41.359,53,27,53z"
+                    />
+                    <path
+                      style="fill:#38a168;"
+                      d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z"
+                    />
+                  </g>
+                  <path
+                    style="fill:#FFFFFF;"
+                    d="M22.294,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L32.88,27L21.587,15.707c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L23.001,39.707C22.806,39.902,22.55,40,22.294,40z"
+                  />
+                </g>
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+                <g />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</template>
+
+<script>
+import RugCard from '~/components/RugCard'
+import { fireDb } from '~/plugins/firebase'
+import SearchFilters from '~/components/SearchFilters'
+
+export default {
+  name: 'App',
+  components: {
+    RugCard,
+    SearchFilters
+  },
+  head () {
+    return {
+      title: 'Pool Table Rugs: Search Our Catalog.'
+    }
+  },
+  data () {
+    return {
+      doc: [],
+      styles: [
+        {
+          title: 'Modern Rugs',
+          description: 'Vivid colors, bold designs, and sharp lines. Our modern rugs will match any 21st century space.'
+        },
+        {
+          title: 'Classy Rugs',
+          description: 'Neutral colors, classy designs, and sharp lines. Our classy rugs will make you feel like hamilton.'
+        },
+        {
+          title: 'Spooky Rugs',
+          description: 'Experience Texas living in these awesome ranch-style homes.'
+        }
+      ]
+    }
+  },
+  async asyncData ({ app, params, error }) {
+    const rugRef = fireDb.collection('allRugs').doc('modernRugs').collection('rugList')
+    let data
+    try {
+      data = []
+      await rugRef.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, ' => ', doc.data())
+          data.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: doc.data().Rating, reviewCount: doc.data()['Review Count'], group: doc.data()['Size Group'] })
+        })
+      })
+    } catch (e) {
+      // TODO: error handling
+      alert(e)
+    }
+    return {
+      doc: data
+    }
+  },
+  methods: {
+    truncateString (str, num) {
+      // If the length of str is less than or equal to num
+      // just return str--don't truncate it.
+      if (str.length <= num) {
+        return str
+      }
+      // Return str truncated with '...' concatenated to the end of str.
+      return str.slice(0, num) + '...'
+    }
+  }
+}
+</script>
+
+<style scoped>
+@media (min-width: 1280px) {
+  .rugroot {
+    height: 92vh !important;
+  }
+}
+</style>
