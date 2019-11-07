@@ -1,6 +1,6 @@
 <template>
   <div class="loginroot pb-2 bg-gray-800 h-screen w-full">
-    <div class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
+    <div class="transition-all flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0">
       <div class="flex rounded-lg shadow-lg h-auto w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0" style="min-height:500px; max-width: 700px;">
         <div class="flex flex-col w-full md:w-2/3 p-4">
           <div class="flex flex-col flex-1 justify-center mb-8">
