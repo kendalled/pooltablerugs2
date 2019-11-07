@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .loginpic {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55)), url("https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fsamplerug.jpg?alt=media&token=44e0a8cd-2231-4058-baa9-a2eba8ef23d6")
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.55)), url("https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fsamplerug.jpg?alt=media&token=44e0a8cd-2231-4058-baa9-a2eba8ef23d6")
 }
 @media (min-width: 1280px) {
   .loginroot {
