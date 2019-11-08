@@ -5,10 +5,10 @@
       @mouseover="isHovering = true"
       @mouseout="isHovering = false"
     >
-      <hooper :wheel-control="true" class="focus:outline-none">
+      <hooper :wheel-control="false" class="focus:outline-none">
         <slide v-for="(slide, i) in slides" :key="i" class="bg-cover" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" />
-        <hooper-pagination slot="hooper-addons" />
-        <!-- <hooper-navigation slot="hooper-addons" /> -->
+        <!-- <hooper-pagination slot="hooper-addons" /> -->
+        <hooper-navigation slot="hooper-addons" />
       </hooper>
       <!-- <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="info.imageUrl" alt=""> -->
     </div>
@@ -66,7 +66,7 @@
 import {
   Hooper,
   Slide,
-  Pagination as HooperPagination
+  Navigation as HooperNavigation
 } from 'hooper'
 
 // import 'hooper/dist/hooper.css'
@@ -74,7 +74,7 @@ export default {
   components: {
     Hooper,
     Slide,
-    HooperPagination
+    HooperNavigation
   },
   props: {
     'info': {
@@ -145,9 +145,9 @@ export default {
     height:100%;
   }
 .contentBox, .parent {
-  transition: transform .25s;
+  transition: opacity .2s ease-in-out;
 }
 .slideDown {
-  transform: translate(0px, 2.1rem);
+  opacity: .75;
 }
 </style>
