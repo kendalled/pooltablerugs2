@@ -5,7 +5,7 @@
         <div class="flex flex-col w-full md:w-2/3 p-4">
           <div class="flex flex-col flex-1 justify-center mb-8">
             <h1 class="text-3xl text-center tracking-tighter text-gray-800">
-              Login to complete checkout.
+              Log in to complete checkout.
             </h1>
             <div class="w-full mt-4 px-2">
               <div id="firebaseui-auth-container" />
@@ -18,23 +18,56 @@
             </div>
           </div>
         </div>
-        <div class="loginpic hidden md:block md:w-1/3 rounded-r-lg bg-cover bg-center" />
+        <div class="loginpic hidden md:block md:flex-1 rounded-r-lg bg-cover bg-center" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { firebase, uiConfig } from '~/plugins/firebase'
-let firebaseui
+import { firebase } from '~/plugins/firebase'
+let firebaseui, uiConfig
+
 if (process.client) {
   firebaseui = require('firebaseui')
+  // FirebaseUI config.
+  uiConfig = {
+    callbacks: {
+      uiShown () {
+        // do something
+      }
+    },
+    signInSuccessUrl: 'https://lapelpinsandcoins.com',
+    signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+    ],
+    // tosUrl and privacyPolicyUrl accept either url string or a callback
+    // function.
+    // Terms of service url/callback.
+    tosUrl: 'https://lapelpinsandcoins.com',
+    // Privacy policy url/callback.
+    privacyPolicyUrl () {
+      window.location.assign('https://lapelpinsandcoins.com')
+    }
+  }
 }
 export default {
   name: 'LoginCard',
+  data () {
+    return {
+      the: 1234
+    }
+  },
   mounted () {
     // Initialize the FirebaseUI Widget using Firebase.
-    const ui = new firebaseui.auth.AuthUI(firebase.auth())
+    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth())
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig)
   }

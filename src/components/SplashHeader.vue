@@ -5,7 +5,14 @@
         <div class="lg:w-7/12 lg:pl-12 lg:pr-8">
           <div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12">
             <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Woman workcationing on beach">
-            <svg class="hidden lg:block absolute inset-y-0 left-0 w-20 h-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              style="margin-left: -0.015rem;"
+              class="hidden lg:block absolute inset-y-0 left-0 w-20 h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <polygon class="text-white" fill="currentColor" points="0,0 0,100 100,0" />
             </svg>
           </div>
@@ -15,7 +22,7 @@
             <span class="text-green-500">with a durable, stylish rug.</span>
           </h1>
           <p class="mt-4 text-gray-600 tracking-tight text-xl">
-            Protect your game room with our custom rugs. From spills to scuffs - our rugs keep your game room in shape.
+            Protect your game room with our custom rugs. <br> From spills to scuffs - our rugs keep your game room in shape.
           </p>
           <div class="mt-6">
             <button class="bg-white transition-bg hover:bg-gray-100 text-gray-800 font-semibold py-3 px-5 border border-gray-400 rounded shadow">
