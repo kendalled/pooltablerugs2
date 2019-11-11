@@ -22,7 +22,7 @@
             <span class="text-green-500">with a durable, stylish rug.</span>
           </h1>
           <p class="mt-4 text-gray-600 tracking-tight text-xl">
-            Protect your game room with our custom rugs. <br> From spills to scuffs - our rugs keep your game room in shape.
+            Protect your game room with our custom rugs. <br> From spills to scuffs, our rugs keep your game room in shape.
           </p>
           <div class="mt-6">
             <button class="bg-white transition-bg hover:bg-gray-100 text-gray-800 font-semibold py-3 px-5 border border-gray-400 rounded shadow">

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 px-24 py-16 flex flex-wrap items-center justify-center">
+  <div id="background" class="px-24 py-16 flex flex-wrap items-center justify-center">
     <!-- <div class="mx-auto flex-1 flex-col sm:p-24 lg:py-4 lg:px-48">
       <h1
         class="text-center text-3xl text-black font-medium -mt-2 leading-snug"

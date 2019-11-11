@@ -1,15 +1,13 @@
 <template>
   <div class="bg-white">
     <SplashHeader />
-    <PricingSection />
-    <ProductCards />
     <BlankSection />
+    <PricingSection />
     <RespFooter />
   </div>
 </template>
 
 <script>
-import ProductCards from '../components/ProductCards'
 import SplashHeader from '~/components/SplashHeader'
 import BlankSection from '~/components/BlankSection'
 import RespFooter from '~/components/RespFooter'
@@ -20,7 +18,6 @@ export default {
     SplashHeader,
     PricingSection,
     BlankSection,
-    ProductCards,
     RespFooter
   }
 }

@@ -88,7 +88,7 @@
           <button class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded" @click="seeDetails = !seeDetails">
             See Details
           </button>
-          <button class="bg-green-500 hover:bg-green-700 transition-bg shadow-md text-white font-bold py-2 px-4 rounded">
+          <button class="bg-green-500 hover:bg-green-700 transition-bg shadow-md text-white font-bold py-2 px-4 rounded" @click="addToCart(info)">
             Add to Cart
           </button>
         </div>
@@ -173,6 +173,9 @@ export default {
         // No user is signed in.
         this.userid = null
       }
+    },
+    addToCart (item) {
+      this.$store.commit('addToCart', item)
     }
   }
 }
