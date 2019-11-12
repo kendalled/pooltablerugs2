@@ -3,7 +3,7 @@
     <h1
       class="text-center text-3xl text-white font-medium -mt-2 leading-snug"
     >
-      Help keep your game room in shape.
+      Keep your game room spotless.
     </h1>
     <p class="text-center text-lg text-gray-200 mt-2 px-6">
       Three icons below here to show how rugs are, and their uses.
