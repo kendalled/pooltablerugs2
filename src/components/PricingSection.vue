@@ -15,7 +15,7 @@
       <h1
         class="text-center text-3xl text-gray-800 font-medium leading-snug tracking-wide"
       >
-        Rugs for Any Style.
+        Rugs for any style.
       </h1>
       <p class="text-center text-lg text-gray-700 mt-2 px-6">
         With over 20 years of experience, we will find you the perfect rug.
