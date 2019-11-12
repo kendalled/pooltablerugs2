@@ -1,6 +1,9 @@
 <template>
   <div class="rugroot bg-gray-100 antialiased xl:flex xl:flex-col">
     <!-- <SiteHeader  /> -->
+    <div class="w-full h-auto flex absolute justify-end items-start pr-6">
+      <Cart />
+    </div>
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters />
       <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
@@ -77,12 +80,14 @@
 import RugCard from '~/components/RugCard'
 import { firebase, fireDb } from '~/plugins/firebase'
 import SearchFilters from '~/components/SearchFilters'
+import Cart from '~/components/Cart'
 
 export default {
   name: 'App',
   components: {
     RugCard,
-    SearchFilters
+    SearchFilters,
+    Cart
   },
   head () {
     return {

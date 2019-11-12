@@ -1,16 +1,5 @@
 <template>
   <div class="px-24 py-16 flex flex-wrap items-center justify-center bg-gray-200">
-    <!-- <div class="mx-auto flex-1 flex-col sm:p-24 lg:py-4 lg:px-48">
-      <h1
-        class="text-center text-3xl text-black font-medium -mt-2 leading-snug"
-      >
-        Thousands of styles to choose from.
-      </h1>
-      <div class="h-1 mx-auto bg-green-600 w-32 opacity-75 mt-4 mb-4 rounded" />
-      <p class="text-center text-md text-gray-700 mt-2 px-6">
-        From modern to chic, we're sure you'll find the perfect rug.
-      </p>
-    </div> -->
     <div class="w-full mb-4">
       <h1
         class="text-center text-3xl text-gray-800 font-medium leading-snug tracking-wide"

@@ -19,6 +19,7 @@
         class="sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/3 mb-4"
       />
     </div>
+    <!-- test checkout card -->
     <!--    <div id="content" class="min-h-screen flex justify-center text-center bg-gray-100 mx-auto">-->
     <!--      <h3 class="text-3xl mt-4 text-gray-800">-->
     <!--        Heading goes here-->

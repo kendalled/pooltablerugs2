@@ -361,13 +361,13 @@ export default {
 }
 @keyframes roll {
   0% {
-    transform: translate(15px, 0px);
+    transform: translate(-8px, 0px);
   }
   50% {
-    transform: translate(-15px, 0px);
+    transform: translate(8px, 0px);
   }
   100% {
-    transform: translate(15px, 0px);
+    transform: translate(-8px, 0px);
   }
 }
 

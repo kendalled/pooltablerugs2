@@ -71,12 +71,12 @@
         </div>
       </div>
     </nav>
+    <!-- <Cart /> -->
   </header>
 </template>
 
 <script>
 import Dropdown from '~/components/Dropdown'
-
 export default {
   components: { Dropdown },
   props: [],

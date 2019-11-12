@@ -45,13 +45,13 @@ html {
     transform: translate3d(-100%, 0, 0);
   }
 } */
-.page-enter-active, .page-leave-active {
+/* .page-enter-active, .page-leave-active {
   transition: all .25s ease-out;
 }
 .page-enter, .page-leave-active {
   opacity: 0;
   transform-origin: 50% 50%;
-}
+} */
 </style>
 <script>
 // import RespFooter from '~/components/RespFooter'
