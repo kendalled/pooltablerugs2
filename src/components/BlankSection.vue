@@ -1,7 +1,7 @@
 <template>
   <div id="content" class="py-20">
     <h1
-      class="text-center text-4xl text-white font-medium -mt-2 leading-snug"
+      class="text-center text-3xl text-white font-medium -mt-2 leading-snug"
     >
       Help keep your game room in shape.
     </h1>

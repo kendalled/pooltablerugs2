@@ -297,23 +297,23 @@ export default {
 <style scoped>
 .rotate {
   transition: all 1s ease-in-out;
-  animation: rotation 3.5s infinite;
+  animation: rotation 3s infinite;
 }
 .rotate2 {
   transition: all 1s ease-in-out;
-  animation: rotation2 3.5s infinite;
+  animation: rotation2 3s infinite;
 }
 .spilling {
   transition: all 1s ease-in-out;
-  animation: spill 3.5s infinite;
+  animation: spill 3s infinite;
 }
 .shaking {
   transition: all 1s ease-in-out;
-  animation: shake 3.5s infinite;
+  animation: shake 3s infinite;
 }
 .rolling {
   transition: all 1s ease-in-out;
-  animation: roll 3.5s infinite;
+  animation: roll 3s infinite;
 }
 @keyframes rotation {
   0% {
@@ -361,13 +361,13 @@ export default {
 }
 @keyframes roll {
   0% {
-    transform: translate(8px, 0px);
+    transform: translate(15px, 0px);
   }
   50% {
-    transform: translate(-8px, 0px);
+    transform: translate(-15px, 0px);
   }
   100% {
-    transform: translate(8px, 0px);
+    transform: translate(15px, 0px);
   }
 }
 

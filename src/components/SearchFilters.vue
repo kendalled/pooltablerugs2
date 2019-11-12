@@ -22,7 +22,7 @@
         <div class="px-4 py-4 border-b border-gray-900 lg:w-1/3 xl:border-t-0 xl:w-full">
           <div class="flex flex-wrap -mx-2">
             <h2 class="text-xl text-gray-100 font-semibold tracking-tight mx-auto text-center">
-              Search our catalog. {{ theCount }}
+              Search our catalog.
             </h2>
           </div>
         </div>
@@ -99,11 +99,6 @@ export default {
   data () {
     return {
       isOpen: false
-    }
-  },
-  computed: {
-    theCount () {
-      return this.$store.state.counter
     }
   },
   methods: {

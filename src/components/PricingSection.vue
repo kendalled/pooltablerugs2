@@ -13,7 +13,7 @@
     </div> -->
     <div class="w-full mb-4">
       <h1
-        class="text-center text-4xl text-gray-800 font-medium leading-snug tracking-wide"
+        class="text-center text-3xl text-gray-800 font-medium leading-snug tracking-wide"
       >
         Rugs for Any Style.
       </h1>
