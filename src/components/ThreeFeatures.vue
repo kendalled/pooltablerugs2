@@ -170,7 +170,7 @@
         Spills and Scuffs
       </h2>
       <p class="text-sm text-gray-700">
-        On game night, food and drinks are commonly spilled. Let our waterproof rugs take the hit so your floor doesn't have to.
+        On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't have to.
       </p>
       <button
         class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-400 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
