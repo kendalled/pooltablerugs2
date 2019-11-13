@@ -5,8 +5,8 @@
     >
       Keep your game room spotless.
     </h1>
-    <p class="text-center text-lg text-gray-200 mt-2 px-6">
-      Three icons below here to show how rugs are, and their uses.
+    <p class="text-center text-lg text-gray-100 mt-2 px-6">
+      Our rugs aren't just stylish, they're functional.
     </p>
 
     <div class="h-1 mx-auto bg-gray-100 w-48 opacity-75 mb-4 mt-8 rounded" />

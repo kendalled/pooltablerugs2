@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="$store.state.cartCount !== 0" class="w-full max-w-sm absolute flex-col flex bg-white rounded shadow-md px-6 overflow-y-auto py-10 z-30">
+    <div v-if="$store.state.cartCount !== 0 && shown" class="w-full max-w-sm absolute flex-col flex bg-white rounded shadow-md px-6 overflow-y-auto pt-6 pb-10 z-30">
       <!-- <h1 class="text-xl text-gray-800 w-full text-center font-semibold tracking-tight mb-1">
       Your Cart:
       {{ $store.state.cartCount }} item(s)<br>
@@ -8,6 +8,12 @@
     <p v-if="$store.state.cartCount === 0">
       <i>&nbsp;Your cart is empty!</i>
     </p> -->
+      <div class="flex w-full h-8 justify-end items-start">
+        <div class="w-11/12 bg-transparent" />
+        <button class="bg-green-600 w-1/12 text-white px-1 text-center py-1 rounded-full" @click="removeFromCart()">
+          x
+        </button>
+      </div>
       <h1 class="border-b text-xl text-gray-800 w-full text-center font-semibold tracking-tight">
         Your Cart:
         {{ $store.state.cartCount }} item(s)
@@ -35,10 +41,10 @@
         </div>
       </div>
       <div class="flex justify-between w-full h-auto pt-8">
-        <button class="bg-gray-700 hover:bg-gray-600 transition-bg shadow-md text-white font-bold py-2 px-4 rounded w-32" @click="removeFromCart()">
-          Clear Cart
+        <button class="bg-gray-700 hover:bg-gray-600 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
+          View Cart
         </button>
-        <button class="bg-green-500 hover:bg-green-700 transition-bg shadow-md text-white font-bold py-2 px-4 rounded w-32">
+        <button class="ml-8 bg-green-500 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
           Checkout
         </button>
       </div>
@@ -48,6 +54,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      shown: true
+    }
+  },
   computed: {
     skuList () {
       return this.$store.state.cart.map(a => a.sku)
@@ -66,6 +77,18 @@ export default {
     removeFromCart (item) {
       this.$store.commit('removeFromCart', item)
     }
+    // fadeMe: function() {
+    //   this.show = !this.show
+    // },
+
+    // enter: function(el, done) {
+
+    //   var that = this;
+
+    //   setTimeout(function() {
+    //     that.show = false;
+    //   }, 3000); // hide the message after 3 seconds
+    // }
   }
 }
 </script>

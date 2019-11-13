@@ -12,10 +12,12 @@
     "lint": "eslint --fix --ext .vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "firebase": "^7.2.3",
     "firebaseui": "^4.2.0",
     "hooper": "^0.3.4",
     "nuxt": "^2.0.0",
+    "stripe": "^7.13.0",
     "tailwindcss-transitions": "^2.1.0",
     "vuex-persistedstate": "^2.7.0"
   },
