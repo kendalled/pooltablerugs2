@@ -1,16 +1,13 @@
 <template>
-  <div class="flex h-screen w-screen">
-    <div class="w-2/3">
-      <CheckoutCard />
-    </div>
-    <div class="w-1/3 bg-red-500" />
+  <div class="flex flex-col lg:flex-row h-screen w-screen">
+    <div class="w-full lg:w-2/3 bg-green-200" />
+    <div class="w-full lg:w-1/3 bg-red-500" />
   </div>
 </template>
 
 <script>
-import CheckoutCard from '~/components/CheckoutCard'
 export default {
-  components: { CheckoutCard }
+  components: {}
 }
 </script>
 

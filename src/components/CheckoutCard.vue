@@ -500,7 +500,6 @@ export default {
     object-fit: cover;
   }
   .card-item__cover {
-    height: 100%;
     background-color: #1c1d27;
     position: absolute;
     height: 100%;
