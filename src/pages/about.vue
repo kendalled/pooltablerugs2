@@ -7,8 +7,8 @@
 
     <div class="flex flex-wrap px-12 xl:px-32">
       <Card
-        v-for="item in doc"
-        :key="item"
+        v-for="(item, i) in doc"
+        :key="i"
         :sku="item.SKU"
         :shaping="item.shape"
         :group="item.group"
@@ -19,12 +19,6 @@
         class="sm:w-full md:w-1/2 lg:w-1/3 xl:w-1/3 mb-4"
       />
     </div>
-    <!-- test checkout card -->
-    <!--    <div id="content" class="min-h-screen flex justify-center text-center bg-gray-100 mx-auto">-->
-    <!--      <h3 class="text-3xl mt-4 text-gray-800">-->
-    <!--        Heading goes here-->
-    <!--      </h3>-->
-    <!--    </div>-->
   </div>
 </template>
 
