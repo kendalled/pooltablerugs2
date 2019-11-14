@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  components: {}
+  layout: 'Checkout'
 }
 </script>
 
