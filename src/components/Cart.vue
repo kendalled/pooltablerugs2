@@ -10,9 +10,29 @@
     </p> -->
       <div class="flex w-full h-8 justify-end items-start">
         <div class="w-11/12 bg-transparent" />
-        <button class="bg-green-600 w-1/12 text-white px-1 text-center py-1 rounded-full" @click="removeFromCart()">
-          x
-        </button>
+        <svg
+          class="w-1/12 hover:cursor-pointer shadow rounded-full"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 138.3 138.3"
+          style="enable-background:new 0 0 138.3 138.3;"
+          xml:space="preserve"
+          @click="removeFromCart()"
+        >
+          <g id="Cup" />
+          <g id="Liquid">
+            <g>
+              <circle style="fill:#FFFFFF;" cx="69.2" cy="69.2" r="68.7" />
+              <g>
+                <line style="fill:none;stroke:#35A169;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="89.9" y1="91.2" x2="48.4" y2="47.2" />
+                <line style="fill:none;stroke:#35A169;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="48.4" y1="91.2" x2="89.9" y2="47.2" />
+              </g>
+            </g>
+          </g>
+        </svg>
       </div>
       <h1 class="border-b text-xl text-gray-800 w-full text-center font-semibold tracking-tight">
         Your Cart:
