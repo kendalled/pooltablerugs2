@@ -68,7 +68,7 @@
       <div class="flex flex-wrap flex-row justify-between border-t pt-6 mt-6">
         <Checkbox class="checky" />
         <div class="controls">
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
             Need Help?
           </a>
           <button class="ml-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
@@ -77,7 +77,7 @@
         </div>
       </div>
       <nuxt-link to="/" class="flex flex-col justify-end h-56">
-        <img class="h-auto w-48 mt-2 opacity-25 hover:opacity-100" alt="Pool Table Rugs Logo" src="~/static/logo.png">
+        <img class="h-auto w-48 mt-2 opacity-25 hover:opacity-100 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
       </nuxt-link>
     </form>
     <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16">
