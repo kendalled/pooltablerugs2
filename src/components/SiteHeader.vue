@@ -32,15 +32,16 @@
           <nuxt-link to="/checkout" class="mt-1 block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
             Cart&nbsp;
             <svg class="fill-current inline-block h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
-            <div class="inline-block text-gray-100 top-0 right-0 px-2 py-0 bg-green-500 rounded-full">
+            <div class="inline-block text-gray-700 top-0 right-0 px-2 py-0 bg-gray-300 rounded-full">
               <span class="text-sm font-semibold">{{ $store.state.cartCount }}</span>
             </div>
           </nuxt-link>
         </div>
         <div class="relative px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
           <div class="flex items-center sm:hidden">
-            <img class="h-10 w-10 object-cover rounded-full border-2 border-gray-600" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="">
-            <span class="ml-4 font-semibold text-gray-700 sm:hidden">Isla Schoger</span>
+            <!-- mobile ul -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-user px-1 h-8 w-8 object-cover rounded-full border-2 border-gray-600 text-green-600 fill-current"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /><path class="secondary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z" /></svg>
+            <span class="ml-4 font-semibold text-gray-700 sm:hidden">Your Account</span>
           </div>
           <div class="mt-5 sm:hidden">
             <a href="#account" class="block text-gray-600 transition-colors xs:hover:text-green-600 xs:hover:text-white">Account settings</a>
@@ -52,10 +53,11 @@
           <Dropdown class="hidden sm:block">
             <template #trigger="{ hasFocus, isOpen }">
               <span
-                class="block h-8 w-8 overflow-hidden rounded-full border-2 "
-                :class="[(hasFocus || isOpen) ? 'border-white xl:border-green-500' : 'border-gray-600 xl:border-gray-300']"
+                class="block h-8 w-8 px-1 overflow-hidden rounded-full border-2 "
+                :class="[(hasFocus || isOpen) ? 'border-white md:border-green-500' : 'border-gray-300 xl:border-gray-300']"
               >
-                <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-user fill-current text-green-600 h-full w-full object-cover"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /><path class="secondary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z" /></svg>
+
               </span>
             </template>
             <template #dropdown>
