@@ -64,9 +64,9 @@
         <button class="bg-gray-700 hover:bg-gray-600 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
           View Cart
         </button>
-        <button class="ml-8 bg-green-500 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
+        <nuxt-link to="checkout" class="ml-8 bg-green-500 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
           Checkout
-        </button>
+        </nuxt-link>
       </div>
     </div>
   </transition>
