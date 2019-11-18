@@ -10,7 +10,7 @@
         <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}">
           <div class="px-4 xl:px-8">
             <h3 class="text-gray-900 font-bolder text-xl">
-              {{ style.title }}
+              {{ style.title }} Rugs
             </h3>
             <p class="text-gray-600">
               {{ style.description }}
@@ -18,7 +18,17 @@
           </div>
           <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
             <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-              <div v-for="(item, j) in doc" :key="j" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+              <div v-for="(item, j) in doc" v-show="i === 0" :key="j" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+                <!--  <PropertyCard :property="item" /> -->
+                <RugCard :info="item" />
+              </div>
+
+              <div v-for="(item, q) in doc2" v-show="i === 1" :key="q" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+                <!--  <PropertyCard :property="item" /> -->
+                <RugCard :info="item" />
+              </div>
+
+              <div v-for="(item, k) in doc3" v-show="i === 2" :key="k" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
                 <!--  <PropertyCard :property="item" /> -->
                 <RugCard :info="item" />
               </div>
@@ -97,32 +107,62 @@ export default {
   data () {
     return {
       doc: [],
+      doc2: [],
+      doc3: [],
       styles: [
         {
-          title: 'Modern Rugs',
+          title: 'Traditional',
+          description: 'Vivid colors, bold designs, and sharp lines. Our traditional rugs will match any 21st century space.'
+        },
+        {
+          title: 'Shag',
+          description: 'Neutral colors, classy designs, and sharp lines. Our shag rugs will make you feel like hamilton.'
+        },
+        {
+          title: 'Modern',
           description: 'Vivid colors, bold designs, and sharp lines. Our modern rugs will match any 21st century space.'
-        },
-        {
-          title: 'Classy Rugs',
-          description: 'Neutral colors, classy designs, and sharp lines. Our classy rugs will make you feel like hamilton.'
-        },
-        {
-          title: 'Spooky Rugs',
-          description: 'Experience Texas living in these awesome ranch-style homes.'
         }
       ]
     }
   },
   async asyncData ({ app, params, error }) {
-    const rugRef = fireDb.collection('allRugs').doc('modernRugs').collection('rugList')
-    let data
+    const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').limit(4)
+    const rugRef2 = fireDb.collection('Rugs').where('Style', '==', 'Shag').limit(4)
+    const rugRef3 = fireDb.collection('Rugs').where('Style', '==', 'Modern').limit(4)
+    let data, data2, data3
     try {
       data = []
       await rugRef.get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: doc.data().Rating, reviewCount: doc.data()['Review Count'], group: doc.data()['Size Group'] })
+          data.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
+        })
+      })
+    } catch (e) {
+      // TODO: error handling
+      alert(e)
+    }
+    try {
+      data2 = []
+      await rugRef2.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, ' => ', doc.data())
+          data2.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
+        })
+      })
+    } catch (e) {
+      // TODO: error handling
+      alert(e)
+    }
+    try {
+      data3 = []
+      await rugRef3.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, ' => ', doc.data())
+          data3.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 10, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
@@ -130,7 +170,9 @@ export default {
       alert(e)
     }
     return {
-      doc: data
+      doc: data,
+      doc2: data2,
+      doc3: data3
     }
   },
   mounted () {

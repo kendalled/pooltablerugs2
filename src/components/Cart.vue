@@ -38,7 +38,7 @@
         Your Cart:
         {{ $store.state.cartCount }} item(s)
       </h1>
-      <div v-for="(product, i) in skuList" :key="product" class="w-full flex items-center h-24 border-b">
+      <div v-for="(product, i) in skuList" :key="i" class="w-full flex items-center h-24 border-b">
         <div class="w-1/4">
           <img src="https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fwhiteroom.jpg?alt=media&token=0b453813-6cde-4ea4-bdac-20dbb3c9ef70" class="w-16 h-auto rounded-full">
         </div>
@@ -61,10 +61,10 @@
         </div>
       </div>
       <div class="flex justify-between w-full h-auto pt-8">
-        <button class="bg-gray-700 hover:bg-gray-600 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
+        <button class="bg-gray-700 hover:bg-gray-600 transition-bg shadow text-white font-bold py-2 px-4 rounded w-1/2">
           View Cart
         </button>
-        <nuxt-link to="checkout" class="ml-8 bg-green-500 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded w-full">
+        <nuxt-link to="checkout" class="ml-8 bg-green-500 hover:bg-green-700 transition-bg shadow text-white text-center font-bold py-2 px-4 rounded w-1/2">
           Checkout
         </nuxt-link>
       </div>
@@ -84,7 +84,7 @@ export default {
       return this.$store.state.cart.map(a => a.sku)
     },
     priceList () {
-      return this.$store.state.cart.map(a => a.MSRP / 100)
+      return this.$store.state.cart.map(a => a.MSRP)
     },
     quantityList () {
       return this.$store.state.cart.map(a => a.quantity)

@@ -159,7 +159,7 @@ export default {
         currency: 'USD'
       })
 
-      return formatter.format(this.info.MSRP / 100)
+      return formatter.format(this.info.MSRP)
     }
   },
   methods: {
