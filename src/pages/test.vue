@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper px-32 py-12">
     <div id="card-element" />
   </div>
 </template>
