@@ -114,7 +114,7 @@
           </div>
         </div>
       </div>
-      <div v-if="isHidden" style="height: 22rem;" class="flex h-full flex-col justify-end px-4">
+      <div v-if="isHidden" style="height: 14rem;" class="flex h-full flex-col justify-end px-4">
         <h2
           class="text-right text-xl text-white font-medium leading-snug"
         >
