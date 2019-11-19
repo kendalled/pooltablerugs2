@@ -18,17 +18,17 @@
           </div>
           <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
             <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-              <div v-for="(item, j) in doc" v-show="i === 0" :key="j" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+              <div v-for="item in doc" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
                 <!--  <PropertyCard :property="item" /> -->
                 <RugCard :info="item" />
               </div>
 
-              <div v-for="(item, q) in doc2" v-show="i === 1" :key="q" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+              <div v-for="item in doc2" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
                 <!--  <PropertyCard :property="item" /> -->
                 <RugCard :info="item" />
               </div>
 
-              <div v-for="(item, k) in doc3" v-show="i === 2" :key="k" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
+              <div v-for="item in doc3" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-5">
                 <!--  <PropertyCard :property="item" /> -->
                 <RugCard :info="item" />
               </div>
