@@ -1,12 +1,16 @@
 <template>
-  <div class="wrapper max-w-sm mx-auto py-12">
+  <div class="wrapper max-w-lg mx-auto py-12">
+    <CheckoutCard />
     <div id="card-element" />
   </div>
 </template>
 
 <script>
-
+import CheckoutCard from '~/components/CheckoutCard'
 export default {
+  components: {
+    CheckoutCard
+  },
   mounted () {
     const elements = this.$stripe.import().elements()
     const card = elements.create('card')

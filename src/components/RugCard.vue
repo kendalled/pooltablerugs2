@@ -137,19 +137,7 @@ export default {
     return {
       seeDetails: false,
       isHovering: false,
-      userid: null,
-      slides: [
-        {
-          title: 'Picture #1',
-          content: 'Slide content.',
-          image: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Froomrug.jpg?alt=media&token=b43d86ba-d8b7-49d7-8595-80515b581ded'
-        },
-        {
-          title: 'Picture #2',
-          content: 'Slide content.',
-          image: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fwhiteroom.jpg?alt=media&token=0b453813-6cde-4ea4-bdac-20dbb3c9ef70'
-        }
-      ]
+      userid: null
     }
   },
   computed: {
@@ -160,6 +148,12 @@ export default {
       })
 
       return formatter.format(this.info.MSRP)
+    },
+    slides () {
+      const thet = {
+        image: this.info.foldURL
+      }
+      return ([thet])
     }
   },
   methods: {

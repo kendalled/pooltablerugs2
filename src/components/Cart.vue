@@ -40,7 +40,7 @@
       </h1>
       <div v-for="(product, i) in skuList" :key="i" class="w-full flex items-center h-24 border-b">
         <div class="w-1/4">
-          <img src="https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fwhiteroom.jpg?alt=media&token=0b453813-6cde-4ea4-bdac-20dbb3c9ef70" class="w-16 h-auto rounded-full">
+          <img :src="foldList[i]" class="w-16 h-auto rounded-full">
         </div>
         <div class="w-1/2 text-center">
           <h3 class="text-sm text-gray-900">
@@ -88,6 +88,9 @@ export default {
     },
     quantityList () {
       return this.$store.state.cart.map(a => a.quantity)
+    },
+    foldList () {
+      return this.$store.state.cart.map(a => a.foldURL)
     }
   },
   methods: {

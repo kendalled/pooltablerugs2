@@ -77,7 +77,7 @@
       </div>
       <div class="flex flex-col justify-end h-56">
         <nuxt-link to="/">
-          <img class="h-auto w-48 mb-2 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
+          <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
         </nuxt-link>
       </div>
     </form>
@@ -94,11 +94,11 @@
       <div class="h-1 mx-auto bg-gray-100 w-56 opacity-75 mt-4 rounded" />
       <div v-for="(product, i) in skuList" :key="i" class="w-full my-6 items-center justify-between flex h-auto bg-white rounded shadow-md py-6 pl-6 px-6">
         <div class="w-1/8">
-          <img src="https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fwhiteroom.jpg?alt=media&token=0b453813-6cde-4ea4-bdac-20dbb3c9ef70" class="w-12 h-auto rounded-full">
+          <img :src="foldList[i]" class="w-16 h-auto rounded-full">
         </div>
         <div class="w-1/3 h-full flex flex-col">
           <div class="w-full h-auto text-center">
-            <h2 class="block uppercase tracking-wide text-gray-700 text-sm font-bold" for="grid-first-name">
+            <h2 class="block uppercase tracking-wide text-gray-700 text-xs font-bold" for="grid-first-name">
               {{ product }}
             </h2>
           </div>
@@ -113,24 +113,20 @@
             <Counter label-text="Qty" :val="quantityList[i]" @increment="handleChange" @decrement="handleChange" />
           </div>
         </div>
-
-        <h2 class="hidden block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-          AGR-1234
-        </h2>
       </div>
-      <div v-if="isHidden" class="px-4">
+      <div v-if="isHidden" style="height: 22rem;" class="flex h-full flex-col justify-end px-4">
         <h2
-          class="text-left text-xl text-white font-medium leading-snug"
+          class="text-right text-xl text-white font-medium leading-snug"
         >
           Subtotal: ${{ subTotal }}.00
         </h2>
         <h2
-          class="text-left text-xl text-white font-medium leading-snug"
+          class="text-right text-xl text-white font-medium leading-snug"
         >
           Tax: ${{ taxOnly }}
         </h2>
         <h2
-          class="text-left text-2xl text-white font-medium leading-snug"
+          class="text-right text-2xl text-white font-medium leading-snug"
         >
           Grand Total: ${{ grandTotal }}
         </h2>
@@ -168,6 +164,9 @@ export default {
         totalPrice += arr[i]
       }
       return totalPrice
+    },
+    foldList () {
+      return this.$store.state.cart.map(a => a.foldURL)
     },
     taxOnly () {
       return this.roundTo(this.subTotal * 0.07, 2)

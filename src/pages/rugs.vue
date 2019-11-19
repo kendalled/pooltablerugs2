@@ -88,7 +88,7 @@
 
 <script>
 import RugCard from '~/components/RugCard'
-import { firebase, fireDb } from '~/plugins/firebase'
+import { firebase, fireDb, storageBase } from '~/plugins/firebase'
 import SearchFilters from '~/components/SearchFilters'
 import Cart from '~/components/Cart'
 
@@ -136,12 +136,12 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
+          data.push({ sku: doc.data().SKU, foldURL: doc.data()['Fold URL'], MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
       // TODO: error handling
-      alert(e)
+      console.log(e)
     }
     try {
       data2 = []
@@ -149,7 +149,7 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data2.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
+          data2.push({ sku: doc.data().SKU, foldURL: doc.data()['Fold URL'], MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
@@ -162,7 +162,7 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data3.push({ sku: doc.data().SKU, imageUrl: doc.data().imageURL, MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 10, group: doc.data()['Size Group'] })
+          data3.push({ sku: doc.data().SKU, foldURL: doc.data()['Fold URL'], MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 10, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
@@ -195,6 +195,15 @@ export default {
         const errorMessage = error.message
         return (errorCode, errorMessage)
         // ...
+      })
+    },
+    getImageURL (sku) {
+      const storage = storageBase.storage()
+      storage.ref('Fold/' + sku + '-fold.jpg').getDownloadURL().then(function (url) {
+        return (url)
+      }).catch(function (error) {
+        // Handle any errors
+        alert(error)
       })
     }
   }
