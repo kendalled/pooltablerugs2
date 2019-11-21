@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="$store.state.cartCount !== 0 && shown" class="w-full max-w-sm absolute flex-col flex bg-white rounded shadow-md px-6 overflow-y-auto pt-6 pb-10 z-30">
+    <div v-if="$store.state.cartCount !== 0 && shown" class="w-full max-w-sm absolute flex-col flex bg-white rounded shadow-md px-4 overflow-y-auto pt-6 pb-10 z-30">
       <!-- <h1 class="text-xl text-gray-800 w-full text-center font-semibold tracking-tight mb-1">
       Your Cart:
       {{ $store.state.cartCount }} item(s)<br>

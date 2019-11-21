@@ -12,7 +12,7 @@
             <h3 class="text-gray-900 font-bolder text-xl">
               {{ style.title }} Rugs
             </h3>
-            <p class="text-gray-600">
+            <p class="text-gray-700">
               {{ style.description }}
             </p>
           </div>
@@ -189,13 +189,14 @@ export default {
       return str.slice(0, num) + '...'
     },
     signInAnon () {
-      firebase.auth().signInAnonymously().catch(function (error) {
-        // Handle Errors here.
-        const errorCode = error.code
-        const errorMessage = error.message
-        return (errorCode, errorMessage)
+      firebase.auth().signInAnonymously().then((result) => {
+        // Save User here.
+        this.$store.commit('user/authUser', result.user.uid)
         // ...
+      }).catch((e) => {
+        console.log(e)
       })
+      // this.$store.commit('user/authUser', firebase.auth().currentUser.uid)
     },
     getImageURL (sku) {
       const storage = storageBase.storage()
@@ -205,6 +206,10 @@ export default {
         // Handle any errors
         alert(error)
       })
+    },
+    async saveUser () {
+      const uid = await firebase.auth().currentUser.uid
+      this.$store.commit('user/authUser', uid)
     }
   }
 }

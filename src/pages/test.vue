@@ -1,9 +1,5 @@
 <template>
   <div class="wrapper max-w-lg mx-auto py-12">
-    <h1 class="text-3xl text-gray-900">
-      {{ uid }}
-    </h1>
-    <CheckoutCard />
     <form id="payment-form" method="post" style="display: block;">
       <div class="form-row">
         <label for="card-element">
@@ -29,17 +25,8 @@
 </template>
 
 <script>
-import CheckoutCard from '~/components/CheckoutCard'
 import { firebase } from '~/plugins/firebase'
 export default {
-  components: {
-    CheckoutCard
-  },
-  computed: {
-    uid () {
-      return this.$store.state.userid
-    }
-  },
   mounted () {
     // this.$store.commit('saveUserDetails')
     const stripe = this.$stripe.import()
