@@ -2,7 +2,7 @@
   <div class="bg-white">
     <SplashHeader />
     <BlankSection />
-    <PricingSection />
+    <!-- <PricingSection /> -->
     <RespFooter />
   </div>
 </template>
@@ -11,12 +11,10 @@
 import SplashHeader from '~/components/SplashHeader'
 import BlankSection from '~/components/BlankSection'
 import RespFooter from '~/components/RespFooter'
-import PricingSection from '~/components/PricingSection'
 
 export default {
   components: {
     SplashHeader,
-    PricingSection,
     BlankSection,
     RespFooter
   }

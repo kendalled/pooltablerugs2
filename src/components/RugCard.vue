@@ -106,7 +106,7 @@ import {
   Slide,
   Navigation as HooperNavigation
 } from 'hooper'
-
+import { firebase } from '~/plugins/firebase'
 export default {
   components: {
     Hooper,
@@ -134,9 +134,11 @@ export default {
   data () {
     return {
       seeDetails: false,
-      isHovering: false
+      isHovering: false,
+      slides: []
     }
   },
+
   computed: {
     formattedPrice () {
       const formatter = new Intl.NumberFormat('en-US', {
@@ -145,17 +147,28 @@ export default {
       })
 
       return formatter.format(this.info.MSRP)
-    },
-    slides () {
-      const thet = {
-        image: this.info.foldURL
-      }
-      return ([thet])
     }
+  },
+  mounted () {
+    const sku = this.info.sku.toLowerCase()
+    const thet = {
+      image: this.getImageURL(sku)
+    }
+    this.slides = [thet]
   },
   methods: {
     addToCart (item) {
       this.$store.commit('addToCart', item)
+    },
+    getImageURL (sku) {
+      const storage = firebase.storage()
+      storage.refFromURL('gs://pooltablerugs.appspot.com/FoldTest/thumbs/' + sku + '-fold_300x300.jpg').getDownloadURL().then(function (url) {
+        // console.log(url)
+        return (url)
+      }).catch(function (error) {
+        // Handle any errors
+        console.log(error)
+      })
     }
   }
 }

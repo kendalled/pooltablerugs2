@@ -17,10 +17,10 @@
             <polygon style="fill:#35A169;stroke:#1B774F;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;" points="203.67,136.06 46.33,136.06 18.26,184.03 231.74,184.03" />
             <g>
               <defs>
-                <polygon id="SVGID_1_" points="203.67,136.06 46.33,136.06 18.26,184.03 231.74,184.03" />
+                <polygon id="SVGID_6_" points="203.67,136.06 46.33,136.06 18.26,184.03 231.74,184.03" />
               </defs>
               <clipPath id="SVGID_2_">
-                <use xlink:href="#SVGID_1_" style="overflow:visible;" />
+                <use xlink:href="#SVGID_6_" style="overflow:visible;" />
               </clipPath>
               <g style="clip-path:url(#SVGID_2_);">
                 <line style="fill:none;stroke:#1B774F;stroke-width:2;stroke-miterlimit:10;" x1="25.49" y1="171.67" x2="224.51" y2="171.67" />
@@ -82,7 +82,7 @@
         Prevent slips and falls, while protecting your floor from scuff marks and scratches with our indoor rugs.
       </p>
       <button
-        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-400 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
       >
         Learn More
       </button>
@@ -173,7 +173,7 @@
         On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't have to.
       </p>
       <button
-        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-400 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
       >
         Learn More
       </button>
@@ -279,7 +279,7 @@
         From moving your table easier to accidental bumps, our half-inch thick rugs make sure your table doesn't budge.
       </p>
       <button
-        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-400 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
       >
         Learn More
       </button>
