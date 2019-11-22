@@ -21,7 +21,7 @@
       <div class="lg:flex xl:block xl:overflow-y-auto">
         <div class="px-4 py-4 border-b lg:w-1/3 xl:border-t-0 xl:w-full">
           <div class="flex flex-wrap -mx-2">
-            <h2 class="text-xl text-gray-800 tracking-tight mx-auto text-center">
+            <h2 class="text-xl text-gray-700 font-semibold tracking-tight mx-auto text-center">
               Search our catalog.
             </h2>
           </div>
@@ -50,7 +50,7 @@
             </label>
           </div>
         </div>
-        <div class="px-4 py-4 border-t lg:w-1/3 lg:border-l xl:w-full">
+        <div class="px-4 py-4 border-t border-b lg:w-1/3 lg:border-l xl:w-full">
           <span class="block text-sm font-semibold text-gray-700">Pool Table Size</span>
           <div class="sm:flex sm:-mx-2 lg:block lg:mx-0">
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0">
@@ -67,6 +67,13 @@
             </label>
           </div>
         </div>
+        <!-- <div class="px-4 py-4 border-b lg:w-1/3 xl:border-t-0 xl:w-full">
+          <div class="flex flex-wrap -mx-2">
+            <h2 class="text-xl text-gray-700 font-semibold tracking-tight mx-auto text-center">
+              Compare Rugs
+            </h2>
+          </div>
+        </div> -->
         <!-- <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3 lg:border-l xl:w-full">
           <span class="block text-sm font-semibold text-gray-400">Style</span>
           <div class="sm:flex sm:-mx-2 sm:flex-wrap">

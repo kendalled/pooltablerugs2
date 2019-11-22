@@ -29,8 +29,7 @@ import { firebase } from '~/plugins/firebase'
 export default {
   mounted () {
     // this.$store.commit('saveUserDetails')
-    const stripe = this.$stripe.import()
-    const elements = stripe.elements()
+    const elements = this.$stripe.import().elements()
     const card = elements.create('card')
     // Add an instance of the card Element into the `card-element` <div>
     card.mount('#card-element')
@@ -40,7 +39,7 @@ export default {
     form.addEventListener('submit', function (event) {
       event.preventDefault()
 
-      stripe.createToken(card).then(function (result) {
+      this.$stripe.createToken(card).then(function (result) {
         if (result.error) {
           // Inform the user if there was an error.
           const errorElement = document.getElementById('card-errors')
