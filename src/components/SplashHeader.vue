@@ -4,7 +4,11 @@
       <div class="xl:max-w-6xl lg:mr-0 lg:ml-32">
         <div class="lg:w-7/12 lg:pl-12 lg:pr-8">
           <div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12">
-            <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Woman workcationing on beach">
+            <picture>
+              <source srcset="~/static/original1920.webp" type="image/webp">
+              <source srcset="img/original1920.jpg" type="image/jpeg">
+              <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Woman workcationing on beach">
+            </picture>
             <svg
               style="margin-left: -0.015rem;"
               class="hidden lg:block absolute inset-y-0 left-0 w-20 h-full"

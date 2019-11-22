@@ -34,7 +34,11 @@
       </svg>
       <div class="relative pt-10 px-10 flex items-center justify-center">
         <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;" />
-        <img class="relative w-56" src="~/static/sample2.png" alt="">
+        <picture>
+          <source srcset="~/static/sample2.webp" type="image/webp">
+          <source srcset="img/sample2.png" type="image/png">
+          <img class="relative w-56" src="~/static/sample2.png" alt="Sample rug image.">
+        </picture>
       </div>
       <div class="relative text-white px-6 pb-6 mt-6">
         <span class="block opacity-75 text-sm -mb-1">2,300 Designs</span>
@@ -66,7 +70,11 @@
       </svg>
       <div class="relative pt-10 px-10 flex items-center justify-center">
         <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;" />
-        <img class="relative w-56" src="~/static/sample2.png" alt="">
+        <picture>
+          <source srcset="~/static/sample2.webp" type="image/webp">
+          <source srcset="img/sample2.png" type="image/png">
+          <img class="relative w-56" src="~/static/sample2.png" alt="Sample rug image.">
+        </picture>
       </div>
       <div class="relative text-white px-6 pb-6 mt-6">
         <span class="block opacity-75 text-sm -mb-1">1,500 Designs</span>
@@ -98,7 +106,11 @@
       </svg>
       <div class="relative pt-10 px-10 flex items-center justify-center">
         <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;" />
-        <img class="relative w-56" src="~/static/sample2.png" alt="">
+        <picture>
+          <source srcset="~/static/sample2.webp" type="image/webp">
+          <source srcset="img/sample2.png" type="image/png">
+          <img class="relative w-56" src="~/static/sample2.png" alt="Sample rug image.">
+        </picture>
       </div>
       <div class="relative text-white px-6 pb-6 mt-6">
         <span class="block opacity-75 text-sm -mb-1">1,900 Designs</span>
