@@ -37,5 +37,17 @@ export const mutations = {
   saveCart (state) {
     window.localStorage.setItem('cart', JSON.stringify(state.cart))
     window.localStorage.setItem('cartCount', state.cartCount)
+  },
+  increaseQty (state) {
+    state.cartCount += 1
+    this.commit('saveCart')
+  }
+}
+
+export const actions = {
+  incrementAsync ({ commit }) {
+    setTimeout(() => {
+      commit('increaseQty')
+    }, 1000)
   }
 }
