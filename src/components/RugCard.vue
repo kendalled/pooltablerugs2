@@ -150,7 +150,10 @@ export default {
       const thet = {
         image: this.info.foldURL
       }
-      return ([thet])
+      const those = {
+        image: this.info.frontURL
+      }
+      return ([thet, those])
     },
     students () {
       return this.$store.state.students.students

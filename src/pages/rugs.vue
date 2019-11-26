@@ -137,7 +137,7 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
+          data.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
@@ -151,7 +151,7 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data2.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
+          data2.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
@@ -164,7 +164,7 @@ export default {
         querySnapshot.forEach(function (doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, ' => ', doc.data())
-          data3.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 10, group: doc.data()['Size Group'] })
+          data3.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
         })
       })
     } catch (e) {
