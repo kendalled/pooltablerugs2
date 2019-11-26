@@ -21,12 +21,19 @@
         <br>
       </div>
     </form>
+    <br>
+    <br>
+    <FlipCard />
   </div>
 </template>
 
 <script>
 import { firebase } from '~/plugins/firebase'
+import FlipCard from '~/components/FlipCard'
 export default {
+  components: {
+    FlipCard
+  },
   mounted () {
     // this.$store.commit('saveUserDetails')
     const elements = this.$stripe.import().elements()
