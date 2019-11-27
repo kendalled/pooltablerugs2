@@ -33,6 +33,18 @@ export default {
     }
   },
   mounted () {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        this.uid = user.uid
+        console.log('signed in!')
+      } else {
+        // No user is signed in.
+        console.log('not signed in!')
+      }
+    })
+  },
+  created () {
     // this.$store.commit('saveUserDetails')
     const stripe = this.$stripe.import()
     const elements = stripe.elements()
@@ -57,18 +69,6 @@ export default {
           })
         }
       })
-    })
-  },
-  created () {
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        // User is signed in.
-        this.uid = user.uid
-        console.log('signed in!')
-      } else {
-        // No user is signed in.
-        console.log('not signed in!')
-      }
     })
   }
 }
