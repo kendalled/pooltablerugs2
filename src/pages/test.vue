@@ -21,19 +21,12 @@
         <br>
       </div>
     </form>
-    <br>
-    <br>
-    <ImageGroup />
   </div>
 </template>
 
 <script>
 import { firebase } from '~/plugins/firebase'
-import ImageGroup from '~/components/ImageGroup'
 export default {
-  components: {
-    ImageGroup
-  },
   mounted () {
     // this.$store.commit('saveUserDetails')
     const elements = this.$stripe.import().elements()
