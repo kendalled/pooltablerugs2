@@ -52,8 +52,8 @@
     </div>
     <!-- start card -->
     <section class="container relative -mt-8 px-4 h-auto w-auto">
-      <div class="card bg-white rounded-lg shadow-lg h-full absolute" :class="{ flipped: isFlipped }">
-        <div class="front px-4 py-4 h-full w-full">
+      <div class="card rounded-lg shadow-lg h-full absolute" :class="{ flipped: isFlipped }">
+        <div class="front rounded-lg px-4 py-4 h-full w-full">
           <p class="tracking-tight text-sm font-semibold text-gray-700">
             {{ info.collection }} • {{ info.sku }}
           </p>
@@ -84,10 +84,10 @@
           </div>
           <!-- commerce buttons -->
           <div class="flex pt-3 justify-between px-0">
-            <button class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded" @click="flip()">
+            <button class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded focus:outline-none" @click="flip()">
               See Details
             </button>
-            <button class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded" @click="addToCart(info)">
+            <button class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded focus:outline-none" @click="addToCart(info)">
               Add to Cart
             </button>
           </div>
@@ -96,7 +96,7 @@
           <span class="uppercase font-bold text-xs text-left text-gray-800">Summary:</span>
           <br>
           <span class="text-sm text-left text-gray-800">
-            {{ truncateString(info.romance, 173) }}
+            {{ truncateString(info.romance, 170) }} <a class="text-gray-600 underline" href="#" title="See more details">see more</a>
           </span>
         </div>
       </div>
@@ -212,6 +212,7 @@ export default {
 }
 .card {
     width: 90%;
+    will-change: transform;
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
@@ -229,9 +230,10 @@ export default {
     backface-visibility: hidden;
 }
 .card .front {
-  background: transparent;
+  background: white;
 }
 .card .back {
+    will-change: transform;
     margin-top: -13.2rem;
     background: white;
     -webkit-transform: rotateY( 180deg );

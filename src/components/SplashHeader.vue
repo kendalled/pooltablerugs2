@@ -1,12 +1,12 @@
 <template>
   <div class="antialiased">
-    <div class="px-8 pt-8 pb-16 max-w-xl mx-auto lg:max-w-full lg:px-0 lg:pt-24 lg:pb-32 lg:relative lg:max-h-screen bg-white">
+    <div class="px-8 pt-2 lg:pt-8 pb-16 max-w-xl mx-auto lg:max-w-full lg:px-0 lg:pt-24 lg:pb-32 lg:relative lg:max-h-screen bg-white">
       <div class="xl:max-w-6xl lg:mr-0 lg:ml-32">
         <div class="lg:w-7/12 lg:pl-12 lg:pr-8">
           <div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12">
             <picture>
               <source srcset="~/static/original1920.webp" type="image/webp">
-              <source srcset="img/original1920.jpg" type="image/jpeg">
+              <source srcset="~/static/original1920.jpg" type="image/jpeg">
               <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Woman workcationing on beach">
             </picture>
             <svg
@@ -26,7 +26,7 @@
             <span class="text-green-600">with a durable, stylish rug.</span>
           </h1>
           <p class="mt-4 text-gray-700 tracking-tight text-xl">
-            Protect your game room with our custom rugs. <br> From spills to scuffs, our rugs keep your game room in shape.
+            <span class="hidden lg:block">Protect your game room with our custom rugs.</span>From spills to scuffs, our rugs keep your game room in shape.
           </p>
           <div class="mt-6">
             <button aria-label="Info" class="bg-white transition-bg hover:bg-gray-100 text-gray-800 font-semibold py-3 px-5 border border-gray-400 rounded shadow">

@@ -9,7 +9,7 @@
       Our rugs are both stylish and functional.
     </p>
 
-    <div class="h-1 mx-auto bg-gray-100 w-48 opacity-75 mb-4 mt-8 rounded" />
+    <div class="h-1 mx-auto bg-gray-100 w-40 opacity-75 mb-2 mt-4 rounded" />
     <ThreeFeatures />
   </div>
 </template>
