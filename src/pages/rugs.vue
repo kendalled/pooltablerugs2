@@ -192,18 +192,12 @@ export default {
     },
     signInAnon () {
       firebase.auth().signInAnonymously().then((result) => {
-        // Save User here.
-        this.$store.commit('user/authUser', result.user.uid)
         this.shown = true
         // ...
       }).catch((e) => {
         console.log(e)
       })
       // this.$store.commit('user/authUser', firebase.auth().currentUser.uid)
-    },
-    async saveUser () {
-      const uid = await firebase.auth().currentUser.uid
-      this.$store.commit('user/authUser', uid)
     }
   }
 }

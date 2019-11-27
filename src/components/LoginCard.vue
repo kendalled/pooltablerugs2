@@ -37,7 +37,7 @@ if (process.client) {
         // do something
       }
     },
-    signInSuccessUrl: 'https://lapelpinsandcoins.com',
+    signInSuccessUrl: 'https://pooltablerugs.com/checkout',
     signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
