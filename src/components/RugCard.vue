@@ -158,6 +158,9 @@ export default {
         image: this.info.frontURL
       }
       return ([thet, those])
+    },
+    students () {
+      return this.$store.state.students.students
     }
   },
   methods: {
