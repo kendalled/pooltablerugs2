@@ -48,7 +48,6 @@
           </svg>
         </hooper-navigation>
       </hooper>
-      <!-- <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="info.imageUrl" alt=""> -->
     </div>
     <!-- start card -->
     <section class="container relative -mt-8 px-4 h-auto w-auto">
@@ -158,9 +157,6 @@ export default {
         image: this.info.frontURL
       }
       return ([thet, those])
-    },
-    students () {
-      return this.$store.state.students.students
     }
   },
   methods: {

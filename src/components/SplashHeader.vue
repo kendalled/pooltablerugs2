@@ -21,19 +21,20 @@
             </svg>
           </div>
           <h1 class="mt-4 lg:mt-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-            Protect your pool table
+            Protect your game room
             <br class="hidden sm:inline">
-            <span class="text-green-600">with a durable, stylish rug.</span>
+            and <span class="text-green-700">pool table</span> with a
+            <span class="italic text-blue-700">rug</span>.
           </h1>
           <p class="mt-4 text-gray-700 tracking-tight text-xl">
-            <span class="hidden lg:block">Protect your game room with our custom rugs.</span>From spills to scuffs, our rugs keep your game room in shape.
+            <span class="hidden lg:block">Protect your game room with our custom rugs.</span>From spills to scuffs, help tidy up your game room.
           </p>
           <div class="mt-6">
-            <button aria-label="Info" class="bg-white transition-bg hover:bg-gray-100 text-gray-800 font-semibold py-3 px-5 border border-gray-400 rounded shadow">
+            <button aria-label="Info" class="bg-white transition-bg hover:bg-gray-100 text-gray-800 font-semibold py-3 px-6 border border-gray-400 rounded shadow">
               Learn More
             </button>
             <nuxt-link to="/rugs">
-              <button class="px-5 py-3 inline-block ml-4 bg-green-700 hover:bg-green-700 rounded text-white font-semibold transition-bg tracking-wide shadow-md focus:outline-none">
+              <button class="px-6 py-3 inline-block ml-4 bg-green-700 hover:bg-green-700 rounded text-white font-semibold transition-bg tracking-wide shadow-md focus:outline-none">
                 Shop Rugs
               </button>
             </nuxt-link>
@@ -49,7 +50,3 @@ export default {
   name: 'SplashHeader'
 }
 </script>
-
-<style scoped>
-
-</style>
