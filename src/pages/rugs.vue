@@ -101,7 +101,15 @@ export default {
   },
   head () {
     return {
-      title: 'Pool Table Rugs: Search Our Catalog.'
+      title: 'Pool Table Rugs: Search Our Catalog.',
+      link: [
+        { rel: 'preconnect', href: 'https://firebasestorage.googleapis.com' },
+        { rel: 'preconnect', href: 'https://storage.googleapis.com/pooltablerugs.appspot.com' },
+        {
+          rel: 'stylesheet',
+          href: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fhooper.css?alt=media&token=41885b27-3eb4-48c9-83d7-3a17fcedf9b9'
+        }
+      ]
     }
   },
   data () {
