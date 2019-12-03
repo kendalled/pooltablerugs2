@@ -11,8 +11,8 @@
         Find out about events and other news.
       </div>
       <form class="m-4 flex">
-        <input aria-label="Email" class="rounded-l-lg px-6 py-2 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white focus:outline-none" placeholder="you@email.com">
-        <button aria-label="Subscribe" class="focus:outline-none transition-bg hover:bg-blue-300 px-4 rounded-r-lg bg-blue-200 text-blue-900 font-semibold py-2 text-sm border-blue-200 border-t border-b border-r">
+        <input class="rounded-l-lg px-6 py-2 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white focus:outline-none" placeholder="you@email.com">
+        <button class="focus:outline-none transition-bg hover:bg-blue-300 px-4 rounded-r-lg bg-blue-200 text-blue-900 font-semibold py-2 text-sm border-blue-200 border-t border-b border-r">
           Subscribe
         </button>
       </form>
