@@ -17,7 +17,6 @@
     "firebaseui": "^4.2.0",
     "hooper": "^0.3.4",
     "nuxt": "^2.0.0",
-    "nuxt-stripe-module": "^2.0.0",
     "stripe": "^7.13.0",
     "tailwindcss-transitions": "^2.1.0",
     "vue-infinite-loading": "^2.4.4",

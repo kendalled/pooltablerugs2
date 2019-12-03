@@ -82,10 +82,11 @@
         Prevent slips and falls, while protecting your floor from scuff marks and scratches with our indoor rugs.
       </p>
       <nuxt-link
-        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
         to="/rugs"
+        title="Links to our indoor rugs."
       >
-        Learn More
+        Indoor Rugs
       </nuxt-link>
     </div>
     <div class="flex-shrink-0 m-8 bg-white max-w-xs rounded shadow-md px-6 pt-6 pb-10">
@@ -174,10 +175,11 @@
         On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't have to.
       </p>
       <nuxt-link
-        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
         to="/rugs"
+        title="Links to our spill proof rugs."
       >
-        Learn More
+        Waterproof Rugs
       </nuxt-link>
     </div>
     <div class="flex-shrink-0 m-8 bg-white max-w-xs rounded shadow-md px-6 pt-6 pb-10">
@@ -281,10 +283,11 @@
         From moving your table easier to accidental bumps, our half-inch thick rugs make sure your table doesn't budge.
       </p>
       <nuxt-link
-        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-500 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
+        class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
         to="/rugs"
+        title="Links to our outdoor rugs."
       >
-        Learn More
+        Outdoor Rugs
       </nuxt-link>
     </div>
   </div>
