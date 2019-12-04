@@ -8,7 +8,7 @@ if (process.client) {
 }
 
 export const state = () => ({
-  cart: cart ? JSON.parse(cart) : [],
+  cart: cart ? JSON.parse(JSON.stringify(cart)) : [],
   cartCount: cartCount ? parseInt(cartCount) : 0
 })
 
