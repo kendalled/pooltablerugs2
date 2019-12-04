@@ -1,12 +1,12 @@
 <template>
   <div class="z-10 mb-8">
     <div
-      class="relative pb-5/6"
       @mouseover="isHovering = true"
       @mouseout="isHovering = false"
+      class="relative pb-5/6"
     >
       <hooper :wheel-control="false" class="focus:outline-none">
-        <slide v-for="(slide, i) in slides" :key="i" class="bg-cover" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" />
+        <slide v-for="(slide, i) in slides" :key="i" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" class="bg-cover" />
         <!-- <hooper-pagination slot="hooper-addons" /> -->
         <hooper-navigation slot="hooper-addons">
           <svg
@@ -52,7 +52,7 @@
     </div>
     <!-- start card -->
     <section class="container relative -mt-8 px-4 h-auto w-auto">
-      <div class="card rounded-lg shadow-lg h-full absolute" :class="{ flipped: isFlipped }">
+      <div :class="{ flipped: isFlipped }" class="card rounded-lg shadow-lg h-full absolute">
         <div class="front rounded-lg px-4 py-4 h-full w-full">
           <p class="tracking-tight text-sm font-semibold text-gray-700">
             {{ info.collection }} • {{ info.sku }}
@@ -73,8 +73,8 @@
             <svg
               v-for="i in 5"
               :key="i"
-              class="h-4 w-4 fill-current"
               :class="info.rating >= i ? 'text-green-500' : 'text-gray-400'"
+              class="h-4 w-4 fill-current"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -84,15 +84,15 @@
           </div>
           <!-- commerce buttons -->
           <div class="flex pt-3 justify-between px-0">
-            <button class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded focus:outline-none" @click="flip()">
+            <button @click="flip()" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded focus:outline-none">
               See Details
             </button>
-            <button class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded focus:outline-none" @click="addToCart(info)">
+            <button @click="addToCart(info)" class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded focus:outline-none">
               Add to Cart
             </button>
           </div>
         </div>
-        <div class="back px-4 py-4 h-full w-full rounded-lg" @click="flip()">
+        <div @click="flip()" class="back px-4 py-4 h-full w-full rounded-lg">
           <span class="uppercase font-bold text-xs text-left text-gray-800">Summary:</span>
           <br>
           <span class="text-sm text-left text-gray-800">

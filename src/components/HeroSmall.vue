@@ -1,7 +1,7 @@
 <template>
   <div
-    class="py-24 mt-16 bg-cover bg-fixed md: mt-18"
     :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5 )), url(' + require('@/static/'+bg) + ')' }"
+    class="py-24 mt-16 bg-cover bg-fixed md: mt-18"
   >
     <div class="container mx-auto px-3">
       <h2 class="text-3xl font-bold mb-2 text-gray-100">

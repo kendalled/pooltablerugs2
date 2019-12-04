@@ -110,7 +110,7 @@
         </div>
         <div class="w-1/4 h-full flex flex-col">
           <div class="w-full h-full text-center">
-            <Counter label-text="Qty" :val="quantityList[i]" @increment="handleChange" @decrement="handleChange" />
+            <Counter :val="quantityList[i]" @increment="handleChange" @decrement="handleChange" label-text="Qty" />
           </div>
         </div>
       </div>

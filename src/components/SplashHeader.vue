@@ -23,7 +23,7 @@
           <h1 class="mt-4 lg:mt-8 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
             Protect your game room
             <br class="hidden sm:inline">
-            <span class="text-green-700">pool table</span> with a <span class="italic font-bold text-blue-700">rug</span>.
+            and <span class="text-green-700">pool table</span> with a <span class="italic font-bold text-blue-700">rug</span>.
           </h1>
           <p class="mt-4 text-gray-700 tracking-tight text-xl">
             <span class="hidden lg:block">Protect your game room with our custom rugs.</span>From spills to scuffs, help tidy up your game room.

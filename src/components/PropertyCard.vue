@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="relative pb-5/6">
-      <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="property.imageUrl" alt="">
+      <img :src="property.imageUrl" class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" alt="">
     </div>
     <div class="relative px-4 -mt-16">
       <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
@@ -24,8 +24,8 @@
           <svg
             v-for="i in 5"
             :key="i"
-            class="h-4 w-4 fill-current"
             :class="property.rating >= i ? 'text-green-500' : 'text-gray-400'"
+            class="h-4 w-4 fill-current"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >

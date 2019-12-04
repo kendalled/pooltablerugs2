@@ -1,7 +1,7 @@
 <template>
   <div>
     <SiteHeader :class="{ 'navbar bg-white mt-0 w-full fixed z-20 top-0 opacity-0': !showNavbar, 'navbar bg-white mt-0 w-full fixed z-20 top-0 opacity-100 shadow-md': showNavbar }" />
-    <nav class="" :class="{ 'bg-transparent p-3 mt-0 w-full absolute z-20 top-0': !showNavbar, 'hidden': showNavbar }">
+    <nav :class="{ 'bg-transparent p-3 mt-0 w-full absolute z-20 top-0': !showNavbar, 'hidden': showNavbar }" class="">
       <div class="mx-auto flex flex-wrap items-center">
         <div class="flex pt-2 w-full md:w-1/2 justify-center md:justify-start text-gray-700">
           <nuxt-link class="text-gray-700 no-underline hover:text-gray-700 hover:no-underline lg:ml-3" to="/">

@@ -11,6 +11,7 @@
       <div class="flex w-full h-8 justify-end items-start">
         <div class="w-11/12 bg-transparent" />
         <svg
+          @click="removeFromCart()"
           class="w-1/12 hover:cursor-pointer shadow rounded-full"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +21,6 @@
           viewBox="0 0 138.3 138.3"
           style="enable-background:new 0 0 138.3 138.3;"
           xml:space="preserve"
-          @click="removeFromCart()"
         >
           <g id="Cup" />
           <g id="Liquid">

@@ -2,9 +2,9 @@
   <div class="wrapper">
     <div class="card-form">
       <div class="card-list">
-        <div class="card-item" :class="{ '-active' : isCardFlipped }">
+        <div :class="{ '-active' : isCardFlipped }" class="card-item">
           <div class="card-item__side -front">
-            <div ref="focusElement" class="card-item__focus" :class="{'-active' : focusElementStyle }" :style="focusElementStyle" />
+            <div ref="focusElement" :class="{'-active' : focusElementStyle }" :style="focusElementStyle" class="card-item__focus" />
             <div class="card-item__cover">
               <img
                 :src="'https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/' + currentCardBackground + '.jpeg'"
@@ -31,16 +31,16 @@
                       <div
                         v-else-if="cardNumber.length > $index"
                         :key="$index"
-                        class="card-item__numberItem"
                         :class="{ '-active' : n.trim() === '' }"
+                        class="card-item__numberItem"
                       >
                         {{ cardNumber[$index] }}
                       </div>
                       <div
                         v-else
                         :key="$index + 1"
-                        class="card-item__numberItem"
                         :class="{ '-active' : n.trim() === '' }"
+                        class="card-item__numberItem"
                       >{{ n }}</div>
                     </transition>
                   </span>
@@ -56,16 +56,16 @@
                       <div
                         v-else-if="cardNumber.length > $index"
                         :key="$index"
-                        class="card-item__numberItem"
                         :class="{ '-active' : n.trim() === '' }"
+                        class="card-item__numberItem"
                       >
                         {{ cardNumber[$index] }}
                       </div>
                       <div
                         v-else
                         :key="$index + 1"
-                        class="card-item__numberItem"
                         :class="{ '-active' : n.trim() === '' }"
+                        class="card-item__numberItem"
                       >{{ n }}</div>
                     </transition>
                   </span>
@@ -75,12 +75,12 @@
                 <label ref="cardName" for="cardName" class="card-item__info">
                   <div class="card-item__holder">Card Holder</div>
                   <transition name="slide-fade-up">
-                    <div v-if="cardName.length" key="1" class="card-item__name">
+                    <div key="1" v-if="cardName.length" class="card-item__name">
                       <transition-group name="slide-fade-right">
                         <span v-for="(n, $index) in cardName.replace(/\s\s+/g, ' ')" :key="$index + 1" class="card-item__nameItem">{{ n }}</span>
                       </transition-group>
                     </div>
-                    <div v-else key="2" class="card-item__name">Full Name</div>
+                    <div key="2" v-else class="card-item__name">Full Name</div>
                   </transition>
                 </label>
                 <div ref="cardDate" class="card-item__date">
@@ -88,14 +88,14 @@
                   <label for="cardMonth" class="card-item__dateItem">
                     <transition name="slide-fade-up">
                       <span v-if="cardMonth" :key="cardMonth">{{ cardMonth }}</span>
-                      <span v-else key="2">MM</span>
+                      <span key="2" v-else>MM</span>
                     </transition>
                   </label>
                   /
                   <label for="cardYear" class="card-item__dateItem">
                     <transition name="slide-fade-up">
                       <span v-if="cardYear" :key="cardYear">{{ String(cardYear).slice(2,4) }}</span>
-                      <span v-else key="2">YY</span>
+                      <span key="2" v-else>YY</span>
                     </transition>
                   </label>
                 </div>
@@ -133,12 +133,12 @@
             id="cardNumber"
             v-model="cardNumber"
             v-mask="generateCardNumberMask"
+            @focus="focusInput"
+            @blur="blurInput"
             type="text"
             class="card-input__input"
             data-ref="cardNumber"
             autocomplete="off"
-            @focus="focusInput"
-            @blur="blurInput"
           >
         </div>
         <div class="card-input">
@@ -146,12 +146,12 @@
           <input
             id="cardName"
             v-model="cardName"
+            @focus="focusInput"
+            @blur="blurInput"
             type="text"
             class="card-input__input"
             data-ref="cardName"
             autocomplete="off"
-            @focus="focusInput"
-            @blur="blurInput"
           >
         </div>
         <div class="card-form__row">
@@ -161,10 +161,10 @@
               <select
                 id="cardMonth"
                 v-model="cardMonth"
-                class="card-input__input -select"
-                data-ref="cardDate"
                 @focus="focusInput"
                 @blur="blurInput"
+                class="card-input__input -select"
+                data-ref="cardDate"
               >
                 <option value="" disabled selected>
                   Month
@@ -176,10 +176,10 @@
               <select
                 id="cardYear"
                 v-model="cardYear"
-                class="card-input__input -select"
-                data-ref="cardDate"
                 @focus="focusInput"
                 @blur="blurInput"
+                class="card-input__input -select"
+                data-ref="cardDate"
               >
                 <option value="" disabled selected>
                   Year
@@ -197,12 +197,12 @@
                 id="cardCvv"
                 v-model="cardCvv"
                 v-mask="'####'"
+                @focus="flipCard(true)"
+                @blur="flipCard(false)"
                 type="text"
                 class="card-input__input"
                 maxlength="4"
                 autocomplete="off"
-                @focus="flipCard(true)"
-                @blur="flipCard(false)"
               >
             </div>
           </div>

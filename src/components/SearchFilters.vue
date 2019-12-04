@@ -9,10 +9,10 @@
           <input class="block w-full bg-gray-900 focus:outline-none focus:bg-white focus:text-gray-200 text-white rounded-lg pl-10 pr-4 py-2" placeholder="Search by keywords">
         </div>
         <button
-          type="button"
-          class="ml-4 inline-flex items-center hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow pl-3 pr-4"
           :class="{ 'bg-gray-600': isOpen, 'bg-gray-700': !isOpen }"
           @click="toggle"
+          type="button"
+          class="ml-4 inline-flex items-center hover:bg-gray-600 focus:outline-none focus:shadow-outline rounded-lg shadow pl-3 pr-4"
         >
           <svg class="h-6 w-6 fill-current text-gray-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm3 6a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm4 5a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4z" /></svg>
           <span class="ml-1 text-white font-medium">Filters</span>

@@ -1,10 +1,10 @@
 <template>
   <div class="relative">
-    <button type="button" class="block focus:outline-none" @click="toggle" @focus="buttonHasFocus = true" @blur="buttonHasFocus = false">
-      <slot name="trigger" :hasFocus="buttonHasFocus" :isOpen="isOpen" />
+    <button @click="toggle" @focus="buttonHasFocus = true" @blur="buttonHasFocus = false" type="button" class="block focus:outline-none">
+      <slot :hasFocus="buttonHasFocus" :isOpen="isOpen" name="trigger" />
     </button>
     <div :class="[isOpen ? 'block' : 'hidden']">
-      <button type="button" class="z-30 block fixed inset-0 w-full h-full cursor-default" @click="isOpen = false" />
+      <button @click="isOpen = false" type="button" class="z-30 block fixed inset-0 w-full h-full cursor-default" />
       <div class="absolute z-40 right-0">
         <slot name="dropdown" />
       </div>

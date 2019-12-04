@@ -1,18 +1,18 @@
 <template>
   <div class="flex custom-number-input justify-start items-end flex-col h-full w-full mx-0">
     <div class="inline-flex flex-row shadow-md h-10 w-24 rounded relative">
-      <button class="functionbtn bg-gray-200 transition-bg text-gray-700 hover:text-gray-700 hover:bg-gray-400 h-10 w-20 rounded-l cursor-pointer outline-none pb-2" @click="$emit('decrement'), changeVal(0)">
+      <button @click="$emit('decrement'), changeVal(0)" class="functionbtn bg-gray-200 transition-bg text-gray-700 hover:text-gray-700 hover:bg-gray-400 h-10 w-20 rounded-l cursor-pointer outline-none pb-2">
         <span class="m-auto text-2xl">−</span>
       </button>
       <input
+        :value="val"
+        @change="onChange()"
         type="number"
         disabled
         class="outline-none focus:outline-none text-center w-full bg-gray-200 font-semibold transition-colors text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-600  outline-none"
         name="custom-input-number"
-        :value="val"
-        @change="onChange()"
       >
-      <button class="functionbtn bg-gray-200 transition-bg text-gray-700 hover:text-gray-700 hover:bg-gray-400 h-10 w-20 rounded-r cursor-pointer pb-2" @click="$emit('increment'), changeVal(1)">
+      <button @click="$emit('increment'), changeVal(1)" class="functionbtn bg-gray-200 transition-bg text-gray-700 hover:text-gray-700 hover:bg-gray-400 h-10 w-20 rounded-r cursor-pointer pb-2">
         <span class="m-auto text-2xl">+</span>
       </button>
     </div>
