@@ -8,7 +8,7 @@ if (process.client) {
 }
 
 export const state = () => ({
-  cart: cart || [],
+  cart: cart ? JSON.parse(cart) : [],
   cartCount: cartCount ? parseInt(cartCount) : 0
 })
 
@@ -35,7 +35,7 @@ export const mutations = {
     this.commit('saveCart')
   },
   saveCart (state) {
-    window.localStorage.setItem('cart', state.cart)
+    window.localStorage.setItem('cart', JSON.stringify(state.cart))
     window.localStorage.setItem('cartCount', state.cartCount)
   },
   increaseQty (state) {
