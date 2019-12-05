@@ -3,10 +3,10 @@
     <div class="container mx-auto px-8">
       <div class="table w-full">
         <div class="block sm:table-cell">
-          <p class="uppercase text-gray-100 text-sm sm:mb-6">
+          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
             Links
           </p>
-          <ul class="list-reset text-xs mb-6">
+          <ul class="list-reset text-sm mb-6">
             <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
               <a href="#" class="text-gray-100 hover:text-gray-300">FAQ</a>
             </li>
@@ -19,10 +19,10 @@
           </ul>
         </div>
         <div class="block sm:table-cell">
-          <p class="uppercase text-gray-100 text-sm sm:mb-6">
+          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
             Legal
           </p>
-          <ul class="list-reset text-xs mb-6">
+          <ul class="list-reset text-sm mb-6">
             <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
               <a href="#" class="text-gray-100 hover:text-gray-300">Terms</a>
             </li>
@@ -32,10 +32,10 @@
           </ul>
         </div>
         <div class="block sm:table-cell">
-          <p class="uppercase text-gray-100 text-sm sm:mb-6">
+          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
             Social
           </p>
-          <ul class="list-reset text-xs mb-6">
+          <ul class="list-reset text-sm mb-6">
             <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
               <a href="#" class="text-gray-100 hover:text-gray-300">Facebook</a>
             </li>
@@ -48,10 +48,10 @@
           </ul>
         </div>
         <div class="block sm:table-cell">
-          <p class="uppercase text-gray-100 text-sm sm:mb-6">
+          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
             Company
           </p>
-          <ul class="list-reset text-xs mb-6">
+          <ul class="list-reset text-sm mb-6">
             <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
               <a href="#" class="text-gray-100 hover:text-gray-300">Official Blog</a>
             </li>
