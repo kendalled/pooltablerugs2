@@ -33,7 +33,7 @@
                 <RugCard :info="item" />
               </div>
 
-              <!-- see more -->
+              <!--
               <svg
                 id="Capa_1"
                 version="1.1"
@@ -77,7 +77,7 @@
                 <g />
                 <g />
                 <g />
-              </svg>
+              </svg> see more -->
             </div>
           </div>
         </div>
