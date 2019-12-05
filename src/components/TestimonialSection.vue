@@ -4,7 +4,7 @@
       <div class="sm:w-1/3 w-full sm:mb-0 mb-16 mx-4">
         <img src="https://demos.onepagelove.com/html/leno/images/testimonial-1.jpg" class="rounded-full w-24 h-24 mx-auto mb-2">
         <p class="italic text-gray-400 text-center my-3">
-          I received my rug and was amazed with the support and quality. My client's game room is complete.
+          I received my rug and was amazed with the support, speed, and quality. My client's game room is complete.
         </p>
         <p class="font-semibold text-gray-400 text-center text-xl">
           Sandy Grain - Interior Designer
