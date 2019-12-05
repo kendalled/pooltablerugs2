@@ -5,9 +5,9 @@
       <h2 class="font-bold text-2xl text-gray-900">
         Featured collections
       </h2>
-      <button class="bg-transparent transition-bg hover:bg-gray-900 text-gray-900 font-semibold hover:text-white py-2 px-4 border border-gray-900 hover:border-transparent text-base rounded">
+      <nuxt-link to="rugs" class="bg-transparent transition-bg hover:bg-gray-900 text-gray-900 font-semibold hover:text-white py-2 px-4 border border-gray-900 hover:border-transparent text-base rounded">
         View All
-      </button>
+      </nuxt-link>
     </div>
     <FeaturedCards />
   </div>
