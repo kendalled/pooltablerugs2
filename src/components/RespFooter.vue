@@ -20,19 +20,6 @@
         </div>
         <div class="block sm:table-cell">
           <p class="font-semibold text-gray-100 text-sm sm:mb-6">
-            Legal
-          </p>
-          <ul class="list-reset text-sm mb-6">
-            <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
-              <a href="#" class="text-gray-100 hover:text-gray-300">Terms</a>
-            </li>
-            <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
-              <a href="#" class="text-gray-100 hover:text-gray-300">Privacy</a>
-            </li>
-          </ul>
-        </div>
-        <div class="block sm:table-cell">
-          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
             Social
           </p>
           <ul class="list-reset text-sm mb-6">
@@ -60,6 +47,19 @@
             </li>
             <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
               <a href="#" class="text-gray-100 hover:text-gray-300">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="block sm:table-cell">
+          <p class="font-semibold text-gray-100 text-sm sm:mb-6">
+            Legal
+          </p>
+          <ul class="list-reset text-sm mb-6">
+            <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+              <a href="#" class="text-gray-100 hover:text-gray-300">Terms</a>
+            </li>
+            <li class="mt-2 inline-block mr-2 sm:block sm:mr-0">
+              <a href="#" class="text-gray-100 hover:text-gray-300">Privacy</a>
             </li>
           </ul>
         </div>
