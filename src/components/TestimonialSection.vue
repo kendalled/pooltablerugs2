@@ -6,7 +6,7 @@
         <p class="italic text-gray-500 text-center my-3">
           I received my rug and was amazed with the support and quality. My client's game room is complete.
         </p>
-        <p class="font-bold  text-gray-400 text-center text-xl">
+        <p class="font-semibold text-gray-400 text-center text-xl">
           Sandy Grain - Interior Designer
         </p>
       </div>
@@ -15,16 +15,16 @@
         <p class="italic text-gray-500 text-center my-3">
           Searching for a sturdy, spill-proof rug was difficult. The huge selection from Pool Table Rugs was delightful.
         </p>
-        <p class="font-bold  text-gray-400 text-center text-xl">
+        <p class="font-semibold text-gray-400 text-center text-xl">
           Bruce Cash - Billiards Player
         </p>
       </div>
       <div class="sm:w-1/3 w-full sm:mb-0 mb-16 mx-4">
         <img src="https://demos.onepagelove.com/html/leno/images/testimonial-3.jpg" class="rounded-full w-24 h-24 mx-auto mb-2">
         <p class="italic text-gray-500 text-center my-3">
-          My client wanted an outdoor shag rug. With hundreds of choices, it was easy to find the perfect one.
+          My client wanted an outdoor shag rug. With hundreds of choices, it was easy to find the perfect rug.
         </p>
-        <p class="font-bold  text-gray-400 text-center text-xl">
+        <p class="font-semibold text-gray-400 text-center text-xl">
           Amanda Savage - Interior Designer
         </p>
       </div>
