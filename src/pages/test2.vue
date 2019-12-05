@@ -1,20 +1,17 @@
 <template>
   <div>
     <ImageGroup />
-    <LoginForm />
-    <NewSearch />
+    <Accordion />
   </div>
 </template>
 
 <script>
 import ImageGroup from '~/components/ImageGroup'
-import LoginForm from '~/components/LoginForm'
-import NewSearch from '~/components/NewSearch'
+import Accordion from '~/components/Accordion'
 export default {
   components: {
     ImageGroup,
-    LoginForm,
-    NewSearch
+    Accordion
   }
 }
 </script>

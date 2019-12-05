@@ -7,7 +7,7 @@
             <picture>
               <source srcset="~/static/original1920.webp" type="image/webp">
               <source srcset="~/static/original1920.jpg" type="image/jpeg">
-              <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Woman workcationing on beach">
+              <img class="h-56 w-full object-cover object-center sm:h-56 rounded-lg shadow-xl lg:inset-0 lg:h-full lg:object-right lg:shadow-none lg:rounded-none" src="~/static/original1920.jpg" alt="Game room with a pool table rug.">
             </picture>
             <svg
               style="margin-left: -0.015rem;"
