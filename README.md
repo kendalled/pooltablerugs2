@@ -4,7 +4,7 @@ Rugs, but for pool tables. (again). Server Side Rendered with Nuxt.js and Fireba
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 >This site aims to have a 3.0s or lower TTI (Time to interactive) - as well as score extremely well in lighthouse and Google Rankings for [Custom Lapel Pins](https://lapelpinsandcoins.com/lapelpins "Custom Lapel Pins").
->Server side rendering allows async loading of products and images, as well as cross-device support.
+>Server side rendering allows asyncronous loading of products and images, as well as cross-device support.
   
 Successor to: [pooltablerugs](https://github.com/kendalled/pooltablerugs "My first attempt").
 ## Technologies:
