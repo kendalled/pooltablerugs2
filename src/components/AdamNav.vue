@@ -1,12 +1,13 @@
 <template>
-  <div id="nav" class="bg-gray-100 shadow">
+  <div id="nav" class="bg-white border-b antialiased parent z-20">
     <div class="md:px-8">
       <nav
-        class="relative flex flex-wrap items-center justify-between md:py-4"
+        class="relative flex flex-wrap items-center justify-between md:py-5"
       >
         <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
           <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
         </nuxt-link>
+        <SearchBar class="z-20 hidden xl:block" />
         <div class="flex-shrink-0 pr-4 md:hidden">
           <button
             ref="openButton"
@@ -32,24 +33,26 @@
           class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent"
         >
           <div class="lg:absolute inset-0 flex items-center justify-center">
-            <a
-              href="#"
-              class="text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors border-b border-blue-600"
-            >Home</a>
-            <a
-              href="#"
+            <nuxt-link
+              to="/"
+              class="text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors border-b border-green-700"
+            >
+              Home
+            </nuxt-link>
+            <nuxt-link
+              to="rugs"
               class="ml-10 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors"
-            >Our Rugs</a>
-            <a
-              href="#"
+            >
+              Our Rugs
+            </nuxt-link>
+            <nuxt-link
+              to="/"
               class="ml-10 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors"
-            >Contact</a>
+            >
+              Contact
+            </nuxt-link>
           </div>
           <div class="ml-10 relative flex items-baseline">
-            <a
-              href="#"
-              class="text-sm font-medium text-gray-900 transition-colors hover:text-green-600"
-            >Log in</a>
             <nuxt-link to="/checkout" class="mt-1 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
               Cart&nbsp;
               <svg class="fill-current inline-block h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
@@ -118,7 +121,7 @@
                 </svg>
               </button>
             </div>
-            <div class="px-4 pt-4 pb-6">
+            <div class="px-4 pt-5 pb-6">
               <img class="h-6 w-auto" src="~/static/logo.png" alt="">
               <a
                 href="#"
@@ -172,11 +175,26 @@
   </div>
 </template>
 
+<style>
+  .parent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+}
+</style>
+
 <script>
+import SearchBar from '~/components/SearchBar'
 export default {
+  components: {
+    SearchBar
+  },
   data () {
     return {
-      isOpen: true
+      isOpen: false,
+      selected: []
     }
   },
   computed: {

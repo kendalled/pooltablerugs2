@@ -3,7 +3,7 @@
     <div v-for="(style, i) in styles" :key="i" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28)), url(' + require('@/static/'+style.imageSrc) + ')' }" class="product hover:cursor-pointer flex flex-col items-start flex-shrink-0 m-4 mx-3 bg-white max-w-xs w-full h-full rounded-lg shadow-xl px-6 bg-cover bg-center h-64 pt-4 pb-6">
       <!-- bg-green-600 -->
       <div class="flex w-full h-12 justify-end items-center ">
-        <div v-show="style.new" style="font-size: .7rem;" class="rounded-full bg-white text-blue-700 uppercase font-bold tracking-wide px-2 py-1">
+        <div v-show="style.new" style="font-size: .7rem;" class="rounded-full bg-white text-black uppercase font-bold tracking-wide px-2 py-1">
           NEW
         </div>
       </div>
