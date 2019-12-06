@@ -1,25 +1,25 @@
 <template>
   <div
-    :style="{ backgroundImage: 'linear-gradient(105deg, rgba(0,0,0,0.65) 25%, rgba(0,0,0,0) 75%), url(' + require('@/static/'+bg) + ')' }"
-    class="py-56 mt-16 bg-cover bg-fixed md: mt-18"
+    :style="{ backgroundImage: 'linear-gradient(105deg, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 75%), url(' + require('@/static/'+bg) + ')' }"
+    class="py-64 bg-cover h-full bg-fixed"
   >
-    <div class="container mx-auto px-3">
-      <h1 class="text-3xl font-bold mb-2 text-white">
-        Pool Table Rugs
+    <div class="mx-auto w-3/4 px-4">
+      <h1 class="font-bold mb-2 text-gray-100 leading-tight">
+        Protect your pool table<br> in style with a durable rug.
       </h1>
-      <h2 class="text-2xl mb-8 text-gray-200">
-        Protect your game room with style.
+      <h2 class="mb-6 text-gray-200">
+        Thousands of designs, free shipping, 24/7 support.
       </h2>
-      <nuxt-link to="rugs">
-        <button class="bg-green-600 text-white font-bold py-2 px-4 shadow-lg tracking-wide rounded hover:bg-green-800">
-          Shop Rugs
-        </button>
-      </nuxt-link>
-      <nuxt-link to="about">
-        <button class="bg-white text-gray-700 font-bold py-2 px-4 shadow-lg tracking-wide rounded hover:bg-gray-400">
+      <div class="mt-0">
+        <button aria-label="About Our Rugs" class="bg-gray-100 transition-bg hover:bg-white text-gray-800 font-semibold py-3 px-6 border border-gray-400 rounded shadow">
           Learn More
         </button>
-      </nuxt-link>
+        <nuxt-link to="/rugs">
+          <button aria-label="Shop Rugs" class="px-6 py-3 inline-block ml-4 bg-green-700 hover:bg-green-500 rounded text-white font-semibold transition-bg tracking-wide shadow-md focus:outline-none">
+            Shop Rugs
+          </button>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -30,13 +30,24 @@ export default {
   props: {
     'bg': {
       type: String,
-      default: 'background.jpg'
+      default: 'original1920.jpg'
     }
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
 /* #hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://pooltablerugs.firebaseapp.com/images/background.jpg');
   background-size: cover;

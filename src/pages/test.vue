@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper max-w-lg mx-auto py-12">
+  <div class="wrapper mx-auto py-12">
     <form id="payment-form" method="post" style="display: block;">
       <div class="form-row">
         <label for="card-element">
@@ -8,7 +8,6 @@
         <div id="card-element">
           <!-- A Stripe Element will be inserted here. -->
         </div>
-
         <!-- Used to display Element errors. -->
         <div id="card-errors" role="alert" />
       </div>

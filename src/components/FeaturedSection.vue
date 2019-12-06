@@ -1,7 +1,7 @@
 <template>
   <div class="py-20 px-24 bg-gray-200 text-2xl">
     <!-- bg-green-200 -->
-    <div class="flex w-3/5 mx-auto h-auto px-2 py-2 justify-between">
+    <div class="flex w-5/6 mx-auto h-auto px-5 py-2 justify-between">
       <h2 class="font-semibold text-2xl text-gray-900">
         Featured collections
       </h2>

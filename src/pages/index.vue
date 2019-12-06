@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white">
-    <SplashHeader />
-    <BlankSection />
+    <Hero />
     <FeaturedSection />
+    <BlankSection />
     <TestimonialSection />
     <SubscribeEmail class="hidden lg:block" />
     <!-- <PricingSection /> -->
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SplashHeader from '~/components/SplashHeader'
+import Hero from '~/components/Hero'
 import FeaturedSection from '~/components/FeaturedSection'
 import TestimonialSection from '~/components/TestimonialSection'
 import BlankSection from '~/components/BlankSection'
@@ -20,13 +20,14 @@ import RespFooter from '~/components/RespFooter'
 
 export default {
   components: {
-    SplashHeader,
+    Hero,
     FeaturedSection,
     TestimonialSection,
     BlankSection,
     SubscribeEmail,
     RespFooter
-  }
+  },
+  layout: 'checkout'
 }
 </script>
 

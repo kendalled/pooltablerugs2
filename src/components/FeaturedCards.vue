@@ -1,9 +1,9 @@
 <template>
-  <div class="pb-4 flex flex-wrap items-center justify-center">
-    <div v-for="(style, i) in styles" :key="i" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28)), url(' + require('@/static/'+style.imageSrc) + ')' }" class="product flex flex-col items-start flex-shrink-0 m-4 bg-white max-w-xs w-full h-full rounded-lg shadow-lg px-6 bg-cover bg-center h-64 pt-4 pb-6">
+  <div class="pb-4 flex w-5/6 mx-auto flex-wrap items-center justify-around">
+    <div v-for="(style, i) in styles" :key="i" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28)), url(' + require('@/static/'+style.imageSrc) + ')' }" class="product hover:cursor-pointer flex flex-col items-start flex-shrink-0 m-4 mx-3 bg-white max-w-xs w-full h-full rounded-lg shadow-xl px-6 bg-cover bg-center h-64 pt-4 pb-6">
       <!-- bg-green-600 -->
       <div class="flex w-full h-12 justify-end items-center ">
-        <div v-show="style.new" style="font-size: .7rem;" class="rounded-full bg-white text-gray-800 uppercase font-bold tracking-wide px-2 py-1">
+        <div v-show="style.new" style="font-size: .7rem;" class="rounded-full bg-white text-blue-700 uppercase font-bold tracking-wide px-2 py-1">
           NEW
         </div>
       </div>
@@ -45,8 +45,13 @@ export default {
         },
         {
           title: 'Modern',
-          new: true,
+          new: false,
           imageSrc: 'tinyrug.jpg'
+        },
+        {
+          title: 'Chic',
+          new: true,
+          imageSrc: 'chicrug.jpg'
         },
         {
           title: 'Shag',
