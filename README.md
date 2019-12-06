@@ -1,15 +1,16 @@
-# 🎱 pooltablerugs2 v0.4 - Nuxt, Vue.js, Vuex, Webpack, Babel
+# 🎱 pooltablerugs2 v0.4 - Nuxt, Vue.js, Webpack, & more.
 Rugs, but for pool tables. (again). Server Side Rendered with Nuxt.js and Firebase Cloud Functions.
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
->This site aims to have a 3.0s or lower TTI (Time to interactive) - as well as score extremely well in lighthouse and Google Rankings for [Custom Lapel Pins](https://lapelpinsandcoins.com/lapelpins "Custom Lapel Pins").
+>This site aims to have a 3.0s or lower TTI (Time to interactive) - as well as score extremely well in lighthouse and Google Rankings.
 >Server side rendering allows asyncronous loading of products and images, as well as cross-device support.
   
 Successor to: [pooltablerugs](https://github.com/kendalled/pooltablerugs "My first attempt").
 ## Technologies:
 - Vue.js
 - Nuxt
+- Vuex State Management
 - Tailwind CSS
 - Stripe Integration
 - Server Side Rendering
