@@ -4,10 +4,10 @@
     class="pt-64 pb-56 bg-cover h-full bg-center"
   >
     <div class="mx-auto w-3/4 px-4 my-12">
-      <h1 class="text-4xl lg:text-5xl mb-2 text-gray-100 leading-tight">
+      <h1 class="text-3xl lg:text-4xl mb-2 text-gray-100 leading-tight">
         Protect your pool table<br class="hidden md:block"> in style with a durable rug.
       </h1>
-      <h2 class="mb-6 text-gray-100">
+      <h2 class="mb-6 text-gray-200">
         Thousands of designs, free shipping, 24/7 support.
       </h2>
       <div class="mt-0">
@@ -45,7 +45,7 @@ h1 {
 }
 h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 22px;
 }
 /* #hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://pooltablerugs.firebaseapp.com/images/background.jpg');
