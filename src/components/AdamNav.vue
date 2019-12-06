@@ -44,10 +44,6 @@
               <a
                 href="#"
                 class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700"
-              >Partners</a>
-              <a
-                href="#"
-                class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700"
               >About</a>
             </div>
             <div class="ml-10 relative flex items-baseline">
@@ -151,10 +147,6 @@
                   href="#"
                   class="block font-medium text-gray-900 hover:text-gray-700"
                 >Marketplace</a>
-                <a
-                  href="#"
-                  class="mt-4 block font-medium text-gray-900 hover:text-gray-700"
-                >Partners</a>
                 <a
                   href="#"
                   class="mt-4 block font-medium text-gray-900 hover:text-gray-700"
