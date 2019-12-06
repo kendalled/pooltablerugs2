@@ -4,8 +4,8 @@
     class="py-64 bg-cover h-full bg-center"
   >
     <div class="mx-auto w-3/4 px-4">
-      <h1 class="font-bold mb-2 text-gray-100 leading-tight">
-        Protect your pool table<br> in style with a durable rug.
+      <h1 class="text-3xl font-bold mb-2 text-gray-100 leading-tight">
+        Protect your pool table<br class="hidden md:block"> in style with a durable rug.
       </h1>
       <h2 class="mb-6 text-gray-200">
         Thousands of designs, free shipping, 24/7 support.
@@ -41,7 +41,6 @@ export default {
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  font-size: 42px;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
 }
 h2 {
