@@ -7,7 +7,7 @@
       <h1 class="mb-2 text-gray-100 leading-tight">
         Protect your pool table<br class="hidden md:block"> in style with a durable rug.
       </h1>
-      <h2 class="mb-6 text-gray-200">
+      <h2 class="text-2xl mb-6 text-gray-200">
         Thousands of designs, free shipping, 24/7 support.
       </h2>
       <div class="mt-0">
