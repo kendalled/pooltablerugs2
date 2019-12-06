@@ -1,4 +1,4 @@
-# pooltablerugs2 v0.4 - Nuxt, Vue.js, Vuex, Webpack, Babel
+# 🎱 pooltablerugs2 v0.4 - Nuxt, Vue.js, Vuex, Webpack, Babel
 Rugs, but for pool tables. (again). Server Side Rendered with Nuxt.js and Firebase Cloud Functions.
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
