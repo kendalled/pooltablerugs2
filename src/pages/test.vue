@@ -3,7 +3,7 @@
     <form id="payment-form" method="post" style="display: block;">
       <div class="form-row">
         <label for="card-element">
-          Credit or Debit {{ uid }}:
+          Credit or Debit:
         </label>
         <div id="card-element">
           <!-- A Stripe Element will be inserted here. -->
@@ -27,6 +27,7 @@
 <script>
 // import { firebase } from '~/plugins/firebase'
 export default {
+  layout: 'checkout'
   // mounted () {
   //   firebase.auth().onAuthStateChanged(function (user) {
   //     if (user) {

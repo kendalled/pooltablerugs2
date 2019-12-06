@@ -12,6 +12,7 @@ export default {
   components: {
     ImageGroup,
     Accordion
-  }
+  },
+  layout: 'checkout'
 }
 </script>

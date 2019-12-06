@@ -3,7 +3,7 @@
     <h1 class="mb-4">
       tailwind collapsible
     </h1>
-    <section class="shadow">
+    <section class="shadow bg-white">
       <article class="border-b">
         <div class="border-l-2 border-transparent">
           <header class="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none">

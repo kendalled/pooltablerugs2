@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NewNav />
+    <AdamNav />
     <nuxt />
   </div>
 </template>
@@ -20,11 +20,11 @@ html {
 }
 </style>
 <script>
-import NewNav from '~/components/NewNav'
+import AdamNav from '~/components/AdamNav'
 export default {
   name: 'Checkout',
   components: {
-    NewNav
+    AdamNav
   }
 }
 </script>
