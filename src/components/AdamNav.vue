@@ -5,9 +5,9 @@
         <nav
           class="relative flex flex-wrap items-center justify-between md:py-4"
         >
-          <div class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
+          <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
             <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
-          </div>
+          </nuxt-link>
           <div class="flex-shrink-0 pr-4 md:hidden">
             <button
               ref="openButton"
