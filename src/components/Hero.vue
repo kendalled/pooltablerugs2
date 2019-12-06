@@ -4,7 +4,7 @@
     class="pt-64 pb-56 bg-cover h-full bg-center"
   >
     <div class="mx-auto w-3/4 px-4 my-12">
-      <h1 class="text-3xl lg:text-4xl mb-2 text-gray-100 leading-tight">
+      <h1 class="mb-2 text-gray-100 leading-tight">
         Protect your pool table<br class="hidden md:block"> in style with a durable rug.
       </h1>
       <h2 class="mb-6 text-gray-200">
@@ -37,19 +37,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap');
 h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.2), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+  font-size: 2.8rem;
 }
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px;
-}
-/* #hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://pooltablerugs.firebaseapp.com/images/background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-} */
 </style>
