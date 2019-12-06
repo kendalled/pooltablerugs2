@@ -6,7 +6,7 @@
           class="relative flex flex-wrap items-center justify-between md:py-4"
         >
           <div class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
-            <img class="h-6 w-auto" src="~/static/logo.png" alt="">
+            <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
           </div>
           <div class="flex-shrink-0 pr-4 md:hidden">
             <button
@@ -33,12 +33,28 @@
             class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent"
           >
             <div class="lg:absolute inset-0 flex items-center justify-center">
-              <nuxt-link to="/rugs" class="inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:text-sm sm:px-2 xl:text-gray-800">
-                Find a Rug
-              </nuxt-link>
-              <nuxt-link to="/" class="mt-1 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
-                Add-Ons
-              </nuxt-link>
+              <a
+                href="#"
+                class="text-sm font-medium text-gray-900 hover:text-gray-700"
+              >Products</a>
+              <a
+                href="#"
+                class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700"
+              >Marketplace</a>
+              <a
+                href="#"
+                class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700"
+              >Partners</a>
+              <a
+                href="#"
+                class="ml-10 text-sm font-medium text-gray-900 hover:text-gray-700"
+              >About</a>
+            </div>
+            <div class="ml-10 relative flex items-baseline">
+              <a
+                href="#"
+                class="text-sm font-medium text-gray-900 hover:text-gray-700"
+              >Log in</a>
               <nuxt-link to="/checkout" class="mt-1 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
                 Cart&nbsp;
                 <svg class="fill-current inline-block h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
