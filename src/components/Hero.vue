@@ -1,7 +1,7 @@
 <template>
   <div
     :style="{ backgroundImage: 'linear-gradient(105deg, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 75%), url(' + require('@/static/'+bg) + ')' }"
-    class="pt-64 pb-56 bg-cover h-full bg-center bg-fixed"
+    class="pt-64 pb-56 bg-cover h-full bg-center"
   >
     <div class="mx-auto w-3/4 px-4 my-12">
       <h1 class="text-4xl lg:text-5xl mb-2 text-gray-100 leading-tight">
