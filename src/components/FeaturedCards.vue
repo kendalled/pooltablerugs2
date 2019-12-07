@@ -49,11 +49,6 @@ export default {
           imageSrc: 'tinyrug.jpg'
         },
         {
-          title: 'Chic',
-          new: true,
-          imageSrc: 'chicrug.jpg'
-        },
-        {
           title: 'Shag',
           new: true,
           imageSrc: 'whiteroom.jpg'
