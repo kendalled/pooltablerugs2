@@ -1,5 +1,5 @@
 <template>
-  <div class="rugroot bg-gray-100 antialiased xl:flex xl:flex-col">
+  <div class="rugroot bg-white antialiased xl:flex xl:flex-col">
     <!-- <SiteHeader  /> -->
     <div class="w-full h-auto flex absolute justify-end items-start pr-6">
       <Cart />
@@ -9,10 +9,10 @@
       <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
         <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}">
           <div class="px-4 xl:px-8">
-            <h3 class="text-gray-900 font-bolder text-xl">
+            <h3 class="text-gray-900 font-semibold text-xl">
               {{ style.title }} Rugs
             </h3>
-            <p class="text-gray-700">
+            <p class="text-gray-600">
               {{ style.description }}
             </p>
           </div>

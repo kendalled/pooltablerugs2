@@ -5,7 +5,7 @@
       type="search"
       name="search"
       placeholder="Search by keyword(s)"
-      autocomplete="rugSearch"
+      autocomplete="theSearch"
     >
     <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
       <svg
