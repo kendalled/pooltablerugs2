@@ -12,7 +12,7 @@
             <h3 class="text-gray-900 font-semibold text-xl">
               {{ style.title }} Rugs
             </h3>
-            <p class="text-gray-600">
+            <p class="text-gray-700">
               {{ style.description }}
             </p>
           </div>
