@@ -151,13 +151,13 @@ export default {
       return formatter.format(this.info.MSRP)
     },
     slides () {
-      const thet = {
+      const fold = {
         image: this.info.foldURL
       }
-      const those = {
+      const front = {
         image: this.info.frontURL
       }
-      return ([thet, those])
+      return ([fold, front])
     }
   },
   methods: {
