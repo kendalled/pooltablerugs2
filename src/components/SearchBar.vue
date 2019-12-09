@@ -1,7 +1,7 @@
 <template>
   <div class="absolute ml-64 text-gray-900">
     <input
-      class="border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 h-10 px-5 pr-16 rounded-lg text-sm"
+      class="border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 h-10 px-5 pr-16 rounded-lg text-sm transition-bg"
       type="search"
       name="search"
       placeholder="Search by keyword(s)"
