@@ -40,7 +40,8 @@
 
 <script>
 import RugCard from '~/components/RugCard'
-import { firebase, fireDb } from '~/plugins/firebase'
+// import { firebase, fireDb }
+import { firebase } from '~/plugins/firebase'
 import SearchFilters from '~/components/SearchFilters'
 import Cart from '~/components/Cart'
 
@@ -56,11 +57,7 @@ export default {
       title: 'Pool Table Rugs: Search Our Catalog.',
       link: [
         { rel: 'preconnect', href: 'https://firebasestorage.googleapis.com' },
-        { rel: 'preconnect', href: 'https://www.googleapis.com' },
-        {
-          rel: 'stylesheet',
-          href: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/Images%2Fhooper.css?alt=media&token=41885b27-3eb4-48c9-83d7-3a17fcedf9b9'
-        }
+        { rel: 'preconnect', href: 'https://www.googleapis.com' }
       ]
     }
   },
@@ -70,9 +67,9 @@ export default {
       traditional: [ { 'sku': 'A108-23', 'foldURL': '/traditional/fold/a108-23-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 255, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2' x 3'" }, { 'sku': 'A108-268', 'foldURL': '/traditional/fold/a108-268-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 900, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2'6\" x 8'" }, { 'sku': 'A108-3353', 'foldURL': '/traditional/fold/a108-3353-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 765, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "3' x 5' - 4' x 6'" }, { 'sku': 'A108-58', 'foldURL': '/traditional/fold/a108-58-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 1555, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "5' x 8'" } ],
       shag: [ { 'sku': 'AAS2300-23', 'foldURL': '/shag/fold/aas2300-23-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 85, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'AAS2300-2773', 'foldURL': '/shag/fold/aas2300-2773-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 220, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2'6\" x 8'" }, { 'sku': 'AAS2300-5373', 'foldURL': '/shag/fold/aas2300-5373-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 375, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'AAS2300-710103', 'foldURL': '/shag/fold/aas2300-710103-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 780, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ],
       modern: [ { 'sku': 'ABE8003-223', 'foldURL': '/modern/fold/abe8003-223-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 80, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'ABE8003-5276', 'foldURL': '/modern/fold/abe8003-5276-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 325, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'ABE8003-679', 'foldURL': '/modern/fold/abe8003-679-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 595, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "6' x 9' - 8' x 10'" }, { 'sku': 'ABE8003-76106', 'foldURL': '/modern/fold/abe8003-76106-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 645, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ],
-      doc: [],
-      doc2: [],
-      doc3: [],
+      // doc: [],
+      // doc2: [],
+      // doc3: [],
       styles: [
         {
           title: 'Traditional',
@@ -89,56 +86,56 @@ export default {
       ]
     }
   },
-  async asyncData ({ app, params, error }) {
-    const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').limit(4)
-    const rugRef2 = fireDb.collection('Rugs').where('Style', '==', 'Shag').limit(4)
-    const rugRef3 = fireDb.collection('Rugs').where('Style', '==', 'Modern').limit(4)
-    let data, data2, data3
-    try {
-      data = []
-      await rugRef.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          // doc.data() is never undefined for query doc snapshots
-          // console.log(doc.id, ' => ', doc.data())
-          data.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
-        })
-      })
-    } catch (e) {
-      // TODO: error handling
-      console.log(e)
-    }
-    try {
-      data2 = []
-      await rugRef2.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          // doc.data() is never undefined for query doc snapshots
-          // console.log(doc.id, ' => ', doc.data())
-          data2.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-        })
-      })
-    } catch (e) {
-      // TODO: error handling
-      alert(e)
-    }
-    try {
-      data3 = []
-      await rugRef3.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-          // doc.data() is never undefined for query doc snapshots
-          // console.log(doc.id, ' => ', doc.data())
-          data3.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-        })
-      })
-    } catch (e) {
-      // TODO: error handling
-      alert(e)
-    }
-    return {
-      doc: data,
-      doc2: data2,
-      doc3: data3
-    }
-  },
+  // async asyncData ({ app, params, error }) {
+  //   const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').limit(4)
+  //   const rugRef2 = fireDb.collection('Rugs').where('Style', '==', 'Shag').limit(4)
+  //   const rugRef3 = fireDb.collection('Rugs').where('Style', '==', 'Modern').limit(4)
+  //   let data, data2, data3
+  //   try {
+  //     data = []
+  //     await rugRef.get().then(function (querySnapshot) {
+  //       querySnapshot.forEach(function (doc) {
+  //         // doc.data() is never undefined for query doc snapshots
+  //         // console.log(doc.id, ' => ', doc.data())
+  //         data.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
+  //       })
+  //     })
+  //   } catch (e) {
+  //     // TODO: error handling
+  //     console.log(e)
+  //   }
+  //   try {
+  //     data2 = []
+  //     await rugRef2.get().then(function (querySnapshot) {
+  //       querySnapshot.forEach(function (doc) {
+  //         // doc.data() is never undefined for query doc snapshots
+  //         // console.log(doc.id, ' => ', doc.data())
+  //         data2.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
+  //       })
+  //     })
+  //   } catch (e) {
+  //     // TODO: error handling
+  //     alert(e)
+  //   }
+  //   try {
+  //     data3 = []
+  //     await rugRef3.get().then(function (querySnapshot) {
+  //       querySnapshot.forEach(function (doc) {
+  //         // doc.data() is never undefined for query doc snapshots
+  //         // console.log(doc.id, ' => ', doc.data())
+  //         data3.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
+  //       })
+  //     })
+  //   } catch (e) {
+  //     // TODO: error handling
+  //     alert(e)
+  //   }
+  //   return {
+  //     doc: data,
+  //     doc2: data2,
+  //     doc3: data3
+  //   }
+  // },
   mounted () {
     this.signInAnon()
   },
