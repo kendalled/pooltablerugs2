@@ -7,7 +7,8 @@
         <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
           <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
         </nuxt-link>
-        <SearchBar class="z-20 hidden xl:block" />
+        <!-- hidden for dev purposes -->
+        <SearchBar class="hidden" />
         <div class="flex-shrink-0 pr-4 md:hidden">
           <button
             ref="openButton"
@@ -202,18 +203,6 @@ export default {
       return this.$store.state.cartCount
     }
   },
-  // watch: {
-  //   isOpen: {
-  //     immediate: true,
-  //     handler (isOpen) {
-  //       if (isOpen) {
-  //         document.body.style.setProperty('overflow', 'hidden')
-  //       } else {
-  //         document.body.style.removeProperty('overflow')
-  //       }
-  //     }
-  //   }
-  // },
   methods: {
     open () {
       this.isOpen = true
