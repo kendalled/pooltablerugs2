@@ -6,6 +6,7 @@
       class="relative pb-5/6"
     >
       <hooper :wheel-control="false" class="focus:outline-none">
+        <!-- old slide markup <slide v-for="(slide, i) in slides" :key="i" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" class="bg-cover" /> -->
         <slide v-for="(slide, i) in slides" :key="i" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" class="bg-cover" />
         <!-- <hooper-pagination slot="hooper-addons" /> -->
         <hooper-navigation slot="hooper-addons">
