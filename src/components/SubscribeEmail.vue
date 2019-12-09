@@ -7,7 +7,7 @@
       <div class=" m-0 p-0 text-3xl font-bold tracking-tight text-white antialiased text-center">
         Subscribe for 10% off.
       </div>
-      <div class="tracking-tight m-0 p-0 text-xl text-white antialiased text-center">
+      <div class="tracking-tight m-0 p-0 text-xl text-gray-100 antialiased text-center">
         Find out about events and other news.
       </div>
       <form class="m-4 flex">
