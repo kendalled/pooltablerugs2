@@ -72,16 +72,16 @@
             <span class="block text-sm font-semibold text-gray-400">Style</span>
             <div class="sm:flex sm:-mx-2 sm:flex-wrap">
               <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
-                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="balcony">
+                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="modern" checked>
                 <span class="ml-2 text-white">Modern</span>
               </label>
               <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
-                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="pool">
-                <span class="ml-2 text-white">Casual</span>
+                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="shag" checked>
+                <span class="ml-2 text-white">Shag</span>
               </label>
               <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full">
-                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="beach">
-                <span class="ml-2 text-white">Classic</span>
+                <input class="form-checkbox bg-gray-900 focus:bg-gray-700" type="checkbox" name="traditional" checked>
+                <span class="ml-2 text-white">Traditional</span>
               </label>
             </div>
           </div>
