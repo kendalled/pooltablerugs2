@@ -34,24 +34,7 @@
           class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent"
         >
           <div class="lg:absolute inset-0 flex items-center justify-center">
-            <nuxt-link
-              to="/"
-              class="text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors border-b border-green-700"
-            >
-              Home
-            </nuxt-link>
-            <nuxt-link
-              to="rugs"
-              class="ml-10 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors"
-            >
-              Our Rugs
-            </nuxt-link>
-            <nuxt-link
-              to="/"
-              class="ml-10 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors"
-            >
-              Contact
-            </nuxt-link>
+            <VerticalNav />
           </div>
           <div class="ml-10 relative flex items-baseline">
             <nuxt-link to="/checkout" class="mt-1 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
@@ -188,14 +171,15 @@
 
 <script>
 import SearchBar from '~/components/SearchBar'
+import VerticalNav from '~/components/VerticalNav'
 export default {
   components: {
-    SearchBar
+    SearchBar,
+    VerticalNav
   },
   data () {
     return {
-      isOpen: false,
-      selected: []
+      isOpen: false
     }
   },
   computed: {
