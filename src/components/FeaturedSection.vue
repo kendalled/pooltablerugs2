@@ -1,5 +1,5 @@
 <template>
-  <div class="py-20 lg:px-24 bg-gray-200 text-2xl">
+  <div class="py-20 lg:px-24 bg-gray-100 text-2xl">
     <!-- bg-green-200 -->
     <div class="flex w-5/6 mx-auto h-auto px-5 py-2 justify-between">
       <h2 class="font-semibold text-2xl text-gray-900">
