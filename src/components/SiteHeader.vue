@@ -5,7 +5,7 @@
         <img class="h-6 w-auto mt-2" alt="Pool Table Rugs Logo" src="~/static/logo.png">
       </nuxt-link>
       <div class="flex sm:hidden">
-        <button @click="toggle" type="button" class="px-2 text-gray-600 hover:text-green-600 focus:outline-none focus:text-gray-500" aria-label="Account">
+        <button @click="toggle" type="button" class="px-2 text-gray-600 hover:text-green-600 focus:outline-none focus:text-gray-500 transition-colors" aria-label="Account">
           <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path v-if="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
             <path v-if="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
@@ -21,7 +21,7 @@
         <input class="block w-full border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg pl-10 pr-4 py-2" aria-label="Search Bar" placeholder="Search by keywords">
       </div>
       <div class="sm:flex sm:items-center">
-        <div class="navitems px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
+        <div class="navitems px-2 pt-2 pb-5 border-b border-gray-400 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
           <nuxt-link to="/rugs" class="block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:text-sm sm:px-2 xl:text-gray-800">
             Find a Rug
           </nuxt-link>
@@ -43,12 +43,12 @@
           <div class="flex items-center sm:hidden">
             <!-- mobile ul -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-user px-1 h-8 w-8 object-cover rounded-full border-2 border-gray-600 text-green-600 fill-current"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /><path class="secondary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z" /></svg>
-            <span class="ml-4 font-semibold text-gray-700 sm:hidden">Your Account</span>
+            <span class="ml-4 font-semibold text-gray-800 sm:hidden">Your Account</span>
           </div>
           <div class="mt-5 sm:hidden">
-            <a href="#account" class="block text-gray-600 transition-colors xs:hover:text-green-600 xs:hover:text-white">Account settings</a>
-            <a href="#support" class="mt-3 block text-gray-600 transition-colors xs:hover:text-green-600 xs:hover:text-white">Support</a>
-            <nuxt-link to="login" class="mt-3 block text-gray-600 transition-colors xs:hover:text-green-600 xs:hover:text-white">
+            <a href="#account" class="block text-gray-700 transition-colors xs:hover:text-green-600 xs:hover:text-white">Account settings</a>
+            <a href="#support" class="mt-3 block text-gray-700 transition-colors xs:hover:text-green-600 xs:hover:text-white">Support</a>
+            <nuxt-link to="login" class="mt-3 block text-gray-700 transition-colors xs:hover:text-green-600 xs:hover:text-white">
               Sign In
             </nuxt-link>
           </div>
