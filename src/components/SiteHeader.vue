@@ -14,8 +14,7 @@
       </div>
     </div>
     <nav :class="{ 'hidden': !isOpen, 'block': isOpen }" class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between">
-      <!-- class="hidden xl:block xl:relative xl:max-w-xs xl:w-full xl:ml-8" -->
-      <div class="hidden">
+      <div class="hidden xl:block xl:relative xl:max-w-xs xl:w-full">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3">
           <svg class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41l.01-.01zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" /></svg>
         </div>
@@ -23,17 +22,11 @@
       </div>
       <div class="sm:flex sm:items-center">
         <div class="navitems px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
-          <nuxt-link
-            to="rugs"
-            class="mx-3 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors leading-loose"
-          >
-            Our Rugs
+          <nuxt-link to="/rugs" class="block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:text-sm sm:px-2 xl:text-gray-800">
+            Find a Rug
           </nuxt-link>
-          <nuxt-link
-            to="/"
-            class="mx-3 text-sm font-semibold text-gray-800 hover:text-green-700 transition-colors leading-loose"
-          >
-            Contact
+          <nuxt-link to="/" class="mt-1 block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
+            Add-Ons
           </nuxt-link>
           <nuxt-link to="/checkout" class="mt-1 block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
             Cart&nbsp;
