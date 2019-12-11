@@ -7,8 +7,8 @@
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" />
       <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
-        <!-- lg:ml-2 temp fix for positioning on desktop -->
-        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-2">
+        <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
+        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > -1}" class="lg:ml-2">
           <div class="px-4 xl:px-8">
             <h3 class="text-gray-900 font-semibold text-xl">
               {{ style.title }} Rugs
@@ -19,17 +19,23 @@
           </div>
           <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
             <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-              <div v-for="item in traditional" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+              <sequential-entrance>
+                <div v-for="item in traditional" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
+              </sequential-entrance>
 
-              <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+              <sequential-entrance>
+                <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
+              </sequential-entrance>
 
-              <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+              <sequential-entrance>
+                <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
+              </sequential-entrance>
               <!-- See more -->
             </div>
           </div>

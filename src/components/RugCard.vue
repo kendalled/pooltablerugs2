@@ -210,7 +210,7 @@ export default {
 }
 .card {
     width: 90%;
-    will-change: transform;
+    /*will-change: transform;*/
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
@@ -231,7 +231,7 @@ export default {
   background: white;
 }
 .card .back {
-    will-change: transform;
+    /*will-change: transform;*/
     margin-top: -13.2rem;
     background: white;
     -webkit-transform: rotateY( 180deg );
