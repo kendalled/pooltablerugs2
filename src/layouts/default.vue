@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AdamNav />
-    <nuxt class="mt-16"/>
+    <nuxt class="mt-16" />
   </div>
 </template>
 
@@ -17,6 +17,13 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: #f1f1f1;
+}
+.page-enter-active, .page-leave-active {
+  transition: all .2s ease-in-out;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+  transform-origin: 50% 50%;
 }
 </style>
 <script>
