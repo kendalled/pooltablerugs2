@@ -25,6 +25,10 @@ html {
   opacity: 0;
   transform-origin: 50% 50%;
 }
+@import url('https://fonts.googleapis.com/css?family=Roboto:600,900&display=swap');
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
 </style>
 <script>
 import AdamNav from '~/components/AdamNav'

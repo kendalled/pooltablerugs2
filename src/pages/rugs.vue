@@ -9,9 +9,9 @@
       <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
 
-        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-4">
+        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-6">
           <div class="px-4 xl:px-8">
-            <h3 class="text-gray-800 font-semibold text-xl">
+            <h3 class="roboto text-gray-800 font-semibold text-xl">
               {{ style.title }} Rugs
             </h3>
             <p class="text-gray-700">
