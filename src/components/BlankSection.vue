@@ -1,10 +1,10 @@
 <template>
   <div id="content" class="py-20">
-    <h1
+    <h2
       class="text-center text-3xl text-white font-medium -mt-2 leading-snug"
     >
       Keep your game room spotless.
-    </h1>
+    </h2>
     <p class="text-center text-lg text-gray-100 mt-2 px-6">
       Our rugs are both stylish and functional.
     </p>
