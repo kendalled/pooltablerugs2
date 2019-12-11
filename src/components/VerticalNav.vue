@@ -2,6 +2,7 @@
   <div class="flex justify-center max-w-lg mx-auto">
     <nav id="nav" class="w-auto relative">
       <span
+        v-show="selected !== -1"
         :style="{ transform: `translateX(calc(100% * ${selected}))` }"
         class="absolute h-10 w-24 bg-white rounded-lg shadow ease-out transition-transform transition-medium"
       />
@@ -158,7 +159,7 @@ export default {
   computed: {
     selected () {
       const path = this.$route.path
-      return path === '/' ? 0 : path === '/rugs' ? 1 : path === '/test2' ? 2 : undefined
+      return path === '/' ? 0 : path === '/rugs' ? 1 : path === '/test2' ? 2 : -1
     }
   }
 }

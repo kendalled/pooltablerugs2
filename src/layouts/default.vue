@@ -19,7 +19,7 @@ html {
   background-color: #f1f1f1;
 }
 .page-enter-active, .page-leave-active {
-  transition: all .2s ease-in-out;
+  transition: all .18s ease-out;
 }
 .page-enter, .page-leave-active {
   opacity: 0;
