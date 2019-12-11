@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-900 sm:py-32 py-16">
+  <section class="bg-gray-900 sm:py-32 py-12">
     <h2
       class="text-center text-3xl text-white font-medium -mt-2 leading-snug"
     >
@@ -10,7 +10,7 @@
     </p>
 
     <div class="h-1 mx-auto bg-gray-100 w-40 opacity-75 mb-2 mt-4 rounded" />
-    <div class="container mx-auto sm:flex-row flex-col flex">
+    <div class="md:mb-10 lg:mb-16 container mx-auto sm:flex-row flex-col flex">
       <div class="sm:w-1/3 w-full sm:mb-0 mb-16 md:mx-2 lg:mx-4">
         <img src="https://demos.onepagelove.com/html/leno/images/testimonial-1.jpg" class="desat rounded-full w-24 h-24 mx-auto mb-2">
         <p class="italic text-gray-400 text-center my-3 px-2 lg:px-0">
