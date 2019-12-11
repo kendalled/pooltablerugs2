@@ -157,16 +157,8 @@ export default {
   name: 'VerticalNav',
   computed: {
     selected () {
-      if (this.$route.path === '/') {
-        return 0
-      }
-      if (this.$route.path === '/rugs') {
-        return 1
-      }
-      if (this.$route.path === '/test2') {
-        return 2
-      }
-      return 0
+      const path = this.$route.path
+      return path === '/' ? 0 : path === '/rugs' ? 1 : path === '/test2' ? 2 : undefined
     }
   }
 }
