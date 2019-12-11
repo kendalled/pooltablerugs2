@@ -2,7 +2,7 @@
   <div id="nav" class="bg-white border-b antialiased parent z-20">
     <div class="md:px-8">
       <nav
-        class="relative flex flex-wrap items-center justify-between md:py-5"
+        class="relative flex flex-wrap items-center justify-between md:py-4"
       >
         <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
           <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
