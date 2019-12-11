@@ -8,7 +8,6 @@
       <ul class="relative">
         <li>
           <nuxt-link
-            @click.native="select(0)"
             :aria-selected="selected === 0"
             tag="button"
             class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
@@ -36,7 +35,6 @@
         </li>
         <li>
           <nuxt-link
-            @click.native="select(1)"
             :aria-selected="selected === 1"
             tag="button"
             class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
@@ -64,7 +62,6 @@
         </li>
         <li>
           <nuxt-link
-            @click.native="select(2)"
             :aria-selected="selected === 2"
             tag="button"
             class="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
@@ -155,16 +152,21 @@ ul li, ul li * {
 </style>
 
 <script>
+// @click.native="select(0)" select(i) { this.selected = i }
 export default {
   name: 'VerticalNav',
-  data () {
-    return {
-      selected: 0
-    }
-  },
-  methods: {
-    select (i) {
-      this.selected = i
+  computed: {
+    selected () {
+      if (this.$route.path === '/') {
+        return 0
+      }
+      if (this.$route.path === '/rugs') {
+        return 1
+      }
+      if (this.$route.path === '/test2') {
+        return 2
+      }
+      return 0
     }
   }
 }
