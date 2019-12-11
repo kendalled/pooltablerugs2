@@ -89,7 +89,7 @@
               :class="selected === 2 ? 'text-green-600' : 'text-gray-700'"
               class="ml-2 text-sm font-medium transition-all ease-out transition-medium"
             >
-              Deals
+              Sales
             </span>
           </nuxt-link>
         </li>

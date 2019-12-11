@@ -9,9 +9,9 @@
       <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
 
-        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > -1}" class="lg:ml-2">
+        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-4">
           <div class="px-4 xl:px-8">
-            <h3 class="text-gray-900 font-semibold text-xl">
+            <h3 class="text-gray-800 font-semibold text-xl">
               {{ style.title }} Rugs
             </h3>
             <p class="text-gray-700">
@@ -168,7 +168,7 @@ export default {
 <style scoped>
 @media (min-width: 1280px) {
   .rugroot {
-    height: 93vh !important;
+    height: calc(100vh - 64px) !important;
   }
 }
 </style>
