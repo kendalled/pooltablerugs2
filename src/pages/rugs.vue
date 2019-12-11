@@ -166,7 +166,7 @@ export default {
 <style scoped>
 @media (min-width: 1280px) {
   .rugroot {
-    height: 93vh !important;
+    height: 93.5vh !important;
   }
 }
 </style>

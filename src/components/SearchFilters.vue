@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <section v-if="show" class="bg-gray-800 xl:w-72">
+    <section v-if="show" class="bg-gray-800 xl:w-72 mt-3">
       <div class="flex justify-between px-4 py-3 xl:hidden">
         <div class="relative max-w-xs w-full">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -20,9 +20,10 @@
       </div>
       <form :class="{ 'hidden': !isOpen, 'block': isOpen }" class="xl:block xl:h-full xl:flex xl:flex-col xl:justify-between">
         <div class="lg:flex xl:block xl:overflow-y-auto">
+          <!-- used to be py-3 -->
           <div class="px-4 py-4 border-b border-gray-900 lg:w-1/3 xl:border-t-0 xl:w-full">
             <div class="flex flex-wrap -mx-2">
-              <h2 class="mt-1 text-xl text-gray-200 font-semibold tracking-tight mx-auto text-center">
+              <h2 class="text-xl text-gray-200 font-semibold tracking-tight mx-auto text-center">
                 Search our catalog.
               </h2>
             </div>
