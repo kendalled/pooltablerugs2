@@ -20,13 +20,18 @@
         <br>
       </div>
     </form>
+    <SplashHeader />
   </div>
 </template>
 
 <script>
 // import { firebase } from '~/plugins/firebase'
+import SplashHeader from '~/components/SplashHeader'
 export default {
-  layout: 'checkout'
+  layout: 'checkout',
+  components: {
+    SplashHeader
+  }
   // mounted () {
   //   firebase.auth().onAuthStateChanged(function (user) {
   //     if (user) {
