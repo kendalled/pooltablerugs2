@@ -228,10 +228,11 @@ export default {
     backface-visibility: hidden;
 }
 .card .front {
+  will-change: transform;
   background: white;
 }
 .card .back {
-    /*will-change: transform;*/
+    will-change: transform;
     margin-top: -13.2rem;
     background: white;
     -webkit-transform: rotateY( 180deg );
