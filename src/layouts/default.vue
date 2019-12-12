@@ -6,7 +6,7 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:600,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,900&display=swap');
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
