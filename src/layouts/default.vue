@@ -6,6 +6,7 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:600,900&display=swap');
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -25,7 +26,6 @@ html {
   opacity: 0;
   transform-origin: 50% 50%;
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto:600,900&display=swap');
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
@@ -33,7 +33,7 @@ html {
 <script>
 import AdamNav from '~/components/AdamNav'
 export default {
-  name: 'Checkout',
+  name: 'Default',
   components: {
     AdamNav
   }
