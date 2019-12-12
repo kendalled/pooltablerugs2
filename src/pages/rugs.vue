@@ -1,5 +1,5 @@
 <template>
-  <div class="rugroot bg-white antialiased xl:flex xl:flex-col">
+  <div class="rugroot bg-white xl:flex xl:flex-col">
     <!-- <SiteHeader  /> -->
     <div class="w-full h-auto flex absolute justify-end items-start pr-6">
       <Cart />
@@ -11,7 +11,7 @@
 
         <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-2">
           <div class="px-4 xl:px-8">
-            <h3 class="roboto text-gray-800 font-semibold text-xl">
+            <h3 class="antialiased roboto text-gray-800 font-semibold text-xl">
               {{ style.title }} Rugs
             </h3>
             <p class="text-gray-700">
@@ -50,6 +50,7 @@ import Cart from '~/components/Cart'
 
 export default {
   name: 'App',
+  layout: 'checkout',
   components: {
     RugCard,
     SearchFilters,
@@ -57,11 +58,7 @@ export default {
   },
   head () {
     return {
-      title: 'Pool Table Rugs: Search Our Catalog.',
-      link: [
-        { rel: 'preconnect', href: 'https://firebasestorage.googleapis.com' },
-        { rel: 'preconnect', href: 'https://www.googleapis.com' }
-      ]
+      title: 'Pool Table Rugs: Search Our Catalog.'
     }
   },
   data () {
