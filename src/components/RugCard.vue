@@ -210,7 +210,7 @@ export default {
 }
 .card {
     width: 90%;
-    /*will-change: transform;*/
+    will-change: transform;
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
