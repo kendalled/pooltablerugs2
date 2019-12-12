@@ -1,15 +1,15 @@
 <template>
   <div id="nav" class="bg-white border-b antialiased parent z-20">
-    <div class="md:px-8">
+    <div class="lg:px-8">
       <nav
-        class="relative flex flex-wrap items-center justify-between md:py-4"
+        class="relative flex flex-wrap items-center justify-between lg:py-4"
       >
-        <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 md:p-0">
+        <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 lg:p-0">
           <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
         </nuxt-link>
         <!-- hidden for dev purposes -->
         <SearchBar class="hidden" />
-        <div class="flex-shrink-0 pr-4 md:hidden">
+        <div class="flex-shrink-0 pr-4 lg:hidden">
           <button
             ref="openButton"
             @click="open"
@@ -31,7 +31,7 @@
           </button>
         </div>
         <div
-          class="hidden md:block md:ml-10 md:flex md:items-baseline md:justify-between md:bg-transparent"
+          class="hidden lg:block lg:ml-10 lg:flex lg:items-baseline lg:justify-between lg:bg-transparent"
         >
           <div class="lg:absolute inset-0 flex items-center justify-center">
             <VerticalNav />
@@ -58,7 +58,7 @@
       </nav>
     </div>
 
-    <div class="md:hidden">
+    <div class="lg:hidden">
       <!-- Off-canvas menu background overlay -->
       <transition
         enter-class="opacity-0"
