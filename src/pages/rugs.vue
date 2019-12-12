@@ -50,7 +50,6 @@ import Cart from '~/components/Cart'
 
 export default {
   name: 'App',
-  layout: 'checkout',
   components: {
     RugCard,
     SearchFilters,
