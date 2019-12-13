@@ -47,12 +47,7 @@
                 <span class="text-sm font-semibold">{{ cartCount }}</span>
               </div>
             </nuxt-link>
-            <nuxt-link
-              to="login"
-              class="ml-8 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg"
-            >
-              Sign In
-            </nuxt-link>
+            <ModalWrapper />
           </div>
         </div>
       </nav>
@@ -178,10 +173,12 @@
 <script>
 import SearchBar from '~/components/SearchBar'
 import VerticalNav from '~/components/VerticalNav'
+import ModalWrapper from '~/components/ModalWrapper'
 export default {
   components: {
     SearchBar,
-    VerticalNav
+    VerticalNav,
+    ModalWrapper
   },
   data () {
     return {
