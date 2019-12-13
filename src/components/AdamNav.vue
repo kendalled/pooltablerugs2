@@ -7,8 +7,7 @@
         <nuxt-link to="/" class="relative z-10 flex-shrink-0 pl-4 py-4 lg:p-0">
           <img class="h-6 w-auto mt-1" src="~/static/logo.png" alt="">
         </nuxt-link>
-        <!-- hidden for dev purposes -->
-        <SearchBar class="hidden" />
+        <!-- <SearchBar class="hidden" /> -->
         <div class="flex-shrink-0 pr-4 lg:hidden">
           <button
             ref="openButton"
@@ -47,7 +46,8 @@
                 <span class="text-sm font-semibold">{{ cartCount }}</span>
               </div>
             </nuxt-link>
-            <ModalWrapper />
+            <LoginModal v-if="!loggedIn" @login="login" />
+            <Dropdown2 v-if="loggedIn" />
           </div>
         </div>
       </nav>
@@ -171,18 +171,19 @@
 </style>
 
 <script>
-import SearchBar from '~/components/SearchBar'
 import VerticalNav from '~/components/VerticalNav'
-import ModalWrapper from '~/components/ModalWrapper'
+import Dropdown2 from '~/components/Dropdown2'
+import LoginModal from '~/components/LoginModal'
 export default {
   components: {
-    SearchBar,
     VerticalNav,
-    ModalWrapper
+    Dropdown2,
+    LoginModal
   },
   data () {
     return {
-      isOpen: false
+      isOpen: false,
+      loggedIn: false
     }
   },
   computed: {
@@ -196,6 +197,9 @@ export default {
       this.$nextTick(() => {
         this.$refs.closeButton.focus()
       })
+    },
+    login () {
+      this.loggedIn = true
     },
     close () {
       this.isOpen = false

@@ -1,6 +1,6 @@
 <template>
   <div class="signIn">
-    <button @click="open = true" class="ml-8 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
+    <button @click="open = true" class="ml-2 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
       Sign In
     </button>
     <Modal :open="open" @close="open = false">
@@ -58,15 +58,16 @@ if (process.client) {
     // tosUrl and privacyPolicyUrl accept either url string or a callback
     // function.
     // Terms of service url/callback.
-    tosUrl: 'https://lapelpinsandcoins.com',
+    tosUrl: 'https://pooltablerugs.com',
     // Privacy policy url/callback.
     privacyPolicyUrl () {
-      window.location.assign('https://lapelpinsandcoins.com')
+      window.location.assign('https://pooltablerugs.com')
     }
   }
 }
 
 export default {
+  name: 'LoginModal',
   components: {
     Modal
   },
@@ -75,8 +76,22 @@ export default {
       open: false
     }
   },
+  // computed: {
+  //   signedIn () {
+  //     const user = firebase.auth().currentUser
+
+  //     if (user) {
+  //       // User is signed in.
+  //       return true
+  //     } else {
+  //       // No user is signed in.
+  //       return false
+  //     }
+  //   }
+  // },
   mounted () {
     // Initialize the FirebaseUI Widget using Firebase.
+    // this.$emit('login')
     const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth())
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig)

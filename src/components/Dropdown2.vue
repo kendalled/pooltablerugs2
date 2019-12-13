@@ -2,11 +2,12 @@
   <div id="dropdown" class="relative inline-block">
     <button
       @click="opened = true"
-      class="inline-flex items-center pl-6 pr-2 py-2 font-semibold text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900"
+      class="inline-flex text-sm items-center pl-6 pr-2 py-2 font-medium text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition-bg"
     >
       Account
       <svg
         class="ml-2 h-6 w-6 text-white"
+        style="margin-bottom: -.2rem;"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
@@ -24,33 +25,35 @@
     />
 
     <transition
-      enter-class="opacity-0 scale-90"
-      enter-active-class="ease-out transition-fastest"
+      enter-active-class="transition-all transition-fastest ease-out-quad"
+      leave-active-class="transition-all transition-faster ease-in-quad"
+      enter-class="opacity-0 scale-70"
       enter-to-class="opacity-100 scale-100"
       leave-class="opacity-100 scale-100"
-      leave-active-class="ease-in transition-fastest"
-      leave-to-class="opacity-0 scale-90"
+      leave-to-class="opacity-0 scale-70"
     >
       <div
         v-if="opened"
         class="mt-2 absolute right-0 origin-top-right text-left"
       >
-        <div class="w-64 bg-white rounded-lg shadow-lg">
+        <div class="w-64 bg-white rounded-lg shadow-lg border">
           <div class="flex items-center px-6 py-4">
-            <img
-              class="h-10 w-10 rounded-full flex-no-shrink"
-              src="https://images.unsplash.com/photo-1541271696563-3be2f555fc4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=1.75&w=200&h=200&q=80"
-              alt=""
+            <span
+              :class="[(hasFocus || isOpen) ? 'border-white md:border-green-500' : 'border-gray-300 xl:border-gray-300']"
+              class="block h-10 w-10 px-1 overflow-hidden rounded-full border-2 "
             >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-user fill-current text-green-600 h-full w-full object-cover"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /><path class="secondary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z" /></svg>
+
+            </span>
             <div class="ml-4">
               <p class="font-semibold text-gray-900 leading-none">
-                Margot Foster
+                Your Account
               </p>
               <p>
                 <a
                   href="#"
                   class="text-sm text-gray-600 leading-none hover:underline"
-                >View Profile</a>
+                >View Orders</a>
               </p>
             </div>
           </div>
