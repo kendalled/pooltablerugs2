@@ -46,8 +46,8 @@
                 <span class="text-sm font-semibold">{{ cartCount }}</span>
               </div>
             </nuxt-link>
-            <LoginModal v-if="!loggedIn" @login="login" />
-            <Dropdown2 v-if="loggedIn" />
+            <!-- v-show="!loggedIn" <Dropdown2 v-if="loggedIn" @logout="signOut" /> -->
+            <LoginModal @login="accountChange(1)" @logout="accountChange(0)" />
           </div>
         </div>
       </nav>
@@ -172,18 +172,15 @@
 
 <script>
 import VerticalNav from '~/components/VerticalNav'
-import Dropdown2 from '~/components/Dropdown2'
 import LoginModal from '~/components/LoginModal'
 export default {
   components: {
     VerticalNav,
-    Dropdown2,
     LoginModal
   },
   data () {
     return {
-      isOpen: false,
-      loggedIn: false
+      isOpen: false
     }
   },
   computed: {
@@ -198,8 +195,15 @@ export default {
         this.$refs.closeButton.focus()
       })
     },
-    login () {
-      this.loggedIn = true
+    accountChange (val) {
+      if (val === 1) {
+        console.log('log in seen from nav')
+      } else if (val === 0) {
+        console.log('log out seen from nav')
+      } else {
+        console.log('woops')
+      }
+      console.log('emit received from loginModal')
     },
     close () {
       this.isOpen = false

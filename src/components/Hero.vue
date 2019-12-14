@@ -6,9 +6,10 @@
     <div class="mx-auto w-3/4 px-4 my-12">
       <h1 class="mb-2 text-white leading-tight roboto font-black">
         Protect your pool table<br class="hidden md:block"> in style with a durable rug.
+        {{ userAccount }}
       </h1>
       <h2 class="text-2xl tracking-tight mb-6 text-gray-100">
-        Thousands of designs, free shipping, 24/7 support.
+        Thousands of designs, free shipping, 24/7 support. {{ computedGetter }}
       </h2>
       <div class="mt-0">
         <button aria-label="About Our Rugs" class="bg-gray-100 transition-bg hover:bg-white text-gray-800 font-semibold py-3 px-6 border border-gray-400 rounded shadow">
@@ -31,6 +32,14 @@ export default {
     'bg': {
       type: String,
       default: 'original1920.jpg'
+    }
+  },
+  computed: {
+    userAccount () {
+      return this.$store.state.user
+    },
+    computedGetter () {
+      return this.$store.getters['user/getUser']
     }
   }
 }

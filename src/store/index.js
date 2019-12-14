@@ -43,11 +43,3 @@ export const mutations = {
     this.commit('saveCart')
   }
 }
-
-export const actions = {
-  incrementAsync ({ commit }) {
-    setTimeout(() => {
-      commit('increaseQty')
-    }, 1000)
-  }
-}

@@ -3,19 +3,32 @@
     <button @click="open = true" class="ml-2 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
       Sign In
     </button>
+    <AccountDropdown @logout="signOut" @printuser="printUser" />
     <Modal :open="open" @close="open = false">
       <div class="max-w-lg w-full bg-white rounded-lg shadow-2xl px-6 py-6">
         <h2 class="font-semibold text-gray-900 text-2xl leading-tight border-b-2 border-gray-200 pb-4">
           Sign in
         </h2>
         <div class="w-full mt-6 px-2">
-          <div id="firebaseui-auth-container" />
+          <FirebaseUi />
           <!-- old form placement -->
           <div class="text-center mt-4">
             <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
               Forgot Your Password?
             </a>
           </div>
+          <!-- cut me-->
+          <div
+            class="border-t-2 border-gray-200 py-1"
+          >
+            <button
+              @click="emitLogin"
+              class="block w-full px-6 py-3 text-left leading-tight hover:bg-gray-200"
+            >
+              emit
+            </button>
+          </div>
+          <!-- end cut -->
         </div>
         <!-- <div class="mt-6">
             <button @click="open = false" type="button" class="px-4 py-2 text-white font-semibold bg-red-500 hover:bg-red-600 border border-transparent rounded focus:outline-none focus:shadow-outline">
@@ -32,69 +45,44 @@
 
 <script>
 import Modal from '~/components/Modal'
-import { firebase } from '~/plugins/firebase'
-let firebaseui, uiConfig
-
-if (process.client) {
-  firebaseui = require('firebaseui')
-  // FirebaseUI config.
-  uiConfig = {
-    callbacks: {
-      uiShown () {
-        // do something
-      }
-    },
-    signInSuccessUrl: 'https://pooltablerugs.com/checkout',
-    signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-    ],
-    // tosUrl and privacyPolicyUrl accept either url string or a callback
-    // function.
-    // Terms of service url/callback.
-    tosUrl: 'https://pooltablerugs.com',
-    // Privacy policy url/callback.
-    privacyPolicyUrl () {
-      window.location.assign('https://pooltablerugs.com')
-    }
-  }
-}
+import AccountDropdown from '~/components/AccountDropdown'
+import { auth } from '~/plugins/firebase'
+import FirebaseUi from '~/components/FirebaseUi'
 
 export default {
   name: 'LoginModal',
   components: {
-    Modal
+    Modal,
+    AccountDropdown,
+    FirebaseUi
   },
   data () {
     return {
       open: false
     }
   },
-  // computed: {
-  //   signedIn () {
-  //     const user = firebase.auth().currentUser
-
-  //     if (user) {
-  //       // User is signed in.
-  //       return true
-  //     } else {
-  //       // No user is signed in.
-  //       return false
-  //     }
-  //   }
-  // },
-  mounted () {
-    // Initialize the FirebaseUI Widget using Firebase.
-    // this.$emit('login')
-    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth())
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig)
+  methods: {
+    signOut () {
+      auth.signOut().then(function () {
+        console.log('signing out...')
+      }).catch(function (e) {
+        console.log(e)
+      })
+      this.$emit('logout')
+    },
+    // saveUserToVuex (user) {
+    //   this.$store.commit('user/updateUser', user)
+    // },
+    printUser () {
+      const user = auth.currentUser
+      console.log(user)
+      return (user)
+    },
+    emitLogin () {
+      // idempotency used in emit
+      this.$emit('login')
+    }
   }
 }
+
 </script>

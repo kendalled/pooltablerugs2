@@ -44,7 +44,7 @@
 <script>
 import RugCard from '~/components/RugCard'
 // import { firebase, fireDb }
-import { firebase } from '~/plugins/firebase'
+// import { firebase } from '~/plugins/firebase'
 import SearchFilters from '~/components/SearchFilters'
 import Cart from '~/components/Cart'
 
@@ -135,9 +135,6 @@ export default {
   //     doc3: data3
   //   }
   // },
-  mounted () {
-    this.signInAnon()
-  },
   methods: {
     truncateString (str, num) {
       // If the length of str is less than or equal to num
@@ -147,15 +144,6 @@ export default {
       }
       // Return str truncated with '...' concatenated to the end of str.
       return str.slice(0, num) + '...'
-    },
-    signInAnon () {
-      firebase.auth().signInAnonymously().then((result) => {
-        this.shown = true
-        // ...
-      }).catch((e) => {
-        console.log(e)
-      })
-      // this.$store.commit('user/authUser', firebase.auth().currentUser.uid)
     }
   }
 }

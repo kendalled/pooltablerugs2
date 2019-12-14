@@ -39,7 +39,6 @@
         <div class="w-64 bg-white rounded-lg shadow-lg border">
           <div class="flex items-center px-6 py-4">
             <span
-              :class="[(hasFocus || isOpen) ? 'border-white md:border-green-500' : 'border-gray-300 xl:border-gray-300']"
               class="block h-10 w-10 px-1 overflow-hidden rounded-full border-2 "
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-user fill-current text-green-600 h-full w-full object-cover"><path class="primary" d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /><path class="secondary" d="M21 20v-1a5 5 0 0 0-5-5H8a5 5 0 0 0-5 5v1c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2z" /></svg>
@@ -77,17 +76,27 @@
               class="block px-6 py-3 leading-tight hover:bg-gray-200"
             >Analytics</a>
           </div>
-          <form
+          <div
             class="border-t-2 border-gray-200 py-1"
-            action="#"
-            method="POST"
           >
             <button
+              @click="logOut"
               class="block w-full px-6 py-3 text-left leading-tight hover:bg-gray-200"
             >
               Sign out
             </button>
-          </form>
+          </div>
+          <!-- copy -->
+          <div
+            class="border-t-2 border-gray-200 py-1"
+          >
+            <button
+              @click="printUser"
+              class="block w-full px-6 py-3 text-left leading-tight hover:bg-gray-200"
+            >
+              print user
+            </button>
+          </div>
         </div>
       </div>
     </transition>
@@ -96,10 +105,19 @@
 
 <script>
 export default {
-  name: 'Dropdown2',
+  name: 'AccountDropdown',
   data () {
     return {
-      opened: true
+      opened: false
+    }
+  },
+  methods: {
+    logOut () {
+      console.log('logging out')
+      this.$emit('logout')
+    },
+    printUser () {
+      this.$emit('printuser')
     }
   }
 }
