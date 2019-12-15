@@ -12,7 +12,7 @@
             Sign in
           </h2>
           <div class="w-full mt-6 px-2">
-            <FirebaseUi @login="printStuff" />
+            <FirebaseUi @login="signedIn" />
             <div class="text-center mt-4">
               <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
                 Forgot Your Password?
@@ -66,7 +66,8 @@ export default {
       }).catch(function (e) {
         console.log(e)
       })
-      // TODO: handle destruction of firebaseui
+      // TODO: fix destruction of firebaseui
+      this.open = true
       this.$emit('logout')
     },
     printUser () {
@@ -74,8 +75,9 @@ export default {
       console.log(user)
       return (user)
     },
-    printStuff () {
-      console.log('stuff')
+    signedIn () {
+      this.open = false
+      console.log('closing modal...')
     }
   }
 }
