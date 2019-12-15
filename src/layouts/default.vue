@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AdamNav />
-    <nuxt style="padding-top: 69px;" />
+    <nuxt class="paddingNav" />
   </div>
 </template>
 
@@ -28,6 +28,14 @@ html {
 }
 .roboto {
   font-family: 'Roboto', sans-serif;
+}
+.paddingNav {
+  padding-top: 69px;
+}
+@media screen and (max-width: 1024px){
+  .paddingNav {
+    padding-top: 61px;
+  }
 }
 </style>
 <script>
