@@ -2,11 +2,11 @@
   <client-only>
     <div class="signIn">
       <!-- @click="open = true" -->
-      <button v-if="!loggedIn" @click="shouldOpen = true" class="ml-2 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
+      <button v-if="!loggedIn" @click="open = true" class="ml-2 px-3 py-2 font-medium text-center text-sm rounded-lg bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
         Sign In
       </button>
       <AccountDropdown v-if="loggedIn" @logout="signOut" @printuser="printUser" />
-      <Modal :open="open && shouldOpen">
+      <Modal :open="open" @close="open = false">
         <div class="max-w-lg w-full bg-white rounded-lg shadow-2xl px-6 py-6">
           <h2 class="font-semibold text-gray-900 text-2xl leading-tight border-b-2 border-gray-200 pb-4">
             Sign in
@@ -48,16 +48,16 @@ export default {
   },
   data () {
     return {
-      shouldOpen: false
+      open: false
     }
   },
   computed: {
     loggedIn () {
       return !(this.$store.state.user.user == null)
-    },
-    open () {
-      return (this.$store.state.user.user == null)
     }
+    // open () {
+    //   return (this.$store.state.user.user == null)
+    // }
   },
   methods: {
     signOut () {
@@ -66,7 +66,7 @@ export default {
       }).catch(function (e) {
         console.log(e)
       })
-      // handle destruction of firebaseui
+      // TODO: handle destruction of firebaseui
       this.$emit('logout')
     },
     printUser () {
