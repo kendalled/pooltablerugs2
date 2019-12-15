@@ -163,6 +163,7 @@
 <style>
   .parent {
   position: fixed;
+  will-change: transform;
   top: 0;
   left: 0;
   margin: auto;

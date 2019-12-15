@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AdamNav />
-    <nuxt class="mt-16" />
+    <nuxt style="padding-top: 69px;" />
   </div>
 </template>
 
