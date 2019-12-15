@@ -2,7 +2,7 @@
   <div id="dropdown" class="relative inline-block">
     <button
       @click="opened = true"
-      class="inline-flex text-sm items-center pl-6 pr-2 py-2 font-medium text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition-bg"
+      class="ml-4 pl-4 pr-2 py-2 font-medium inline-flex text-sm items-center text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition-bg"
     >
       Account
       <svg
@@ -46,7 +46,7 @@
             </span>
             <div class="ml-4">
               <p class="font-semibold text-gray-900 leading-none">
-                Your Account
+                {{ accountName }}
               </p>
               <p>
                 <a
@@ -60,21 +60,21 @@
             <a
               href="#"
               class="block px-6 py-3 leading-tight hover:bg-gray-200"
-            >Settings and Privacy</a>
+            >Order History</a>
             <a
               href="#"
               class="block px-6 py-3 leading-tight hover:bg-gray-200"
-            >Language</a>
+            >Track Shipping</a>
           </div>
           <div class="border-t-2 border-gray-200 py-1">
             <a
               href="#"
               class="block px-6 py-3 leading-tight hover:bg-gray-200"
-            >Advertise</a>
+            >Terms of Service</a>
             <a
               href="#"
               class="block px-6 py-3 leading-tight hover:bg-gray-200"
-            >Analytics</a>
+            >Settings and Privacy</a>
           </div>
           <div
             class="border-t-2 border-gray-200 py-1"
@@ -84,17 +84,6 @@
               class="block w-full px-6 py-3 text-left leading-tight hover:bg-gray-200"
             >
               Sign out
-            </button>
-          </div>
-          <!-- copy -->
-          <div
-            class="border-t-2 border-gray-200 py-1"
-          >
-            <button
-              @click="printUser"
-              class="block w-full px-6 py-3 text-left leading-tight hover:bg-gray-200"
-            >
-              print user
             </button>
           </div>
         </div>
@@ -111,14 +100,19 @@ export default {
       opened: false
     }
   },
+  computed: {
+    accountName () {
+      return this.$store.state.user.user.displayName || 'Your Account'
+    }
+  },
   methods: {
     logOut () {
       console.log('logging out')
       this.$emit('logout')
-    },
-    printUser () {
-      this.$emit('printuser')
     }
+    // printUser () {
+    //   this.$emit('printuser')
+    // }
   }
 }
 </script>

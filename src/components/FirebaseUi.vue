@@ -15,10 +15,6 @@ export default {
         callbacks: {
           signInSuccessWithAuthResult (authResult, redirectUrl) {
             // User successfully signed in.
-            // const user = firebase.auth().currentUser
-            // console.log('sign in success: ' + user.uid)
-            // this.changeCallback = true
-            this.$emit('login')
             // don't redirect automatically
             return false
           }
