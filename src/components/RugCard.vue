@@ -247,3 +247,5 @@ export default {
     transform: rotateY(180deg);
 }
 </style>
+
+<style src="~/node_modules/hooper/dist/hooper.css"></style>
