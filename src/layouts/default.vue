@@ -44,3 +44,5 @@ export default {
   }
 }
 </script>
+
+<style src="~/node_modules/hooper/dist/hooper.css"></style>
