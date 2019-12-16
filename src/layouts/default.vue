@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <span />
+  <div id="app" style="padding-top: 3.8rem">
     <AdamNav />
-    <nuxt id="theSpan" />
+    <nuxt />
   </div>
 </template>
 
@@ -30,12 +29,9 @@ html {
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
-#theSpan {
-    margin-top: 4.4rem !important;
-  }
-@media screen and (max-width: 1024px){
-  #theSpan {
-    margin-top: 3.8rem !important;
+@media screen and (min-width: 1024px){
+  #app {
+    padding-top: 4.4rem !important;
   }
 }
 </style>
