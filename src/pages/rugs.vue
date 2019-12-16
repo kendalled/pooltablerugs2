@@ -6,10 +6,9 @@
     </div>
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" />
-      <main class="pt-8 pb-6 px-4 xl:flex-1 xl:overflow-x-hidden">
+      <main class="pt-8 pb-6 md:pt-10 px-10 md:px-0 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
-
-        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="lg:ml-2">
+        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="w-full">
           <div class="px-4 xl:px-8">
             <h3 class="antialiased roboto text-gray-800 font-semibold text-xl">
               {{ style.title }} Rugs
@@ -152,7 +151,7 @@ export default {
 <style scoped>
 @media (min-width: 1280px) {
   .rugroot {
-    height: calc(100vh - 64px) !important;
+    height: calc(100vh - 70px) !important;
   }
 }
 </style>
