@@ -1,5 +1,7 @@
 <template>
   <div>
+    <AnimatedHero />
+    <PanContainer />
     <ImageGroup />
     <Accordion />
     <HeroTest />
@@ -16,11 +18,15 @@
 import ImageGroup from '~/components/ImageGroup'
 import Accordion from '~/components/Accordion'
 import HeroTest from '~/components/HeroTest'
+import AnimatedHero from '~/components/AnimatedHero'
+import PanContainer from '~/components/PanContainer'
 export default {
   components: {
     ImageGroup,
     Accordion,
-    HeroTest
+    HeroTest,
+    AnimatedHero,
+    PanContainer
   },
   computed: {
     computedGetter () {
