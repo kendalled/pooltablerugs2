@@ -36,17 +36,43 @@
             <VerticalNav />
           </div>
           <div class="ml-10 relative flex items-baseline">
-            <nuxt-link to="/checkout" class="mt-1 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
-              Cart&nbsp;
+            <!-- <nuxt-link to="/checkout" class="mt-1 mr-4 inline-block px-3 py-1 rounded font-semibold text-gray-800 transition-colors hover:text-green-600 hover:text-white sm:mt-0 sm:text-sm sm:px-2 sm:ml-2 xl:text-gray-800">
               <svg class="fill-current inline-block h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
+              Cart&nbsp;
               <div v-if="cartCount === 0" class="inline-block text-gray-700 top-0 right-0 px-2 py-0 bg-gray-300 rounded-full">
                 <span class="text-sm font-semibold">{{ cartCount }}</span>
               </div>
-              <div v-else class="inline-block text-green-900 top-0 right-0 px-2 py-0 bg-green-300 rounded-full">
+              <div v-else class="absolute text-green-900 top-0 right-0 px-2 py-0 bg-green-300 rounded-full" style="margin-right:9rem;">
                 <span class="text-sm font-semibold">{{ cartCount }}</span>
               </div>
-            </nuxt-link>
+            </nuxt-link> -->
             <!-- v-show="!loggedIn" <Dropdown2 v-if="loggedIn" @logout="signOut" /> -->
+            <button class="relative bg-green-500 text-white px-2 py-2 rounded text-sm font-bold overflow-visible mr-1 hover:bg-green-600 transition-colors">
+              Cart&nbsp;
+              <svg class="fill-current inline-block h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M4 2h16l-3 9H4a1 1 0 1 0 0 2h13v2H4a3 3 0 0 1 0-6h.33L3 5 2 2H0V0h3a1 1 0 0 1 1 1v1zm1 18a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm10 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
+              <!-- <div v-if="cartCount === 0" class="absolute top-0 right-0 -mt-3 -mr-3 px-2 py-1 bg-gray-300 rounded-full text-gray-700 shadow" style="font-size: .68rem;">{{ cartCount }}</div>
+              <div v-else class="absolute top-0 right-0 -mt-3 -mr-3 px-2 py-1 bg-red-500 rounded-full" style="font-size: .68rem;">{{ cartCount }}</div> -->
+              <svg v-if="cartCount !== 0" class="absolute top-0 right-0 -mt-3 -mr-3 fill-current text-gray-300" width="31.25" height="31.25">
+                <circle cx="15.625" cy="15.625" r="12.5" />
+                <text
+                  x="50%"
+                  y="50%"
+                  text-anchor="middle"
+                  class="text-xs font-bold text-gray-700"
+                  dy=".3em"
+                >{{ cartCount }}</text>
+              </svg>
+              <svg v-if="cartCount === -1" class="absolute top-0 right-0 -mt-3 -mr-3 fill-current text-green-300" width="31.25" height="31.25">
+                <circle cx="15.625" cy="15.625" r="12.5" />
+                <text
+                  x="50%"
+                  y="50%"
+                  text-anchor="middle"
+                  class="text-xs font-bold text-green-900 antialiased"
+                  dy=".3em"
+                >{{ cartCount }}</text>
+              </svg>
+            </button>
             <LoginModal @login="accountChange(1)" @logout="accountChange(0)" />
           </div>
         </div>
