@@ -37,4 +37,5 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 10+ ✔ |
 - __Version 0.5.0__ Style Guide Finalized, Adding E-commerce in Next Major Version
 - __Version 0.5.1__ Asset Loading Deferred, Testing Transitions
 - __Version 0.6.0__ Vuex / Firebase Auth 2-Way Data Bind
+- __Version 0.6.1__ Cleanup of login/logout state.
 
