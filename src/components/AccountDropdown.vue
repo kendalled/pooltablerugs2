@@ -2,7 +2,7 @@
   <div id="dropdown" class="relative inline-block">
     <button
       @click="opened = true"
-      class="mx-4 pl-4 pr-2 py-2 font-medium inline-flex text-sm items-center text-white bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition-bg"
+      class="mx-4 pl-4 pr-2 py-2 font-medium inline-flex text-sm items-center text-white bg-gray-800 rounded hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition-bg"
     >
       Account
       <svg
