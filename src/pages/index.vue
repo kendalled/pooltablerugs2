@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <Hero />
+    <AnimatedHero />
     <FeaturedSection />
     <BlankSection />
     <TestimonialSection />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Hero from '~/components/Hero'
+import AnimatedHero from '~/components/AnimatedHero'
 import FeaturedSection from '~/components/FeaturedSection'
 import TestimonialSection from '~/components/TestimonialSection'
 import BlankSection from '~/components/BlankSection'
@@ -20,7 +20,7 @@ import RespFooter from '~/components/RespFooter'
 
 export default {
   components: {
-    Hero,
+    AnimatedHero,
     FeaturedSection,
     TestimonialSection,
     BlankSection,
