@@ -2,7 +2,7 @@
   <client-only>
     <div class="signIn">
       <!-- @click="open = true" -->
-      <button v-if="!loggedIn" @click="open = true" class="ml-2 px-3 py-2 font-medium text-center text-sm rounded bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
+      <button v-if="!loggedIn" @click="open = true" class="mx-2 px-4 py-2 font-medium text-center text-sm rounded bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
         Sign In
       </button>
       <AccountDropdown v-if="loggedIn" @logout="signOut" @printuser="printUser" />
