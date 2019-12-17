@@ -11,13 +11,13 @@
 
     <div class="h-1 mx-auto bg-gray-100 w-40 opacity-75 mb-8 md:mb-12 lg:mb-16 mt-4 rounded" />
     <div class="container mx-auto sm:flex-row flex-col flex">
-      <div class="sm:w-1/3 w-full sm:mb-0 mb-16 md:mx-2 lg:mx-4">
-        <img src="https://demos.onepagelove.com/html/leno/images/testimonial-1.jpg" class="desat rounded-full w-24 h-24 mx-auto mb-2">
-        <p class="italic text-gray-400 text-center my-3 px-8 lg:px-0">
-          I received my rug and was amazed with the support, speed, and quality. My client's game room is complete.
+      <div class="sm:w-1/3 w-full sm:mb-0 mb-16 md:mx-2 lg:mx-4 bg-white shadow rounded pt-6 pb-12 px-5 desat">
+        <img src="https://demos.onepagelove.com/html/leno/images/testimonial-1.jpg" class="shadow-md rounded-full w-24 h-24 mx-auto mb-2">
+        <p class="italic text-gray-700 text-center my-3 px-8 lg:px-0">
+          I received my rug and was amazed with the support, speed, and quality. Bravo!
         </p>
-        <p class="font-semibold text-gray-300 text-center text-xl">
-          Sandy Grain - Interior Designer
+        <p class="font-semibold text-gray-800 text-center text-xl">
+          Sandy Grain, <span class="text-green-600">Interior Designer</span>
         </p>
       </div>
       <div class="sm:w-1/3 w-full sm:mb-0 mb-16 md:mx-2 lg:mx-4">
@@ -44,11 +44,20 @@
 
 <style scoped>
 .desat {
-    filter: none;
-    -webkit-filter: grayscale(0%);
-    -moz-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    cursor: pointer;
+    transition: .2s filter;
+}
+.desat:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0f);
+    -moz-filter: grayscale(0f);
+    -ms-filter: grayscale(0f);
+    -o-filter: grayscale(0f);
     cursor: pointer;
 }
 </style>

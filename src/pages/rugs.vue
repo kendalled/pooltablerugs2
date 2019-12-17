@@ -1,7 +1,7 @@
 <template>
   <div class="rugroot bg-white xl:flex xl:flex-col">
     <!-- <SiteHeader  /> -->
-    <div class="w-full h-auto flex absolute justify-end items-start pr-6">
+    <div class="w-full h-auto flex absolute justify-end items-start pr-6 hidden">
       <Cart />
     </div>
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
