@@ -12,6 +12,7 @@
     "lint": "eslint --fix --ext .vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "animejs": "^3.1.0",
     "child_process": "^1.0.2",
     "firebase": "^7.5.0",
     "firebaseui": "^4.2.0",

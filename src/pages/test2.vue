@@ -1,7 +1,8 @@
 <template>
   <div>
     <SubscribeEmail2 />
-    <AnimatedHero />
+    <CartWidget ref="cart" />
+    <AddToCartButton @click="$refs.cart.add()" />
     <PanContainer />
     <ImageGroup />
     <Accordion />
@@ -17,9 +18,10 @@
 
 <script>
 import ImageGroup from '~/components/ImageGroup'
+import AddToCartButton from '~/components/AddToCartButton'
+import CartWidget from '~/components/CartWidget'
 import Accordion from '~/components/Accordion'
 import HeroTest from '~/components/HeroTest'
-import AnimatedHero from '~/components/AnimatedHero'
 import PanContainer from '~/components/PanContainer'
 import SubscribeEmail2 from '~/components/SubscribeEmail2'
 export default {
@@ -27,9 +29,10 @@ export default {
     ImageGroup,
     Accordion,
     HeroTest,
-    AnimatedHero,
     PanContainer,
-    SubscribeEmail2
+    SubscribeEmail2,
+    CartWidget,
+    AddToCartButton
   },
   computed: {
     computedGetter () {
