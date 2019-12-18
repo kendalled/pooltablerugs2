@@ -301,22 +301,27 @@ export default {
 
 <style scoped>
 .rotate {
+  will-change: transform;
   transition: all 1s ease-in-out;
   animation: rotation 3s infinite;
 }
 .rotate2 {
+  will-change: transform;
   transition: all 1s ease-in-out;
   animation: rotation2 3s infinite;
 }
 .spilling {
+  will-change: transform;
   transition: all 1s ease-in-out;
   animation: spill 3s infinite;
 }
 .shaking {
+  will-change: transform;
   transition: all 1s ease-in-out;
   animation: shake 3s infinite;
 }
 .rolling {
+  will-change: -transform;
   transition: all 1s ease-in-out;
   animation: roll 3s infinite;
 }
