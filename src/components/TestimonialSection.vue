@@ -14,7 +14,7 @@
       <div class="sm:w-1/3 max-w-sm sm:mb-0 mb-16 md:mx-2 lg:mx-4 bg-white shadow rounded pt-4 pb-10 px-12">
         <div class="flex w-full h-auto ml-8 pb-6 pr-4 items-end justify-end mb-2">
           <p class="text-gray-700 text-sm text-center px-8 lg:px-0 inline-block ml-6 mt-3 w-auto w-2/3">
-            <span class="italic">"</span> received my rug and was amazed with the support, speed, and quality. Bravo!<span class="italic">"</span>
+            <span class="italic">"</span> I received my rug and was amazed with the support, speed, and quality. Bravo!<span class="italic">"</span>
           </p>
         </div>
         <div class="flex w-full h-auto justify-between pl-24 -mt-4">
@@ -29,7 +29,7 @@
             <Stars class="absolute pt-10 mt-1 pl-16" />
           </div>
         </div>
-        <span class="text-xs text-gray-700 hover:text-green-600 transition-colors text-left w-full pl-2 underline absolute">see more</span>
+        <span class="text-xs text-gray-700 hover:text-green-600 transition-colors text-left w-auto pl-2 underline absolute">see more</span>
         <picture>
           <source srcset="@/static/sample2.webp" type="image/webp">
           <source srcset="@/static/sample2.png" type="image/png">

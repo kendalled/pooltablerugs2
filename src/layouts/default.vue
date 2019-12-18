@@ -34,6 +34,9 @@ html {
     padding-top: 4.4rem !important;
   }
 }
+html {
+  max-width: 100vw;
+}
 </style>
 <script>
 import AdamNav from '~/components/AdamNav'
