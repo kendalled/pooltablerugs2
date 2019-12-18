@@ -1,14 +1,14 @@
 <template>
   <div class="rugroot bg-white xl:flex xl:flex-col">
     <!-- <SiteHeader  /> -->
-    <div class="w-full h-auto flex absolute justify-end items-start pr-6 hidden">
+    <!-- <div class="w-full h-auto flex absolute justify-end items-start pr-6 hidden">
       <Cart />
-    </div>
+    </div> -->
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
-      <SearchFilters :show="shown" />
+      <SearchFilters :show="shown" @changeCats="changeCats" />
       <main class="pt-10 pb-6 px-10 md:px-0 lg:pl-12 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
-        <div v-for="(style, i) in styles" :key="i" :class="{'mt-6': i > 0}" class="w-full">
+        <div v-for="(style, i) in styles" v-if="style.visible" :key="i" :class="{'mt-6': i > 0}" class="w-full">
           <div class="px-4 xl:px-8">
             <h3 class="antialiased roboto text-gray-800 font-semibold text-xl">
               {{ style.title }} Rugs
@@ -45,14 +45,12 @@ import RugCard from '~/components/RugCard'
 // import { firebase, fireDb }
 // import { firebase } from '~/plugins/firebase'
 import SearchFilters from '~/components/SearchFilters'
-import Cart from '~/components/Cart'
 
 export default {
   name: 'App',
   components: {
     RugCard,
-    SearchFilters,
-    Cart
+    SearchFilters
   },
   head () {
     return {
@@ -71,15 +69,18 @@ export default {
       styles: [
         {
           title: 'Traditional',
-          description: 'Vivid colors, bold designs, and sharp lines. Our traditional rugs will match any 21st century space.'
+          description: 'Vivid colors, bold designs, and sharp lines. Our traditional rugs will match any 21st century space.',
+          visible: true
         },
         {
           title: 'Shag',
-          description: 'Bright colors, psychedelic designs, and timeless shapes. Our shag rugs will make you feel like it\'s 1975.'
+          description: 'Bright colors, psychedelic designs, and timeless shapes. Our shag rugs will make you feel like it\'s 1975.',
+          visible: true
         },
         {
           title: 'Modern',
-          description: 'Vivid colors, bold designs, and sharp lines. Our modern rugs will match any 21st century space.'
+          description: 'Vivid colors, bold designs, and sharp lines. Our modern rugs will match any 21st century space.',
+          visible: true
         }
       ]
     }
@@ -143,6 +144,23 @@ export default {
       }
       // Return str truncated with '...' concatenated to the end of str.
       return str.slice(0, num) + '...'
+    },
+    changeCats (val) {
+      if (val.includes('traditional')) {
+        this.styles[0].visible = true
+      } else {
+        this.styles[0].visible = false
+      }
+      if (val.includes('shag')) {
+        this.styles[1].visible = true
+      } else {
+        this.styles[1].visible = false
+      }
+      if (val.includes('modern')) {
+        this.styles[2].visible = true
+      } else {
+        this.styles[2].visible = false
+      }
     }
   }
 }
