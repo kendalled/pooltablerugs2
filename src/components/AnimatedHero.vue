@@ -9,11 +9,11 @@
           Thousands of designs, free shipping, 24/7 support.
         </h2>
         <div class="mt-0">
-          <button aria-label="About Our Rugs" class="header-button sCta animate-pop-in bg-gray-100 transition-bg hover:bg-white text-gray-800 font-semibold py-3 px-6 border border-gray-400 rounded shadow">
+          <button aria-label="About Our Rugs" class="header-button sCta animate-pop-in bg-gray-100 transition-bg hover:bg-white text-gray-800 font-medium py-3 px-6 border border-gray-400 rounded shadow">
             Learn More
           </button>
           <nuxt-link to="/rugs">
-            <button aria-label="Shop Rugs" class="header-button pCta animate-pop-in px-6 py-3 inline-block ml-4 bg-green-700 hover:bg-green-500 rounded text-white font-semibold transition-bg tracking-wide shadow-md focus:outline-none">
+            <button aria-label="Shop Rugs" class="header-button pCta animate-pop-in px-6 py-3 inline-block ml-4 bg-green-700 hover:bg-green-500 rounded text-white font-medium transition-bg tracking-wide shadow-md focus:outline-none">
               Shop Rugs
             </button>
           </nuxt-link>

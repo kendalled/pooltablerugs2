@@ -1,7 +1,7 @@
 <template>
   <div id="content" class="py-20">
     <h2
-      class="text-center text-3xl text-white font-medium -mt-2 leading-snug"
+      class="text-center text-3xl text-white font-semibold -mt-2 leading-snug"
     >
       Keep your game room spotless.
     </h2>
