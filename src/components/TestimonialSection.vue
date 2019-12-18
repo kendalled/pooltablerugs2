@@ -1,7 +1,7 @@
 <template>
   <section class="bg-gray-800 sm:py-24 py-12">
     <h2
-      class="text-center text-2xl lg:text-3xl text-white font-medium -mt-2 leading-snug"
+      class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >
       Don't just take our word for it.
     </h2>
@@ -13,8 +13,8 @@
     <div class="container mx-auto sm:flex-row flex-col flex justify-center">
       <div class="sm:w-1/3 max-w-sm sm:mb-0 mb-16 md:mx-2 lg:mx-4 bg-white shadow rounded pt-4 pb-10 px-12">
         <div class="flex w-full h-auto ml-8 pb-6 pr-4 items-end justify-end mb-2">
-          <p class="italic text-gray-700 text-sm text-center px-8 lg:px-0 inline-block ml-6 mt-3 w-auto w-2/3">
-            "I received my rug and was amazed with the support, speed, and quality. Bravo!"
+          <p class="text-gray-700 text-sm text-center px-8 lg:px-0 inline-block ml-6 mt-3 w-auto w-2/3">
+            <span class="italic">"</span> received my rug and was amazed with the support, speed, and quality. Bravo!<span class="italic">"</span>
           </p>
         </div>
         <div class="flex w-full h-auto justify-between pl-24 -mt-4">
