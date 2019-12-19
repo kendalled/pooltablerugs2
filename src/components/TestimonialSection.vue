@@ -11,7 +11,7 @@
 
     <div class="h-1 mx-auto bg-gray-100 w-40 opacity-75 mb-8 md:mb-12 lg:mb-16 mt-4 rounded" />
     <div class="container mx-auto sm:flex-row flex-col flex justify-center">
-      <div v-for="q in reviews" :key="q.id" :class="[selected.includes(q.id) ? '' : 'desat']" class="sm:w-1/3 max-w-sm sm:mb-0 mb-16 md:mx-2 lg:mx-4 bg-white shadow rounded pt-4 pb-10 px-12">
+      <div @click="selected = [q.id]" v-for="q in reviews" :key="q.id" :class="[selected.includes(q.id) ? 'scaled' : 'desat']" class="sm:w-1/3 max-w-sm sm:mb-0 mb-16 md:mx-2 lg:mx-6 bg-white shadow rounded pt-4 pb-10 px-12 transition-ease-in-out transition-transform transition-250">
         <div class="flex w-full h-auto ml-8 pb-6 pr-4 items-end justify-end mb-2">
           <p class="text-gray-700 text-sm text-center px-8 lg:px-0 inline-block ml-6 mt-3 w-auto w-2/3">
             <span class="italic">"</span> I received my rug and was amazed with the support, speed, and quality. Bravo!<span class="italic">"</span>
@@ -59,10 +59,10 @@
       </div> -->
     </div>
     <div class="inline-flex w-full justify-center mt-12">
-      <button @click="moveTest(-1)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded-l">
+      <button @click="moveTest(-1)" class="mx-4 bg-gray-100 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded focus:outline-none transition-bg">
         Prev
       </button>
-      <button @click="moveTest(1)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded-r">
+      <button @click="moveTest(1)" class="mx-4 bg-gray-100 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded focus:outline-none transition-bg">
         Next
       </button>
     </div>
@@ -79,13 +79,17 @@
     cursor: pointer;
     transition: .2s filter;
 }
-.desat:hover {
+/* .desat:hover {
     filter: grayscale(0);
     -webkit-filter: grayscale(0f);
     -moz-filter: grayscale(0f);
     -ms-filter: grayscale(0f);
     -o-filter: grayscale(0f);
     cursor: pointer;
+} */
+.scaled {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 </style>
 <script>
@@ -146,6 +150,6 @@ export default {
 <style scoped>
 .styleMe {
   background-color: #2d3748;
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%2392aaac' fill-opacity='0.13' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%2392aaac' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 </style>

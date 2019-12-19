@@ -8,8 +8,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900&display=swap');
 html {
-  /* font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; */
-  font-family: 'Source Sans Pro', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

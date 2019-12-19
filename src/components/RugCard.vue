@@ -55,7 +55,7 @@
     <section class="container relative -mt-8 px-4 h-auto w-auto">
       <div :class="{ flipped: isFlipped }" class="card rounded-lg shadow-lg h-full absolute">
         <div class="front rounded-lg px-4 py-4 h-full w-full">
-          <p class="tracking-tight text-sm font-semibold text-gray-700">
+          <p class="tracking-tight text-sm font-medium text-gray-700">
             {{ info.collection }} • {{ info.sku }}
           </p>
           <!-- price spot -->
@@ -64,8 +64,8 @@
           </div>
           <!-- tags / reviews -->
           <div class="flex items-end mt-2">
-            <span class="inline-block bg-gray-200 rounded px-3 py-1 text-xs font-semibold text-gray-700 transition-bg mr-2 hover:bg-gray-400 hover:cursor-pointer">{{ info.styling }}</span>
-            <span class="inline-block bg-gray-200 rounded px-3 py-1 text-xs font-semibold text-gray-700 transition-bg mr-2 hover:bg-gray-400 hover:cursor-pointer">{{ info.group }}</span>
+            <span class="inline-block bg-gray-200 rounded px-3 py-1 text-xs font-medium text-gray-700 transition-bg mr-2 hover:bg-gray-400 hover:cursor-pointer">{{ info.styling }}</span>
+            <span class="inline-block bg-gray-200 rounded px-3 py-1 text-xs font-medium text-gray-700 transition-bg mr-2 hover:bg-gray-400 hover:cursor-pointer">{{ info.group }}</span>
             <svg class="inline-block h-6 w-6 text-gray-600 hover:text-green-600 hover:cursor-pointer fill-current ml-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path d="M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z" />
             </svg>
@@ -85,10 +85,10 @@
           </div>
           <!-- commerce buttons -->
           <div class="flex pt-3 justify-between px-0">
-            <button @click="flip()" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-bold py-2 px-4 rounded focus:outline-none">
+            <button @click="flip()" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-medium py-2 px-4 rounded focus:outline-none">
               See Details
             </button>
-            <button @click="addToCart(info)" class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-bold py-2 px-4 rounded focus:outline-none">
+            <button @click="addToCart(info)" class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-medium py-2 px-4 rounded focus:outline-none">
               Add to Cart
             </button>
           </div>

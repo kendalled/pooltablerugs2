@@ -8,33 +8,35 @@
       <SearchFilters :show="shown" @changeCats="changeCats" />
       <main class="pt-10 pb-6 px-10 md:px-0 lg:pl-12 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
-        <div v-for="(style, i) in styles" v-if="style.visible" :key="i" :class="{'mt-6': i > 0}" class="w-full">
-          <div class="px-4 xl:px-8">
-            <h3 class="antialiased roboto text-gray-800 font-semibold text-xl">
-              {{ style.title }} Rugs
-            </h3>
-            <p class="text-gray-700">
-              {{ style.description }}
-            </p>
-          </div>
-          <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
-            <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-              <div v-for="item in traditional" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+        <transition v-for="(style, i) in styles" v-if="style.visible" :key="i" name="fade">
+          <div :class="{'mt-6': i > 0}" class="w-full">
+            <div class="px-4 xl:px-8">
+              <h3 class="antialiased text-gray-800 font-semibold text-xl">
+                {{ style.title }} Rugs
+              </h3>
+              <p class="text-gray-700">
+                {{ style.description }}
+              </p>
+            </div>
+            <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
+              <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
+                <div v-for="item in traditional" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
 
-              <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+                <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
 
-              <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                <RugCard :info="item" />
-              </div>
+                <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="item" />
+                </div>
 
-              <!-- See more -->
+                <!-- See more -->
+              </div>
             </div>
           </div>
-        </div>
+        </transition>
       </main>
     </div>
   </div>
@@ -171,5 +173,11 @@ export default {
   .rugroot {
     height: calc(100vh - 70px) !important;
   }
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease-in-out;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
