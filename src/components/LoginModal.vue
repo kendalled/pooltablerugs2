@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     loggedIn () {
-      return !(this.$store.state.user.user == null)
+      return this.$store.getters['user/isUser']
     }
     // open () {
     //   return (this.$store.state.user.user == null)

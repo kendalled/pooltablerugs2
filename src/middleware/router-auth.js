@@ -1,31 +1,10 @@
-// This is `@middleware/router-auth.js`
-export default function ({
-  store,
-  route,
-  redirect
-}) {
-  // if (route.name === 'login' && process.server) {
-  //   if (store.state.user !== null) {
-  //     //  redirect('/admin')
-  //     console.log(store.getters.['user/getUser'])
-  //   } else if (store.state.user === null) {
-  //     //  redirect('/login')
-  //     console.log(store.state)
-  //   }
-  if (route.name === 'login') {
-    redirect('/login')
-    console.log(store.state)
+// This is `@middleware/router-auth.js`base'
+export default function ({ store, route, redirect }) {
+  if (route.name === 'admin' && process.server) {
+    if (store.getters['user/isUser']) {
+      return redirect('/login')
+    } else {
+      return redirect('/')
+    }
   }
 }
-
-// else {
-//   redirect('/')
-//   console.log('works 3')
-// }
-
-// function isAdminRoute (route) {
-//   if (route.matched.some(record => record.path === '/admin')) {
-//     return true
-//   }
-// }
-// && isAdminRoute(route)
