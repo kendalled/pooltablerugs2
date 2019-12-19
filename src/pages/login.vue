@@ -20,7 +20,8 @@ export default {
       ]
     }
   },
-  components: { LoginCard }
+  components: { LoginCard },
+  middleware: 'router-auth'
 }
 </script>
 

@@ -313,7 +313,7 @@
 
 <script>
 export default {
-  name: 'Coinbase',
+  name: 'Admin',
   layout: 'admin'
 }
 </script>
