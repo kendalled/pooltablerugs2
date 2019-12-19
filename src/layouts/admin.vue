@@ -1,11 +1,10 @@
 <template>
-  <div id="app" style="padding-top: 3.8rem">
-    <AdamNav />
+  <div id="app">
     <nuxt />
   </div>
 </template>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,900&display=swap');
 html {
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -28,21 +27,12 @@ html {
 .roboto {
   font-family: 'Roboto', sans-serif;
 }
-@media screen and (min-width: 1024px){
-  #app {
-    padding-top: 4.4rem !important;
-  }
-}
 html {
   max-width: 100vw;
 }
 </style>
 <script>
-import AdamNav from '~/components/AdamNav'
 export default {
-  name: 'Default',
-  components: {
-    AdamNav
-  }
+  name: 'Admin'
 }
 </script>
