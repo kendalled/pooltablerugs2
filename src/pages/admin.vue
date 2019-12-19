@@ -315,6 +315,6 @@
 export default {
   name: 'Admin',
   layout: 'admin',
-  middleware: 'router-auth'
+  middleware: 'auth'
 }
 </script>
