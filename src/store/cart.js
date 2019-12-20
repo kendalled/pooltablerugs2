@@ -14,7 +14,7 @@ export const state = () => ({
 
 export const mutations = {
   addToCart (state, item) {
-    const found = state.cart.find(product => product.sku === item.sku)
+    const found = state.cart.find(product => product.sku === item.sku) || false
 
     if (found) {
       found.quantity++
