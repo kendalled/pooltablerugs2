@@ -6,7 +6,7 @@
     </div> -->
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" />
-      <main class="pt-10 pb-6 px-10 md:px-0 lg:pl-12 xl:flex-1 xl:overflow-x-hidden">
+      <main class="pt-10 pb-6 px-10 md:px-0 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
         <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
         <transition v-for="(style, i) in styles" v-if="style.visible" :key="i" name="fade">
           <div :class="{'mt-6': i > 0}" class="w-full">
