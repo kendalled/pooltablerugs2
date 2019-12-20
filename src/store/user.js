@@ -1,11 +1,11 @@
 
-let user
-if (process.client) {
-  user = window.localStorage.getItem('user')
-}
+// let user
+// if (process.client) {
+//   user = window.localStorage.getItem('user')
+// }
 
 export const state = () => ({
-  user: user || null
+  user: null
 })
 
 export const getters = {
@@ -13,18 +13,14 @@ export const getters = {
     return state.user
   },
   isUser (state) {
-    return state.user !== null
+    return state.user.uid !== null
   }
 }
 
 export const mutations = {
   setUser (state, user) {
     state.user = user
-    window.localStorage.setItem('user', state.user)
-  },
-  clearUser (state) {
-    state.user = null
-    window.localStorage.setItem('user', null)
+    // window.localStorage.setItem('user', state.user)
   }
 }
 
