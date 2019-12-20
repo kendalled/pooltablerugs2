@@ -314,7 +314,6 @@
 <script>
 export default {
   name: 'Admin',
-  layout: 'admin',
-  middleware: 'auth'
+  layout: 'admin'
 }
 </script>
