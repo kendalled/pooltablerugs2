@@ -1,4 +1,4 @@
-<template>
+<template v-if="loggedIn">
   <div class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full">
     <div>
       <div class="bg-gray-200">
@@ -12,7 +12,7 @@
             </div>
             <div class="w-1/4 md:w-auto md:flex text-right">
               <div>
-                <img :src="require('~/static/audilogot.png')" class="inline-block h-10 w-10 rounded-full object-contain object-center overflow-hidden bg-gray-100" alt="">
+                <img :src="require('~/static/audilogot.png')" class="inline-block h-10 w-10 rounded-full object-contain object-center overflow-hidden bg-gray-100 border-2 border-gray-700 focus:border-green-600" alt="">
               </div>
               <div class="hidden md:block md:flex md:items-center ml-2">
                 <span class="text-gray-800 font-medium text-base mr-1">Dillon Twilley</span>
@@ -314,6 +314,11 @@
 <script>
 export default {
   name: 'Admin',
-  layout: 'admin'
+  layout: 'admin',
+  computed: {
+    loggedIn () {
+      return this.$store.state.user !== null
+    }
+  }
 }
 </script>

@@ -200,7 +200,7 @@ export default {
   },
   computed: {
     cartCount () {
-      return this.$store.state.cartCount
+      return this.$store.state.cart.cartCount
     }
   },
   methods: {
@@ -221,7 +221,7 @@ export default {
       console.log('emit received from loginModal')
     },
     removeFromCart (item) {
-      this.$store.commit('removeFromCart', item)
+      this.$store.commit('cart/removeFromCart', item)
     },
     close () {
       this.isOpen = false

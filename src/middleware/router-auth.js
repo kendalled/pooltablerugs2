@@ -35,19 +35,17 @@
 // hackernoon
 export default function ({ store, redirect, route }) {
   const isLogin = (store) => {
-    return (store && store.state && store.state.user.user)
+    return (store.state.user !== null)
   }
-
   const isAdminRoute = (route) => {
     if (route.matched.some(record => record.path === '/admin')) {
       return true
     }
   }
-
-  if (isLogin(store) && route.name === 'login') {
+  if (isLogin(store) && isAdminRoute(route)) {
     return redirect('/admin')
   }
   if (!isLogin(store) && isAdminRoute(route)) {
-    return redirect('/admin')
+    return redirect('/login')
   }
 }

@@ -11,7 +11,7 @@
       {{ computedGetter }}
     </p>
     <p class="text-sm text-red-800 my-10">
-      {{ userAccount }}
+      {{ userAccount }} {{ testVuex }}
     </p>
   </div>
 </template>
@@ -36,10 +36,13 @@ export default {
   },
   computed: {
     computedGetter () {
-      return this.$store.getters['user/getUser']
+      return this.$store.getters.getUser
     },
     userAccount () {
       return this.$store.state.user
+    },
+    testVuex () {
+      return this.$store.state.user === null
     }
   }
 }

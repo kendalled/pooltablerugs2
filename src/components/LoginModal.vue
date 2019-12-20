@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="w-full mt-6 px-2">
-            <FirebaseUi v-show="!loggedIn" @login="signedIn" />
+            <FirebaseUi v-if="!loggedIn" @login="signedIn" />
             <div class="text-center mt-4">
               <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
                 Forgot Your Password?
@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     loggedIn () {
-      return this.$store.getters['user/isUser']
+      return this.$store.state.user !== null
     }
     // open () {
     //   return (this.$store.state.user.user == null)

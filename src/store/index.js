@@ -1,45 +1,24 @@
-import Vue from 'vue'
-
-let cart, cartCount
-
+let user
 if (process.client) {
-  cart = window.localStorage.getItem('cart')
-  cartCount = window.localStorage.getItem('cartCount')
+  user = window.localStorage.getItem('user')
 }
 
 export const state = () => ({
-  cart: cart ? JSON.parse(JSON.stringify(cart)) : [],
-  cartCount: cartCount ? parseInt(cartCount) : 0
+  user: user ? JSON.parse(JSON.stringify(user)) : null
 })
 
 export const mutations = {
-  addToCart (state, item) {
-    const found = state.cart.find(product => product.sku === item.sku)
+  setUser (state, payload) {
+    state.user = JSON.parse(JSON.stringify(payload))
+    window.localStorage.setItem('user', JSON.stringify(payload))
+  }
+}
 
-    if (found) {
-      found.quantity++
-      found.totalPrice = found.quantity * found.msrp
-    } else {
-      state.cart.push(item)
-
-      Vue.set(item, 'quantity', 1)
-      Vue.set(item, 'totalPrice', item.msrp)
-    }
-
-    state.cartCount++
-    this.commit('saveCart')
+export const actions = {
+  userChange (context, payload) {
+    context.commit('setUser', payload)
   },
-  removeFromCart (state) {
-    state.cart.splice(0)
-    state.cartCount = 0
-    this.commit('saveCart')
-  },
-  saveCart (state) {
-    window.localStorage.setItem('cart', JSON.stringify(state.cart))
-    window.localStorage.setItem('cartCount', state.cartCount)
-  },
-  increaseQty (state) {
-    state.cartCount += 1
-    this.commit('saveCart')
+  userReset (context) {
+    context.commit('setUser', null)
   }
 }

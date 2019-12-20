@@ -172,7 +172,7 @@ export default {
       return str.slice(0, num) + '...'
     },
     addToCart (item) {
-      this.$store.commit('addToCart', item)
+      this.$store.commit('cart/addToCart', item)
     },
     flip () {
       this.isFlipped = !this.isFlipped
