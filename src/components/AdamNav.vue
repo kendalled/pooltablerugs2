@@ -177,6 +177,7 @@
 <style>
   .parent {
   position: fixed;
+  backface-visibility: hidden;
   top: 0;
   left: 0;
   margin: auto;
