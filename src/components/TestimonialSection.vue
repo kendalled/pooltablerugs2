@@ -78,6 +78,8 @@
     -o-filter: grayscale(1);
     cursor: pointer;
     transition: .2s filter;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
 }
 /* .desat:hover {
     filter: grayscale(0);
@@ -88,8 +90,8 @@
     cursor: pointer;
 } */
 .scaled {
-  transform: scale(1.1);
-  -webkit-transform: scale(1.1);
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
 }
 </style>
 <script>
