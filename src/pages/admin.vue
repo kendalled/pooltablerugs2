@@ -3,14 +3,14 @@
     <div class="admin-wrapper">
       <div v-if="loggedIn" class="font-sans bg-grey-lighter flex flex-col min-h-screen w-full">
         <div>
-          <div class="bg-gray-200">
+          <div class="bg-gray-100">
             <div class="container mx-auto px-4">
               <div class="flex items-center md:justify-between py-4">
                 <div class="w-1/4 md:hidden">
                   <svg class="fill-current text-white h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1z" /></svg>
                 </div>
-                <div class="w-1/2 md:w-auto text-center text-gray-800 text-2xl font-semibold">
-                  Admin Panel
+                <div class="w-1/2 md:w-auto text-center text-gray-800 text-2xl font-semibold border-b-2 border-blue-500">
+                  PTR Admin
                 </div>
                 <div class="w-1/4 md:w-auto md:flex text-right">
                   <div>

@@ -1,5 +1,5 @@
 <template>
-  <section class="styleMe sm:pt-32 sm:pb-40 py-12 w-screen">
+  <section class="styleMe sm:pt-32 sm:pb-40 py-12">
     <h2
       class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >

@@ -3,7 +3,7 @@
     <AnimatedHero />
     <FeaturedSection />
     <BlankSection />
-    <TestimonialSection class="w-screen" />
+    <TestimonialSection class="overflow-hidden" />
     <SubscribeEmail class="hidden lg:block" />
     <!-- <PricingSection /> -->
     <RespFooter />
