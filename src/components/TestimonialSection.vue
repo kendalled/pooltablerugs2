@@ -1,5 +1,5 @@
 <template>
-  <section class="styleMe sm:pt-32 sm:pb-40 py-12">
+  <section class="styleMe sm:pt-32 sm:pb-40 py-12 w-screen">
     <h2
       class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >
@@ -78,8 +78,6 @@
     -o-filter: grayscale(1);
     cursor: pointer;
     transition: .2s filter;
-    transform: scale(0.9);
-    -webkit-transform: scale(0.9);
 }
 /* .desat:hover {
     filter: grayscale(0);
