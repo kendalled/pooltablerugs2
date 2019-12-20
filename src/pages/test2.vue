@@ -42,7 +42,7 @@ export default {
       return this.$store.state.user
     },
     testVuex () {
-      return this.$store.state.user === null
+      return this.$store.state.user !== null
     }
   }
 }

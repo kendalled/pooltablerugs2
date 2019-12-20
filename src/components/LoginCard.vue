@@ -7,15 +7,14 @@
             <h1 class="text-3xl text-center tracking-tighter text-gray-800">
               Log in to complete checkout.
             </h1>
-            <div class="w-full mt-4 px-2">
-              <div id="firebaseui-auth-container" />
-              <!-- old form placement -->
-              <div class="text-center mt-4">
-                <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
-                  Forgot Your Password?
-                </a>
-              </div>
+            <div v-show="!loggedIn" class="w-full mt-6 px-2">
+            <FirebaseUi v-show="!loggedIn" />
+            <div class="text-center mt-4">
+              <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
+                Forgot Your Password?
+              </a>
             </div>
+          </div>
           </div>
         </div>
         <div class="loginpic hidden md:block md:flex-1 rounded-r-lg bg-cover bg-center" />
@@ -25,51 +24,16 @@
 </template>
 
 <script>
-import { firebase } from '~/plugins/firebase'
-let firebaseui, uiConfig
-
-if (process.client) {
-  firebaseui = require('firebaseui')
-  // FirebaseUI config.
-  uiConfig = {
-    callbacks: {
-      uiShown () {
-        // do something
-      }
-    },
-    signInSuccessUrl: 'https://pooltablerugs.com/checkout',
-    signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-      firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-    ],
-    // tosUrl and privacyPolicyUrl accept either url string or a callback
-    // function.
-    // Terms of service url/callback.
-    tosUrl: 'https://lapelpinsandcoins.com',
-    // Privacy policy url/callback.
-    privacyPolicyUrl () {
-      window.location.assign('https://lapelpinsandcoins.com')
-    }
-  }
-}
+import FirebaseUi from '~/components/FirebaseUi'
 export default {
   name: 'LoginCard',
-  data () {
-    return {
-      the: 1234
-    }
+  components: {
+    FirebaseUi
   },
-  mounted () {
-    // Initialize the FirebaseUI Widget using Firebase.
-    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(firebase.auth())
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig)
+  computed: {
+    loggedIn () {
+      return this.$store.state.user !== null
+    }
   }
 }
 </script>

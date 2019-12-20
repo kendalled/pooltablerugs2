@@ -29,7 +29,7 @@
               </svg>
             </div>
           </div>
-          <div class="w-full mt-6 px-2">
+          <div v-show="!loggedIn" class="w-full mt-6 px-2">
             <FirebaseUi v-if="!loggedIn" @login="signedIn" />
             <div class="text-center mt-4">
               <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
