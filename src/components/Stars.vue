@@ -12,6 +12,6 @@
 
 <script>
 export default {
-  name: 'Star'
+  name: 'Stars'
 }
 </script>
