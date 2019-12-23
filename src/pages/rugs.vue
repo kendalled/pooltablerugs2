@@ -1,13 +1,8 @@
 <template>
   <div class="rugroot bg-white xl:flex xl:flex-col">
-    <!-- <SiteHeader  /> -->
-    <!-- <div class="w-full h-auto flex absolute justify-end items-start pr-6 hidden">
-      <Cart />
-    </div> -->
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" />
       <main class="pt-10 pb-6 px-0 sm:px-2 md:px-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
-        <!-- lg:ml-2 temp fix for positioning on desktop, i > 0 default -->
         <transition v-for="(style, i) in styles" v-if="style.visible" :key="i" name="fade">
           <div :class="{'mt-6': i > 0}" class="w-full">
             <div class="px-4 xl:px-8">
