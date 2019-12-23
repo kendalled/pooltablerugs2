@@ -8,13 +8,13 @@
               Log in to complete checkout.
             </h1>
             <div v-show="!loggedIn" class="w-full mt-6 px-2">
-            <FirebaseUi v-show="!loggedIn" />
-            <div class="text-center mt-4">
-              <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
-                Forgot Your Password?
-              </a>
+              <FirebaseUi v-show="!loggedIn" />
+              <div class="text-center mt-4">
+                <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
+                  Forgot Your Password?
+                </a>
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <div class="loginpic hidden md:block md:flex-1 rounded-r-lg bg-cover bg-center" />
