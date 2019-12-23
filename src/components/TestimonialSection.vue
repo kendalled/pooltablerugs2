@@ -78,6 +78,7 @@
     -o-filter: grayscale(1);
     cursor: pointer;
     transition: .2s filter;
+    transform: scale(0.99);
 }
 /* .desat:hover {
     filter: grayscale(0);
