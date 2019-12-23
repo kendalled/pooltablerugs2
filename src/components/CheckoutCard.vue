@@ -1,5 +1,27 @@
 <template>
   <div class="wrapper">
+    <!-- modify this form HTML and place wherever you want your form -->
+
+    <form
+      action="https://formspree.io/xknorayl"
+      method="POST"
+      class="bg-white shadow rounded px-4 py-2 my-2 mx-auto"
+    >
+      <label>
+        Your email:
+        <input type="text" name="_replyto">
+      </label>
+      <label>
+        Your message:
+        <textarea name="message" />
+      </label>
+
+      <!-- your other form fields go here -->
+
+      <button type="submit">
+        Send
+      </button>
+    </form>
     <div class="card-form">
       <div class="card-list">
         <div :class="{ '-active' : isCardFlipped }" class="card-item">

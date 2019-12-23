@@ -1,132 +1,132 @@
 <template>
   <!-- change padding to more when done! -->
-  <div class="flex flex-col max-w-6xl mx-auto py-12 lg:flex-row h-screen w-screen">
+  <div class=" h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 lg:flex-row">
     <!-- copy these classes -->
     <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l shadow-md">
       <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
         Checkout
       </h1>
-      <div class="flex flex-wrap border-t pt-5 mt-1 -mx-3 mb-6">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+      <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+        <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
+          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-first-name">
             First Name
           </label>
-          <input id="grid-first-name" autocomplete="fName" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Jane">
+          <input id="grid-first-name" autocomplete="fName" class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Jane">
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
             Last Name
           </label>
-          <input id="grid-last-name" autocomplete="lName" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Doe">
+          <input id="grid-last-name" autocomplete="lName" class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Doe">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
-          <label class="inline-block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="grid-password">
             Address
           </label>
-          <input id="grid-password" autocomplete="new-password" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="1234 Crystal Lake Dr.">
+          <input id="grid-password" autocomplete="new-password" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="1234 Crystal Lake Dr.">
           <p class="text-gray-600 text-xs italic">
             Enter your full shipping address.
           </p>
         </div>
       </div>
-      <div class="flex flex-wrap -mx-3 mb-2">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+      <div class="-mx-3 mb-2 flex flex-wrap">
+        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-city">
             City
           </label>
-          <input id="grid-city" autocomplete="newcity" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Albuquerque">
+          <input id="grid-city" autocomplete="newcity" class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Albuquerque">
         </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+        <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-state">
             State
           </label>
           <div class="relative">
-            <select id="grid-state" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+            <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
               <option>New Mexico</option>
               <option>Missouri</option>
               <option>Texas</option>
               <option>Florida</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div class="px-2 flex items-center absolute pointer-events-none inset-y-0 right-0 text-gray-700">
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
             </div>
           </div>
         </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+        <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
             Zip
           </label>
-          <input id="grid-zip" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210">
+          <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210">
           <p class="text-red-500 text-xs italic">
             Please fill out this field.
           </p>
         </div>
       </div>
-      <div class="flex flex-wrap flex-row justify-between border-t pt-6 mt-6">
+      <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
         <Checkbox class="checky" />
         <div class="controls">
           <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
             Need Help?
           </a>
-          <button class="ml-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+          <button class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline" type="button">
             Continue
           </button>
         </div>
       </div>
-      <div class="flex flex-col justify-end h-56">
+      <div class="h-56 flex flex-col justify-end">
         <nuxt-link to="/">
           <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
         </nuxt-link>
       </div>
     </form>
-    <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16">
-      <h1
-        class="text-center text-3xl text-white font-medium leading-snug"
-      >
-        Shopping Cart: {{ $store.state.cartCount }} item(s)
-      </h1>
-      <!-- use as footer text <p class="text-center text-lg text-gray-100 mt-2 px-6">
-      Our rugs are both stylish and functional.
-    </p> -->
+    <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16 flex flex-col justify-between">
+      <div class="firstHalf w-auto h-auto">
+        <h2
+          class="text-center text-3xl text-white font-medium leading-snug"
+        >
+          Shopping Cart<span v-if="$store.state.cart.cartCount >= 1">: {{ $store.state.cart.cartCount }} item</span><span v-if="$store.state.cart.cartCount >= 2">s</span>
+        </h2>
+        <!-- use as footer text <p class="text-center text-lg text-gray-100 mt-2 px-6"> -->
 
-      <div class="h-1 mx-auto bg-gray-100 w-56 opacity-75 mt-4 rounded" />
-      <div v-for="(product, i) in skuList" :key="i" class="w-full my-6 items-center justify-between flex h-auto bg-white rounded shadow-md py-6 pl-6 px-6">
-        <div class="w-1/8">
-          <img :src="foldList[i]" class="w-16 h-auto rounded-full">
-        </div>
-        <div class="w-1/3 h-full flex flex-col">
-          <div class="w-full h-auto text-center">
-            <h2 class="block uppercase tracking-wide text-gray-700 text-xs font-bold" for="grid-first-name">
-              {{ product }}
-            </h2>
+        <div class="h-1 mt-4 w-56 mx-auto bg-gray-100 opacity-75 rounded" />
+        <div v-for="(product, i) in skuList" :key="i" class="my-6 py-6 pl-6 px-6 w-full items-center justify-between flex h-auto bg-white rounded shadow-md">
+          <div class="w-1/8">
+            <img :src="foldList[i]" class="w-16 h-auto rounded-full">
           </div>
-          <div class="w-full h-auto text-center">
-            <h3 class="text-base text-gray-900">
-              ${{ priceList[i] }}.00
-            </h3>
+          <div class="w-1/3 h-full flex flex-col">
+            <div class="w-full h-auto text-center">
+              <h2 class="text-xs font-bold block uppercase tracking-wide text-gray-700" for="grid-first-name">
+                {{ product }}
+              </h2>
+            </div>
+            <div class="w-full h-auto text-center">
+              <h3 class="text-base text-gray-900">
+                ${{ priceList[i] }}.00
+              </h3>
+            </div>
           </div>
-        </div>
-        <div class="w-1/4 h-full flex flex-col">
-          <div class="w-full h-full text-center">
-            <Counter :val="quantityList[i]" @increment="handleChange" @decrement="handleChange" label-text="Qty" />
+          <div class="w-1/4 h-full flex flex-col">
+            <div class="w-full h-full text-center">
+              <Counter :val="quantityList[i]" @increment="handleChange" @decrement="handleChange" label-text="Qty" />
+            </div>
           </div>
         </div>
       </div>
-      <div v-if="isHidden" style="height: 14rem;" class="flex h-full flex-col justify-end px-4">
+      <div v-if="isHidden" class="px-4 px-4 py-3 -mb-4 bg-white rounded shadow-md">
         <h2
-          class="text-right text-xl text-white font-medium leading-snug"
+          class="font-medium text-right text-base text-gray-700 leading-snug"
         >
           Subtotal: ${{ subTotal }}.00
         </h2>
         <h2
-          class="text-right text-xl text-white font-medium leading-snug"
+          class="font-medium text-right text-base text-gray-600 leading-snug"
         >
-          Tax: ${{ taxOnly }}
+          Tax: ${{ taxOnly }}.00
         </h2>
         <h2
-          class="text-right text-2xl text-white font-medium leading-snug"
+          class="font-medium text-right text-lg text-gray-800 leading-snug"
         >
           Grand Total: ${{ grandTotal }}
         </h2>
@@ -139,34 +139,33 @@
 import Checkbox from '~/components/Checkbox'
 import Counter from '~/components/Counter'
 export default {
-  layout: 'checkout',
   components: {
     Checkbox,
     Counter
   },
   computed: {
     isHidden () {
-      return this.$store.state.cartCount > 0
+      return this.$store.state.cart.cartCount > 0
     },
     skuList () {
-      return this.$store.state.cart.map(a => a.sku)
+      return this.$store.state.cart.cart.map(a => a.sku)
     },
     priceList () {
-      return this.$store.state.cart.map(a => a.MSRP)
+      return this.$store.state.cart.cart.map(a => a.MSRP)
     },
     quantityList () {
-      return this.$store.state.cart.map(a => a.quantity)
+      return this.$store.state.cart.cart.map(a => a.quantity)
     },
     subTotal () {
       let totalPrice = 0
-      const arr = this.$store.state.cart.map(a => a.MSRP)
+      const arr = this.$store.state.cart.cart.map(a => a.MSRP)
       for (let i = arr.length - 1; i >= 0; i--) {
         totalPrice += arr[i]
       }
       return totalPrice
     },
     foldList () {
-      return this.$store.state.cart.map(a => a.foldURL)
+      return this.$store.state.cart.cart.map(a => a.foldURL)
     },
     taxOnly () {
       return this.roundTo(this.subTotal * 0.07, 2)

@@ -166,7 +166,7 @@ export default {
 <style scoped>
 @media (min-width: 1280px) {
   .rugroot {
-    height: calc(99vh - 60px) !important;
+    height: calc(99vh - 61px) !important;
   }
 }
 .fade-enter-active, .fade-leave-active {
