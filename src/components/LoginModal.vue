@@ -2,11 +2,11 @@
   <client-only>
     <div class="signIn">
       <!-- @click="open = true" -->
-      <button v-if="!loggedIn" @click="open = true" class="mx-4 px-4 py-2 font-medium text-center text-sm rounded bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
+      <button v-if="!loggedIn" @click="openModal = true" class="mx-4 px-4 py-2 font-medium text-center text-sm rounded bg-gray-300 text-gray-900 hover:bg-gray-400 focus:outline-none transition-bg">
         Sign In
       </button>
       <AccountDropdown v-if="loggedIn" @logout="signOut" @printuser="printUser" />
-      <Modal :open="open" @close="open = false" class="modal">
+      <Modal :open="openModal && !loggedIn" @close="openModal = false" class="modal">
         <div class="max-w-lg w-full bg-white rounded-lg shadow-2xl px-6 py-6">
           <!-- <h2 class="font-semibold text-gray-900 text-2xl leading-tight border-b-2 border-gray-200 pb-4">
             Sign in
@@ -15,7 +15,7 @@
             <p class="font-semibold text-gray-800 text-2xl leading-tight">
               Sign in
             </p>
-            <div @click="open = false" class="cursor-pointer z-50">
+            <div @click="openModal = false" class="cursor-pointer z-50">
               <svg
                 class="fill-current text-gray-700 hover:text-green-700 transition-colors"
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,8 +29,8 @@
               </svg>
             </div>
           </div>
-          <div v-show="!loggedIn" class="w-full mt-6 px-2">
-            <FirebaseUi v-if="!loggedIn" @login="signedIn" />
+          <div v-if="!loggedIn" class="w-full mt-6 px-2">
+            <FirebaseUi v-if="!loggedIn" @log-in="signedIn" />
             <div class="text-center mt-4">
               <a class="no-underline hover:underline text-gray-600 text-xs" href="#">
                 Forgot Your Password?
@@ -66,7 +66,7 @@ export default {
   },
   data () {
     return {
-      open: false
+      openModal: false
     }
   },
   computed: {
@@ -85,8 +85,8 @@ export default {
         console.log(e)
       })
       // TODO: fix destruction of firebaseui
-      this.open = true
-      this.$emit('logout')
+      this.openModal = true
+      this.$emit('log-out')
     },
     printUser () {
       const user = auth.currentUser
@@ -94,8 +94,11 @@ export default {
       return (user)
     },
     signedIn () {
-      this.open = false
-      console.log('closing modal...')
+      if (process.client) {
+        this.openModal = false
+        this.$emit('log-in')
+        console.log('closing modal...')
+      }
     }
   }
 }

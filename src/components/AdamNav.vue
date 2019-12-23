@@ -36,7 +36,7 @@
             <VerticalNav />
           </div>
           <div class="ml-10 relative flex items-baseline">
-            <LoginModal @login="accountChange(1)" @logout="accountChange(0)" />
+            <LoginModal @log-in="signIn" @log-out="signOut" />
             <!-- old cart link -->
             <button @click="removeFromCart" class="py-2 pl-3 pr-2 text-sm font-medium text-gray-100 bg-green-600 rounded transition-bg hover:bg-green-700 hover:text-white focus:outline-none">
               Cart&nbsp;
@@ -207,15 +207,11 @@ export default {
         this.$refs.closeButton.focus()
       })
     },
-    accountChange (val) {
-      if (val === 1) {
-        console.log('log in seen from nav')
-      } else if (val === 0) {
-        console.log('log out seen from nav')
-      } else {
-        console.log('woops')
-      }
-      console.log('emit received from loginModal')
+    signIn () {
+      console.log('log in seen from nav')
+    },
+    signOut () {
+      console.log('log out seen from nav')
     },
     removeFromCart (item) {
       this.$store.commit('cart/removeFromCart', item)

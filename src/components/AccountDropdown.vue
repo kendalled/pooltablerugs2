@@ -102,7 +102,7 @@ export default {
   },
   computed: {
     accountName () {
-      return this.$store.displayName || 'Your Account'
+      return this.$store.state.user.displayName || 'Your Account'
     }
   },
   methods: {
