@@ -65,17 +65,17 @@ export default {
         }
       })
 
-      anime.timeline({
-        targets: this.$refs.icon,
-        duration: 90
-      }).add({
-        scale: 0.8,
-        delay: 275,
-        easing: 'easeInQuad'
-      }).add({
-        scale: 1,
-        easing: 'easeOutQuad'
-      })
+      // anime.timeline({
+      //   targets: this.$refs.icon,
+      //   duration: 90
+      // }).add({
+      //   scale: 0.8,
+      //   delay: 275,
+      //   easing: 'easeInQuad'
+      // }).add({
+      //   scale: 1,
+      //   easing: 'easeOutQuad'
+      // })
 
       const count = anime.timeline({
         targets: this.$refs.count,
