@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SubscribeEmail2 />
+    <FaqSection />
     <CartWidget ref="cart" />
     <AddToCartButton @click="$refs.cart.add()" />
     <PanContainer />
@@ -23,14 +23,14 @@ import CartWidget from '~/components/CartWidget'
 import Accordion from '~/components/Accordion'
 import HeroTest from '~/components/HeroTest'
 import PanContainer from '~/components/PanContainer'
-import SubscribeEmail2 from '~/components/SubscribeEmail2'
+import FaqSection from '~/components/FaqSection'
 export default {
   components: {
     ImageGroup,
     Accordion,
     HeroTest,
     PanContainer,
-    SubscribeEmail2,
+    FaqSection,
     CartWidget,
     AddToCartButton
   },
