@@ -34,12 +34,12 @@
         </transition>
         <transition v-for="(row, i) in doc2" v-if="true" :key="i" name="fade">
           <div :class="{'mt-6': i > 0}" class="w-full">
-            <div class="px-4 xl:px-8">
-              <h3 class="antialiased text-gray-800 font-semibold text-xl text-center">
+            <div :class="{'hidden': i > 0}" class="px-4 xl:px-8">
+              <h3 class="antialiased text-gray-800 font-semibold text-xl">
                 Your Personalized Rugs
               </h3>
-              <p class="text-gray-700 text-center">
-                Infinite Scroll, Baby
+              <p class="text-gray-700">
+                Infinite Scroll, Baby. Take a look at all of our extra rugs. Kendall is the goat.
               </p>
             </div>
             <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
@@ -206,58 +206,32 @@ export default {
     // },
     infiniteHandler ($state) {
       // Firestore index
-      let rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').limit(4)
+      const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').startAfter(this.lastVisible ? this.lastVisible : 0).limit(8)
+      // let rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').limit(8)
       const vm = this
-      if (!vm.isStarted) {
-        rugRef.get().then(function (documentSnapshots) {
-          vm.lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
-          console.log('last', vm.lastVisible)
-          let results
-          results = null
-          results = []
-          let collection
-          collection = null
-          collection = []
-          documentSnapshots.forEach(function (doc) {
-            collection.push({ sku: doc.data().SKU, foldURL: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/FoldTest%2Fthumbs%2Fa108-268-fold_300x300.jpg?alt=media&token=0e56ad3c-39e3-442c-9353-a3ad60799fcd' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-          })
-          for (let i = 0; i < collection.length; i++) {
-            results.push(collection.splice(0, 4))
-          }
-          for (let i = 0; i < results.length; i++) {
-            console.log('working')
-            vm.doc2.push(results[i])
-          }
-          results = null
-          vm.isStarted = true
-          $state.loaded()
+      rugRef.get().then(function (documentSnapshots) {
+        vm.lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
+        console.log('last', vm.lastVisible)
+        let results
+        results = null
+        results = []
+        let collection
+        collection = null
+        collection = []
+        documentSnapshots.forEach(function (doc) {
+          collection.push({ sku: doc.data().SKU, foldURL: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/FoldTest%2Fthumbs%2Faas2300-2773-fold_300x300.jpg?alt=media&token=1433d11f-bd8a-49a5-8668-76b8bde077b6' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
         })
-      } else {
-        // After first 4, paginate
-        rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').startAfter(vm.lastVisible).limit(4)
-        rugRef.get().then(function (documentSnapshots) {
-          vm.lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
-          console.log('last (second run)', vm.lastVisible)
-          let results
-          results = null
-          results = []
-          let collection
-          collection = null
-          collection = []
-          documentSnapshots.forEach(function (doc) {
-            collection.push({ sku: doc.data().SKU, foldURL: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/FoldTest%2Fthumbs%2Fa108-268-fold_300x300.jpg?alt=media&token=0e56ad3c-39e3-442c-9353-a3ad60799fcd' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-          })
-          for (let i = 0; i < collection.length; i++) {
-            results.push(collection.splice(0, 4))
-          }
-          for (let i = 0; i < results.length; i++) {
-            console.log('working')
-            vm.doc2.push(results[i])
-          }
-          results = null
-          $state.loaded()
-        })
-      }
+        for (let i = 0; i < collection.length; i++) {
+          results.push(collection.splice(0, 4))
+        }
+        for (let i = 0; i < results.length; i++) {
+          console.log('working')
+          vm.doc2.push(results[i])
+        }
+        results = null
+        vm.isStarted = true
+        $state.loaded()
+      })
       if (this.doc2.length > 5) {
         $state.complete()
       }
