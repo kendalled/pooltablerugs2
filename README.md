@@ -41,4 +41,5 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 10+ ✔ |
 - __Version 0.7.0__ Pagination / Infinite loading
 - __Version 0.7.1__ Pagination / Infinite loading (Refactored)
 - __Version 0.7.2__ FAQ & Accordion Component
+- __Version 0.7.3__ FAQ & Accordion Component on Homepage
 

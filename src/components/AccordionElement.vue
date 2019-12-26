@@ -1,9 +1,9 @@
 <template>
-  <section @click="opened = !opened" class="shadow bg-white">
-    <article class="border-b">
-      <div :class="{'border-blue-500' : opened}" class="border-l-2 border-gray-400 transition-border">
+  <section @click="opened = !opened" :class="{'rounded-br' : qKey == 2 }" class="shadow bg-white">
+    <article :class="qKey == 2 ? 'border-b-0' : 'border-b'">
+      <div :class="{'border-blue-600' : opened}" class="border-l-4 border-gray-500 transition-border">
         <header class="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none">
-          <span class="text-gray-800 text-xl tracking-tight">{{ questionTitle }}</span>
+          <span :class="{'text-gray-800': opened}" class="text-gray-700 text-xl tracking-tight">{{ questionTitle }}</span>
           <div :class="{'border-blue-600' : opened}" class="rounded-full border-2 border-gray-400 w-7 h-7 flex items-center justify-center hover:border-blue-600 transition-border">
             <!-- icon by feathericons.com -->
             <svg
@@ -49,6 +49,10 @@ export default {
     'answer': {
       type: String,
       default: 'Sample question answer goes here.'
+    },
+    'qKey': {
+      type: Number,
+      default: -1
     }
   },
   data () {

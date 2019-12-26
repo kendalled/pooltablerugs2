@@ -1,9 +1,16 @@
 <template>
   <div class="w-4/5 md:w-3/5 p-8 mx-auto">
-    <h1 class="mb-4">
+    <h1 class="mb-4 text-gray-100">
       Frequently Asked Questions
     </h1>
-    <AccordionElement v-for="(question, j) in questions" :key="j" :questionTitle="question.title" :answer="question.answer" />
+    <AccordionElement
+      v-for="(question, j) in questions"
+      :key="j"
+      :questionTitle="question.title"
+      :answer="question.answer"
+      :class="{ 'rounded-tr': j == 0 }"
+      :qKey="j"
+    />
   </div>
 </template>
 

@@ -3,9 +3,9 @@
     <AnimatedHero />
     <FeaturedSection />
     <BlankSection />
-    <TestimonialSection class="overflow-hidden" />
-    <SubscribeEmail class="hidden lg:block" />
-    <!-- <PricingSection /> -->
+    <TestimonialSection class="hidden md:block" />
+    <SubscribeEmail class="hidden md:block" />
+    <FaqSection />
     <RespFooter />
   </div>
 </template>
@@ -16,6 +16,7 @@ import FeaturedSection from '~/components/FeaturedSection'
 import TestimonialSection from '~/components/TestimonialSection'
 import BlankSection from '~/components/BlankSection'
 import SubscribeEmail from '~/components/SubscribeEmail'
+import FaqSection from '~/components/FaqSection'
 import RespFooter from '~/components/RespFooter'
 
 export default {
@@ -25,11 +26,8 @@ export default {
     TestimonialSection,
     BlankSection,
     SubscribeEmail,
+    FaqSection,
     RespFooter
   }
 }
 </script>
-
-<style>
-/* Style goes here */
-</style>

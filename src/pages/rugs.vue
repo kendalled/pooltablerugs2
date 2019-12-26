@@ -53,7 +53,7 @@
         </transition>
         <client-only>
           <infinite-loading @infinite="infiniteHandler" spinner="spiral">
-            <div slot="no-more" class="text-center lg:mr-10 text-gray-800">
+            <div slot="no-more" class="text-center lg:mr-10 text-gray-800 mb-4">
               No more rugs to show.
             </div>
           </infinite-loading>
