@@ -23,7 +23,7 @@ export default {
   },
   data () {
     return {
-      questions: [{ title: 'How do you get rugs?', answer: 'You get them by ordering on our website.' }, { title: 'How long does shipping take?', answer: 'Up to two weeks from ordering.' }, { title: 'Return Policy', answer: 'You have 14 days from receiving your rug to submit a return, for a full refund. Shipping Included.' }]
+      questions: [{ title: 'How do you get rugs?', answer: 'We get our rugs directly from interior designers and trusted manufacturers. Our hand-picked selection will ensure you\'ll find something you love.' }, { title: 'How long does shipping take?', answer: 'Up to two weeks from ordering. Contact support for more details.' }, { title: 'Return Policy', answer: 'You have 14 days from receiving your rug to submit a return, for a full refund. Shipping Included.' }]
     }
   }
 }
