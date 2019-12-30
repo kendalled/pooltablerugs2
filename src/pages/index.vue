@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white">
     <AnimatedHero />
-    <SplashHeader class="md:hidden"/>
+    <SplashHeader class="md:hidden" />
     <FeaturedSection />
     <BlankSection />
     <TestimonialSection class="hidden md:block" />
