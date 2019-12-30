@@ -53,8 +53,10 @@
         </transition>
         <client-only>
           <infinite-loading @infinite="infiniteHandler" spinner="spiral">
-            <div slot="no-more" class="text-center lg:mr-10 text-gray-800 mb-4">
-              No more rugs to show.
+            <div slot="no-more" class="mx-auto lg:-ml-16 mb-4">
+              <button class="text-lg bg-blue-500 text-gray-100 px-4 py-2 rounded shadow text-center hover:bg-blue-600 transition-bg">
+              See More
+              </button>
             </div>
           </infinite-loading>
         </client-only>
