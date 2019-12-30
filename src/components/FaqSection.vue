@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-auto subs py-20">
+  <div class="w-full h-auto subs py-20">
     <h2
       class="text-center text-3xl text-white font-semibold -mt-2 leading-snug"
     >
