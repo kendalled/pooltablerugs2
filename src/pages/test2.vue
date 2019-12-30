@@ -5,7 +5,6 @@
     <AddToCartButton @click="$refs.cart.add()" />
     <PanContainer />
     <ImageGroup />
-    <Accordion />
     <HeroTest />
     <p class="text-sm text-black my-10">
       {{ computedGetter }}
@@ -20,14 +19,12 @@
 import ImageGroup from '~/components/ImageGroup'
 import AddToCartButton from '~/components/AddToCartButton'
 import CartWidget from '~/components/CartWidget'
-import Accordion from '~/components/Accordion'
 import HeroTest from '~/components/HeroTest'
 import PanContainer from '~/components/PanContainer'
 import FaqSection from '~/components/FaqSection'
 export default {
   components: {
     ImageGroup,
-    Accordion,
     HeroTest,
     PanContainer,
     FaqSection,
