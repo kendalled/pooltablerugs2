@@ -71,15 +71,15 @@
           <div class="sm:flex sm:-mx-2 lg:block lg:mx-0">
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
               <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="house">
-              <span class="ml-2 text-sm">7' x 3.5'</span>
+              <span class="ml-2 text-sm">7 ft.</span>
             </label>
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
               <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="apartment">
-              <span class="ml-2 text-sm">8' x 4'</span>
+              <span class="ml-2 text-sm">8 ft.</span>
             </label>
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
               <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="loft">
-              <span class="ml-2 text-sm">8' x 5' (Pro)</span>
+              <span class="ml-2 text-sm">8 ft. (Pro)</span>
             </label>
           </div>
         </div>
