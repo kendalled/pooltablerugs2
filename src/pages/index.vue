@@ -1,6 +1,7 @@
 <template>
   <div class="bg-white">
     <AnimatedHero />
+    <SplashHeader class="md:hidden"/>
     <FeaturedSection />
     <BlankSection />
     <TestimonialSection class="hidden md:block" />
@@ -12,6 +13,7 @@
 
 <script>
 import AnimatedHero from '~/components/AnimatedHero'
+import SplashHeader from '~/components/SplashHeader'
 import FeaturedSection from '~/components/FeaturedSection'
 import TestimonialSection from '~/components/TestimonialSection'
 import BlankSection from '~/components/BlankSection'
@@ -22,6 +24,7 @@ import RespFooter from '~/components/RespFooter'
 export default {
   components: {
     AnimatedHero,
+    SplashHeader,
     FeaturedSection,
     TestimonialSection,
     BlankSection,

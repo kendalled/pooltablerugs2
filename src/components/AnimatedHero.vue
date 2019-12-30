@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="hidden md:flex">
     <section class="header-content w-full">
       <div class="mx-auto w-3/4 px-4 mb-16">
         <h1 class="mb-2 text-white leading-tight roboto font-black header-title animate-pop-in">
@@ -33,7 +33,6 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Roboto:900&display=swap');
 header {
   align-items: center;
-  display: flex;
   min-height: 85vh;
   height: auto;
   overflow: hidden;

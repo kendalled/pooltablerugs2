@@ -1,5 +1,5 @@
 <template>
-  <div class="rugroot bg-white xl:flex xl:flex-col">
+  <div class="rugroot bg-gray-100 xl:flex xl:flex-col">
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" />
       <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">

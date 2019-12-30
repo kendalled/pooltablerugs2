@@ -46,19 +46,19 @@
           <div class="flex flex-wrap -mx-2">
             <label class="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
               <span class="text-sm font-semibold text-gray-400">Color</span>
-              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200">
+              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200" disabled>
                 <option>White</option>
               </select>
             </label>
             <label class="block w-1/2 px-2 sm:w-1/4 lg:w-1/2">
               <span class="text-sm font-semibold text-gray-400">Material</span>
-              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200">
+              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200" disabled>
                 <option>Cotton</option>
               </select>
             </label>
             <label class="mt-4 block w-full px-2 sm:mt-0 sm:w-1/2 lg:mt-4 lg:w-full">
               <span class="text-sm font-semibold text-gray-400">Price Range</span>
-              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200">
+              <select class="mt-1 form-select block w-full shadow focus:bg-gray-200" disabled>
                 <option selected>Up to $1,000</option>
                 <option>Up to $2,500</option>
                 <option>Up to $5,000</option>

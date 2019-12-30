@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SplashHeader />
     <FaqSection />
     <CartWidget ref="cart" />
     <AddToCartButton @click="$refs.cart.add()" />
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import SplashHeader from '~/components/SplashHeader'
 import ImageGroup from '~/components/ImageGroup'
 import AddToCartButton from '~/components/AddToCartButton'
 import CartWidget from '~/components/CartWidget'
@@ -24,6 +26,7 @@ import PanContainer from '~/components/PanContainer'
 import FaqSection from '~/components/FaqSection'
 export default {
   components: {
+    SplashHeader,
     ImageGroup,
     HeroTest,
     PanContainer,
