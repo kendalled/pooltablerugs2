@@ -1,6 +1,6 @@
 <template>
   <div class="antialiased">
-    <div class="px-16 pt-4 lg:pt-8 pb-24 max-w-xl mx-auto lg:max-w-full lg:px-0 lg:pt-24 lg:pb-32 lg:relative lg:max-h-screen bg-white">
+    <div class="px-10 pt-4 lg:pt-8 pb-24 max-w-xl mx-auto lg:max-w-full lg:px-0 lg:pt-24 lg:pb-32 lg:relative lg:max-h-screen bg-white">
       <div class="xl:max-w-6xl lg:mr-0 lg:ml-32">
         <div class="lg:w-7/12 lg:pl-12 lg:pr-8">
           <div class="mt-8 lg:mt-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12">
