@@ -1,13 +1,13 @@
 <template>
   <div class="rugroot bg-gray-100 xl:flex xl:flex-col">
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
-      <SearchFilters :show="shown" @changeCats="changeCats" />
+      <SearchFilters :show="shown" @changeCats="changeCats" @changeSize="changeSize" />
       <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
         <transition v-for="(style, i) in styles" v-if="style.visible" :key="i" name="fade">
           <div :class="{'mt-6': i > 0}" class="w-full">
             <div class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
-                {{ style.title }} Rugs
+                {{ style.title }} Rugs {{ tableSize }}
               </h3>
               <p class="text-gray-700">
                 {{ style.description }}
@@ -82,6 +82,7 @@ export default {
   },
   data () {
     return {
+      tableSize: null,
       lastVisible: null,
       isStarted: false,
       scrollPosY: 0,
@@ -116,60 +117,10 @@ export default {
       ]
     }
   },
-  // async asyncData ({ app, params, error }) {
-  //   const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').where('Size Group', '==', '5\' x 8\'').limit(4)
-  //   const rugRef2 = fireDb.collection('Rugs').where('Style', '==', 'Shag').limit(4)
-  //   const rugRef3 = fireDb.collection('Rugs').where('Style', '==', 'Modern').limit(4)
-  //   let data, data2, data3
-  //   try {
-  //     data = []
-  //     await rugRef.get().then(function (querySnapshot) {
-  //       querySnapshot.forEach(function (doc) {
-  //         // doc.data() is never undefined for query doc snapshots
-  //         // console.log(doc.id, ' => ', doc.data())
-  //         data.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 5, reviewCount: 12, group: doc.data()['Size Group'] })
-  //       })
-  //     })
-  //   } catch (e) {
-  //     // TODO: error handling
-  //     console.log(e)
-  //   }
-  //   try {
-  //     data2 = []
-  //     await rugRef2.get().then(function (querySnapshot) {
-  //       querySnapshot.forEach(function (doc) {
-  //         // doc.data() is never undefined for query doc snapshots
-  //         // console.log(doc.id, ' => ', doc.data())
-  //         data2.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-  //       })
-  //     })
-  //   } catch (e) {
-  //     // TODO: error handling
-  //     alert(e)
-  //   }
-  //   try {
-  //     data3 = []
-  //     await rugRef3.get().then(function (querySnapshot) {
-  //       querySnapshot.forEach(function (doc) {
-  //         // doc.data() is never undefined for query doc snapshots
-  //         // console.log(doc.id, ' => ', doc.data())
-  //         data3.push({ sku: doc.data().SKU, foldURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/FoldTest/thumbs/' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
-  //       })
-  //     })
-  //   } catch (e) {
-  //     // TODO: error handling
-  //     alert(e)
-  //   }
-  //   return {
-  //     doc: data,
-  //     doc2: data2,
-  //     doc3: data3
-  //   }
-  // },
   methods: {
     infiniteHandler ($state) {
       // Firestore index
-      const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').startAfter(this.lastVisible ? this.lastVisible : 0).limit(8)
+      const rugRef = fireDb.collection('Rugs').orderBy('Size Group').startAfter(this.lastVisible ? this.lastVisible : 0).limit(8)
       // let rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').limit(8)
       const vm = this
       rugRef.get().then(function (documentSnapshots) {
@@ -223,6 +174,13 @@ export default {
         this.styles[2].visible = true
       } else {
         this.styles[2].visible = false
+      }
+    },
+    changeSize (val) {
+      if (val) {
+        this.tableSize = val
+      } else {
+        this.tableSize = null
       }
     }
   }

@@ -67,18 +67,18 @@
           </div>
         </div>
         <div class="px-4 py-4 border-t border-gray-900 lg:w-1/3 lg:border-l xl:w-full">
-          <span class="block text-sm font-semibold text-gray-400">Pool Table Size</span>
+          <span class="block text-sm font-semibold text-gray-400">Pool Table Size {{ tableSize }}</span>
           <div class="sm:flex sm:-mx-2 lg:block lg:mx-0">
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
-              <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="house">
+              <input v-model="tableSize" class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="tableSize" value="7">
               <span class="ml-2 text-sm">7 ft.</span>
             </label>
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
-              <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="apartment">
+              <input v-model="tableSize" class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="tableSize" value="8">
               <span class="ml-2 text-sm">8 ft.</span>
             </label>
             <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center lg:w-full lg:px-0 hover:cursor-pointer text-gray-200 hover:text-white transition-colors">
-              <input class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="propertyType" value="loft">
+              <input v-model="tableSize" class="form-radio bg-gray-400 hover:bg-gray-500 transition-colors focus:outline-none hover:cursor-pointer" type="radio" name="tableSize" value="8p">
               <span class="ml-2 text-sm">8 ft. (Pro)</span>
             </label>
           </div>
@@ -140,7 +140,8 @@ export default {
   data () {
     return {
       isOpen: false,
-      selected: [ 'modern', 'shag', 'traditional' ]
+      selected: [ 'modern', 'shag', 'traditional' ],
+      tableSize: null
     }
   },
   watch: {
@@ -148,6 +149,11 @@ export default {
       // if (val.length !== 0) {
       // }
       this.$emit('changeCats', val)
+    },
+    tableSize (val, oldVal) {
+      // if (val.length !== 0) {
+      // }
+      this.$emit('changeSize', val)
     }
   },
   methods: {
