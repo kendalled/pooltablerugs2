@@ -55,7 +55,7 @@
           <infinite-loading @infinite="infiniteHandler" spinner="spiral">
             <div slot="no-more" class="mx-auto lg:-ml-16 mb-4">
               <button class="text-lg bg-blue-500 text-gray-100 px-4 py-2 rounded shadow text-center hover:bg-blue-600 transition-bg">
-              See More
+                See More
               </button>
             </div>
           </infinite-loading>
