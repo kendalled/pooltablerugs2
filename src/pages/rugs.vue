@@ -84,6 +84,7 @@ export default {
   },
   data () {
     return {
+      loaded: 0,
       tableSize: null,
       lastVisible: null,
       isStarted: false,
@@ -123,10 +124,11 @@ export default {
     infiniteHandler ($state) {
       // Firestore index
       const rugRef = fireDb.collection('Rugs').orderBy('Size Group').startAfter(this.lastVisible ? this.lastVisible : 0).limit(4)
-      // let rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP').limit(8)
+      // `this` out of scope
       const vm = this
       rugRef.get().then(function (documentSnapshots) {
         vm.lastVisible = documentSnapshots.docs[documentSnapshots.docs.length - 1]
+        vm.loaded += 1
         console.log('last', vm.lastVisible)
         let results
         results = null
@@ -134,6 +136,10 @@ export default {
         let collection
         collection = null
         collection = []
+        // Check if data loaded
+        if (vm.loaded >= 3) {
+          $state.complete()
+        }
         documentSnapshots.forEach(function (doc) {
           collection.push({ sku: doc.data().SKU, foldURL: 'https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/FoldTest%2Fthumbs%2Faas2300-2773-fold_300x300.jpg?alt=media&token=1433d11f-bd8a-49a5-8668-76b8bde077b6' + doc.data().SKU.toLowerCase() + '-fold_300x300.jpg', frontURL: 'https://storage.googleapis.com/pooltablerugs.appspot.com/skus/ath5111-24hm.jpg', MSRP: doc.data().MSRP, styling: doc.data().Style, romance: doc.data()['Romance Copy'], collection: doc.data().Collection, rating: 4, reviewCount: 11, group: doc.data()['Size Group'] })
         })
@@ -148,12 +154,8 @@ export default {
         vm.isStarted = true
         $state.loaded()
       })
-      if (this.doc2.length > 3) {
-        $state.complete()
-      }
     },
     truncateString (str, num) {
-      // If the length of str is less than or equal to num
       // just return str--don't truncate it.
       if (str.length <= num) {
         return str
@@ -179,11 +181,7 @@ export default {
       }
     },
     changeSize (val) {
-      if (val) {
-        this.tableSize = val
-      } else {
-        this.tableSize = null
-      }
+      this.tableSize = val || null
     }
   }
 }
@@ -198,7 +196,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .2s ease-in-out;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>

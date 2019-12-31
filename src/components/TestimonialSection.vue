@@ -18,7 +18,7 @@
           </p>
         </div>
         <div class="flex w-full h-auto justify-between pl-24 -mt-4">
-          <img :src="q.image" class="ml-2 shadow-md border-2 border-gray-600 rounded-full w-12 h-12 inline-block z-20">
+          <img :src="require('@/static/' + q.image)" class="ml-2 shadow-md border-2 border-gray-600 rounded-full w-12 h-12 inline-block z-20">
           <div class="flex flex-col w-auto items-end -mr-1">
             <p class="font-semibold text-gray-700 text-right text-sm block w-full">
               {{ q.name }}
@@ -107,19 +107,19 @@ export default {
         {
           id: 0,
           name: 'Sandy Grain',
-          image: 'https://demos.onepagelove.com/html/leno/images/testimonial-1.jpg',
+          image: 'rev1.jpg',
           job: 'Interior Designer'
         },
         {
           id: 1,
           name: 'Bruce Cash',
-          image: 'https://demos.onepagelove.com/html/leno/images/testimonial-2.jpg',
+          image: 'rev2.jpg',
           job: 'Billiards Player'
         },
         {
           id: 2,
           name: 'Amanda Savage',
-          image: 'https://demos.onepagelove.com/html/leno/images/testimonial-3.jpg',
+          image: 'rev3.jpg',
           job: 'Interior Designer'
         }
       ]
