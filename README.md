@@ -42,4 +42,5 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 10+ ✔ |
 - __Version 0.7.1__ Pagination / Infinite loading (Refactored)
 - __Version 0.7.2__ FAQ & Accordion Component
 - __Version 0.7.3__ FAQ & Accordion Component on Homepage
+- __Version 0.7.4__ Global Padding and Sorting of Products
 
