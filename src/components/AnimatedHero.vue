@@ -63,7 +63,7 @@ header:before {
 }
 
 header:after {
-  animation: rotate-up .5s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  /* animation: rotate-up .5s .5s cubic-bezier(0, 0.5, 0, 1) forwards; */
   background: #f7fafc;
   content: "";
   height: 12rem;
@@ -128,7 +128,7 @@ header:after {
 
 /* @keyframes rotate-up {
   100% {
-    transform: rotateZ(-4deg);
+    transform: translateY(50px);
   }
 } */
 </style>
