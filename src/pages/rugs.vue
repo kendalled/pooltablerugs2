@@ -123,7 +123,7 @@ export default {
   methods: {
     infiniteHandler ($state) {
       // Firestore index
-      const rugRef = fireDb.collection('Rugs').orderBy('Size Group').startAfter(this.lastVisible ? this.lastVisible : 0).limit(4)
+      const rugRef = fireDb.collection('Rugs').where('Style', '==', 'Traditional').orderBy('MSRP', 'desc').startAfter(this.lastVisible ? this.lastVisible : 0).limit(4)
       // `this` out of scope
       const vm = this
       rugRef.get().then(function (documentSnapshots) {
@@ -137,7 +137,7 @@ export default {
         collection = null
         collection = []
         // Check if data loaded
-        if (vm.loaded >= 3) {
+        if (vm.loaded >= 2) {
           $state.complete()
         }
         documentSnapshots.forEach(function (doc) {
