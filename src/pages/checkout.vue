@@ -2,112 +2,251 @@
   <!-- change padding to more when done! -->
   <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 px-8 lg:flex-row">
     <!-- copy these classes -->
-    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" action="https://formspree.io/xknorayl" method="POST">
-      <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
-        Checkout
-      </h1>
-      <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
-        <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
-          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-first-name">
-            First Name
-          </label>
-          <input
-            id="grid-first-name"
-            autocomplete="fName"
-            class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            type="text"
-            placeholder="Jane"
-            name="First Name"
-          >
-        </div>
-        <div class="w-full md:w-1/2 px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-            Last Name
-          </label>
-          <input
-            id="grid-last-name"
-            autocomplete="lName"
-            class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            type="text"
-            placeholder="Doe"
-            name="Last Name"
-          >
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="grid-password">
-            Address
-          </label>
-          <input
-            id="grid-password"
-            autocomplete="new-password"
-            class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            type="text"
-            placeholder="1234 Crystal Lake Dr."
-            name="Address"
-          >
-          <p class="text-gray-600 text-xs italic">
-            Enter your full shipping address.
-          </p>
-        </div>
-      </div>
-      <div class="-mx-3 mb-2 flex flex-wrap">
-        <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-city">
-            City
-          </label>
-          <input
-            id="grid-city"
-            autocomplete="newcity"
-            class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
-            type="text"
-            placeholder="Albuquerque"
-            name="City/Province"
-          >
-        </div>
-        <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
-          <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-state">
-            State
-          </label>
-          <div class="relative">
-            <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
-              <option>New Mexico</option>
-              <option>Missouri</option>
-              <option>Texas</option>
-              <option>Florida</option>
-            </select>
-            <div class="px-2 flex items-center absolute pointer-events-none inset-y-0 right-0 text-gray-700">
-              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-            </div>
+    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" onsubmit="return false">
+      <section id="shipping-details" v-if="!continued">
+        <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
+          Checkout
+        </h1>
+        <!-- TODO: MOVE -->
+        <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+          <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
+              Phone Number
+            </label>
+            <input
+              id="phone-num"
+              autocomplete="phone"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="(123) 456 7890"
+              name="Phone"
+            >
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="e-mail">
+              Email
+            </label>
+            <input
+              id="e-mail"
+              autocomplete="email"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="you@email.com"
+              name="Email"
+            >
           </div>
         </div>
-        <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-            Zip
-          </label>
-          <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
-          <p class="text-red-500 text-xs italic">
-            Please fill out this field.
-          </p>
+        <!-- end move -->
+        <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+          <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="first-name">
+              First Name
+            </label>
+            <input
+              id="first-name"
+              autocomplete="fName"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Jane"
+              name="First Name"
+            >
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="last-name">
+              Last Name
+            </label>
+            <input
+              id="last-name"
+              autocomplete="lName"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Doe"
+              name="Last Name"
+            >
+          </div>
         </div>
-      </div>
-      <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
-        <Checkbox class="checky" />
-        <div class="controls">
-          <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
-            Need Help?
-          </a>
-          <button type="submit" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
-            Continue
-          </button>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="shipping-address">
+              Address
+            </label>
+            <input
+              id="shipping-address"
+              autocomplete="new-password"
+              class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="1234 Crystal Lake Dr."
+              name="Address"
+            >
+            <p class="text-gray-600 text-xs italic">
+              Enter your full shipping address.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="h-40 flex flex-col justify-end">
-        <nuxt-link to="/">
-          <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
-        </nuxt-link>
-      </div>
+        <div class="-mx-3 mb-2 flex flex-wrap">
+          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="city">
+              City
+            </label>
+            <input
+              id="city"
+              autocomplete="newcity"
+              class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Albuquerque"
+              name="City/Province"
+            >
+          </div>
+          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="state">
+              State
+            </label>
+            <div class="relative">
+              <select id="state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
+                <option>New Mexico</option>
+                <option>Missouri</option>
+                <option>Texas</option>
+                <option>Florida</option>
+              </select>
+              <div class="px-2 flex items-center absolute pointer-events-none inset-y-0 right-0 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+          </div>
+          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="zip">
+              Zip
+            </label>
+            <input id="zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
+            <p class="text-red-500 text-xs italic">
+              Please fill out this field.
+            </p>
+          </div>
+        </div>
+        <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
+          <Checkbox class="checky" />
+          <div class="controls">
+            <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
+              Need Help?
+            </a>
+            <button @click="continueHandler" type="button" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
+              Continue
+            </button>
+          </div>
+        </div>
+        <div class="h-40 flex flex-col justify-end">
+          <nuxt-link to="/">
+            <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
+          </nuxt-link>
+        </div>
+      </section>
+      <section id="payment-details" v-if="continued">
+        <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
+          Checkout (payment)
+        </h1>
+        <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+          <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="2first-name">
+              First Name
+            </label>
+            <input
+              id="2first-name"
+              autocomplete="fName"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Jane"
+              name="First Name"
+            >
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="2last-name">
+              Last Name
+            </label>
+            <input
+              id="2last-name"
+              autocomplete="lName"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Doe"
+              name="Last Name"
+            >
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="2shipping-address">
+              Address
+            </label>
+            <input
+              id="2shipping-address"
+              autocomplete="new-password"
+              class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="1234 Crystal Lake Dr."
+              name="Address"
+            >
+            <p class="text-gray-600 text-xs italic">
+              Enter your full shipping address.
+            </p>
+          </div>
+        </div>
+        <div class="-mx-3 mb-2 flex flex-wrap">
+          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-city">
+              City
+            </label>
+            <input
+              id="grid-city"
+              autocomplete="newcity"
+              class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="Albuquerque"
+              name="City/Province"
+            >
+          </div>
+          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-state">
+              State
+            </label>
+            <div class="relative">
+              <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
+                <option>New Mexico</option>
+                <option>Missouri</option>
+                <option>Texas</option>
+                <option>Florida</option>
+              </select>
+              <div class="px-2 flex items-center absolute pointer-events-none inset-y-0 right-0 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+          </div>
+          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              Zip
+            </label>
+            <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
+            <p class="text-red-500 text-xs italic">
+              Please fill out this field.
+            </p>
+          </div>
+        </div>
+        <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
+          <Checkbox class="checky" />
+          <div class="controls">
+            <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
+              Need Help?
+            </a>
+            <button type="submit" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
+              Checkout
+            </button>
+          </div>
+        </div>
+        <div class="h-40 flex flex-col justify-end">
+          <nuxt-link to="/">
+            <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
+          </nuxt-link>
+        </div>
+      </section>
     </form>
     <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16 flex-col justify-between hidden lg:flex">
       <div class="firstHalf w-auto h-auto">
@@ -125,7 +264,7 @@
           </div>
           <div class="w-1/3 h-full flex flex-col">
             <div class="w-full h-auto text-center">
-              <h2 class="text-xs font-bold block uppercase tracking-wide text-gray-700" for="grid-first-name">
+              <h2 class="text-xs font-bold block uppercase tracking-wide text-gray-700">
                 {{ product }}
               </h2>
             </div>
@@ -164,12 +303,18 @@
 </template>
 
 <script>
+import { fireDb } from '~/plugins/firebase'
 import Checkbox from '~/components/Checkbox'
 import Counter from '~/components/Counter'
 export default {
   components: {
     Checkbox,
     Counter
+  },
+  data () {
+    return {
+      continued: false
+    }
   },
   computed: {
     isHidden () {
@@ -200,6 +345,9 @@ export default {
     },
     grandTotal () {
       return this.roundTo(this.subTotal + this.taxOnly, 2)
+    },
+    userAccount () {
+      return this.$store.state.user ? this.$store.state.user.id : 'none'
     }
   },
   methods: {
@@ -216,6 +364,31 @@ export default {
       n = parseFloat((n * multiplicator).toFixed(11))
       const test = (Math.round(n) / multiplicator)
       return +(test.toFixed(digits))
+    },
+    continueHandler () {
+      this.continued = true
+      // Get user data from form fields
+      const state = document.getElementById('state').value
+      const city = document.getElementById('city').value
+      const zip = document.getElementById('zip').value
+      const phone = document.getElementById('phone-num').value
+      // const line2 = document.getElementById('line2').value
+      // Concatenates name fields
+      const name = document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value
+      const email = document.getElementById('e-mail').value
+      const line1 = document.getElementById('shipping-address').value
+
+      fireDb.collection('rug_customers').doc(this.userAccount).collection('details').add({
+        name,
+        line1,
+        city,
+        state,
+        email,
+        phone,
+        zipCode: zip
+      }).then(() => {
+        console.log('Details created in firestore.')
+      })
     }
   }
 }

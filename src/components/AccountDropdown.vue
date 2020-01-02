@@ -34,7 +34,7 @@
     >
       <div
         v-if="opened"
-        class="mt-2 absolute right-0 origin-top-right text-left"
+        class="mt-2 mr-3 absolute right-0 origin-top-right text-left"
       >
         <div class="w-64 bg-white rounded-lg shadow-lg border">
           <div class="flex items-center px-6 py-4">

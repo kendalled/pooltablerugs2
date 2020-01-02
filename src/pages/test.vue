@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper mx-auto py-12">
-    <form id="payment-form" method="post" style="display: block;">
+    <form id="payment-form" class="max-w-md mx-auto" method="post" style="display: block;">
       <div class="form-row">
         <label for="card-element">
           Credit or Debit:
@@ -20,52 +20,52 @@
         <br>
       </div>
     </form>
-    <SplashHeader />
+    <SplashHeader class="mt-64" />
   </div>
 </template>
 
 <script>
-// import { firebase } from '~/plugins/firebase'
+import { firebase } from '~/plugins/firebase'
 import SplashHeader from '~/components/SplashHeader'
 export default {
   layout: 'checkout',
   components: {
     SplashHeader
-  }
-  // mounted () {
-  //   firebase.auth().onAuthStateChanged(function (user) {
-  //     if (user) {
-  //       // User is signed in.
-  //       // Handle form submission.
-  //       const form = document.getElementById('payment-form')
-  //       form.addEventListener('submit', function (event) {
-  //         event.preventDefault()
+  },
+  mounted () {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        // Handle form submission.
+        const form = document.getElementById('payment-form')
+        form.addEventListener('submit', function (event) {
+          event.preventDefault()
 
-  //         stripe.createToken(card).then(function (result) {
-  //           if (result.error) {
-  //             // Inform the user if there was an error.
-  //             const errorElement = document.getElementById('card-errors')
-  //             errorElement.textContent = result.error.message
-  //           } else {
-  //             // Send the token to your server.
-  //             firebase.firestore().collection('rug_customers').doc(user.uid).collection('tokens').add({ token: result.token }).then(() => {
-  //               console.log('Token created')
-  //             })
-  //           }
-  //         })
-  //       })
-  //       console.log(user.uid + ' is signed in!')
-  //     } else {
-  //       // No user is signed in.
-  //       console.log('not signed in!')
-  //     }
-  //   })
-  //   // this.$store.commit('saveUserDetails')
-  //   const stripe = this.$stripe.import()
-  //   const elements = stripe.elements()
-  //   const card = elements.create('card')
-  //   // Add an instance of the card Element into the `card-element` <div>
-  //   card.mount('#card-element')
-  // }
+          stripe.createToken(card).then(function (result) {
+            if (result.error) {
+              // Inform the user if there was an error.
+              const errorElement = document.getElementById('card-errors')
+              errorElement.textContent = result.error.message
+            } else {
+              // Send the token to your server.
+              firebase.firestore().collection('rug_customers').doc(user.uid).collection('tokens').add({ token: result.token }).then(() => {
+                console.log('Token created')
+              })
+            }
+          })
+        })
+        console.log(user.uid + ' is signed in!')
+      } else {
+        // No user is signed in.
+        console.log('not signed in!')
+      }
+    })
+    // this.$store.commit('saveUserDetails')
+    const stripe = this.$stripe.import()
+    const elements = stripe.elements()
+    const card = elements.create('card')
+    // Add an instance of the card Element into the `card-element` <div>
+    card.mount('#card-element')
+  }
 }
 </script>
