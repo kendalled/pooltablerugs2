@@ -1,8 +1,8 @@
 <template>
   <!-- change padding to more when done! -->
-  <div class=" h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 lg:flex-row">
+  <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 px-8 lg:flex-row">
     <!-- copy these classes -->
-    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l shadow-md">
+    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md">
       <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
         Checkout
       </h1>
@@ -75,13 +75,13 @@
           </button>
         </div>
       </div>
-      <div class="h-56 flex flex-col justify-end">
+      <div class="h-40 flex flex-col justify-end">
         <nuxt-link to="/">
           <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
         </nuxt-link>
       </div>
     </form>
-    <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16 flex flex-col justify-between">
+    <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16 flex-col justify-between hidden lg:flex">
       <div class="firstHalf w-auto h-auto">
         <h2
           class="text-center text-3xl text-white font-medium leading-snug"
