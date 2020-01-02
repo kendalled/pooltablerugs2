@@ -34,30 +34,32 @@ export default {
   },
   mounted () {
     const vm = this
-    // Handle form submission.
-    const form = document.getElementById('payment-form')
-    form.addEventListener('submit', function (event) {
-      event.preventDefault()
+    if (process.browser) {
+      // Handle form submission.
+      const form = document.getElementById('payment-form')
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
 
-      stripe.createToken(card).then(function (result) {
-        if (result.error) {
+        stripe.createToken(card).then(function (result) {
+          if (result.error) {
           // Inform the user if there was an error.
-          const errorElement = document.getElementById('card-errors')
-          errorElement.textContent = result.error.message
-        } else {
+            const errorElement = document.getElementById('card-errors')
+            errorElement.textContent = result.error.message
+          } else {
           // Send the token to your server.
-          firebase.firestore().collection('rug_customers').doc(vm.userAccount.id).collection('tokens').add({ token: result.token }).then(() => {
-            console.log('Token created')
-          })
-        }
+            firebase.firestore().collection('rug_customers').doc(vm.$store.state.user.id).collection('tokens').add({ token: result.token }).then(() => {
+              console.log('Token created')
+            })
+          }
+        })
       })
-    })
-    // this.$store.commit('saveUserDetails')
-    const stripe = this.$stripe.import()
-    const elements = stripe.elements()
-    const card = elements.create('card')
-    // Add an instance of the card Element into the `card-element` <div>
-    card.mount('#card-element')
+      // this.$store.commit('saveUserDetails')
+      const stripe = this.$stripe.import()
+      const elements = stripe.elements()
+      const card = elements.create('card')
+      // Add an instance of the card Element into the `card-element` <div>
+      card.mount('#card-element')
+    }
   }
 }
 </script>
