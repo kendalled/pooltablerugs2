@@ -1,6 +1,6 @@
 <template>
   <div
-    :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5 )), url(' + require('@/static/'+bg) + ')' }"
+    :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6 )), url(' + require('@/static/'+bg) + ')' }"
     class="w-full bg-cover bg-gray-500 bg-center bg-no-repeat"
   >
     <div class=" p-10  py-20 flex flex-col flex-wrap justify-center content-center">
