@@ -94,11 +94,11 @@ header:after {
 }
 
 .pCta{
-  animation-delay: 1.1s;
+  animation-delay: 1.25s;
 }
 
 .sCta {
-  animation-delay: 1.0s;
+  animation-delay: 1.15s;
 }
 
 /* Animations */
