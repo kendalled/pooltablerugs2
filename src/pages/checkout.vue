@@ -1,6 +1,6 @@
 <template>
   <!-- change padding to more when done! -->
-  <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 px-8 lg:flex-row">
+  <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto pb-8 pt-12 px-8 lg:flex-row justify-center">
     <!-- copy these classes -->
     <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" onsubmit="return false">
       <section id="shipping-details" v-if="!continued">
