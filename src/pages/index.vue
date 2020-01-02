@@ -5,8 +5,8 @@
     <FeaturedSection />
     <BlankSection />
     <TestimonialSection class="hidden md:block" />
-    <SubscribeEmail class="hidden md:block" />
     <FaqSection />
+    <SubscribeEmail class="hidden md:block" />
     <RespFooter />
   </div>
 </template>
