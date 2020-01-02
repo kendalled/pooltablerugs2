@@ -124,7 +124,7 @@
         </div>
       </div>
       <div class="bg-gray-900 px-4 py-4 sm:text-right">
-        <button class="block w-full sm:w-auto sm:inline-block bg-blue-600 hover:bg-blue-800 transition-bg font-semibold text-white px-4 py-2 rounded-lg xl:block xl:w-full">
+        <button @click="removeFromCart" class="block w-full sm:w-auto sm:inline-block bg-blue-600 hover:bg-blue-800 transition-bg font-semibold text-white px-4 py-2 rounded-lg xl:block xl:w-full">
           Apply Filter(s)
         </button>
       </div>
@@ -159,6 +159,9 @@ export default {
   methods: {
     toggle () {
       this.isOpen = !this.isOpen
+    },
+    removeFromCart (item) {
+      this.$store.commit('cart/removeFromCart', item)
     }
   }
 }
