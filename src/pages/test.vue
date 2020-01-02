@@ -33,6 +33,7 @@ export default {
     SplashHeader
   },
   mounted () {
+    const vm = this
     // Handle form submission.
     const form = document.getElementById('payment-form')
     form.addEventListener('submit', function (event) {
@@ -45,7 +46,7 @@ export default {
           errorElement.textContent = result.error.message
         } else {
           // Send the token to your server.
-          firebase.firestore().collection('rug_customers').doc(this.userAccount.id).collection('tokens').add({ token: result.token }).then(() => {
+          firebase.firestore().collection('rug_customers').doc(vm.userAccount.id).collection('tokens').add({ token: result.token }).then(() => {
             console.log('Token created')
           })
         }
