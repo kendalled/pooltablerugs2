@@ -134,7 +134,7 @@
             </button>
           </div>
         </div>
-        <div class="h-40 flex flex-col justify-end">
+        <div class="h-32 flex flex-col justify-end">
           <nuxt-link to="/">
             <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
           </nuxt-link>
@@ -307,6 +307,7 @@ import { fireDb } from '~/plugins/firebase'
 import Checkbox from '~/components/Checkbox'
 import Counter from '~/components/Counter'
 export default {
+  layout: 'checkout',
   components: {
     Checkbox,
     Counter

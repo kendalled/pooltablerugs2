@@ -1,5 +1,5 @@
 <template>
-  <header class="hidden md:flex">
+  <header class="md:flex hidden">
     <section class="header-content w-full">
       <div class="mx-auto w-3/4 px-4 mb-16">
         <h1 class="mb-2 text-white leading-tight roboto font-black header-title animate-pop-in">
@@ -40,7 +40,6 @@ header {
   transform-style: preserve-3d;
   perspective: 100px;
 }
-
 h1 {
   text-shadow: 0px 4px 3px rgba(0,0,0,0.2), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
   font-size: 2.8rem;

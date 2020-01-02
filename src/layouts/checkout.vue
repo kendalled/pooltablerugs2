@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <SiteHeader class="xl:flex-shrink-0" />
     <nuxt />
   </div>
 </template>
@@ -54,11 +53,7 @@ html {
 } */
 </style>
 <script>
-// import RespFooter from '~/components/RespFooter'
-// // import RespNav from '~/components/RespNav'
-import SiteHeader from '~/components/SiteHeader'
 export default {
-  name: 'Default',
-  components: { SiteHeader }
+  name: 'Checkout'
 }
 </script>
