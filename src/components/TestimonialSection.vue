@@ -80,14 +80,6 @@
     transition: .2s filter;
     transform: scale(0.99);
 }
-/* .desat:hover {
-    filter: grayscale(0);
-    -webkit-filter: grayscale(0f);
-    -moz-filter: grayscale(0f);
-    -ms-filter: grayscale(0f);
-    -o-filter: grayscale(0f);
-    cursor: pointer;
-} */
 .scaled {
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
