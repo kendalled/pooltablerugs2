@@ -14,10 +14,10 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "child_process": "^1.0.2",
-    "firebase": "^7.5.0",
+    "firebase": "^7.6.1",
     "firebaseui": "^4.2.0",
     "hooper": "^0.3.4",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.0.0",
     "nuxt-stripe-module": "^2.0.0",
     "serialize-javascript": "^2.1.2",
     "stripe": "^7.14.0",
