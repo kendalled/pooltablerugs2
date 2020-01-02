@@ -150,6 +150,6 @@ export default {
 
 <style scoped>
 .styled {
-  background-color: #f5f5f5;
+  background-color: #fbfbfb;
 }
 </style>
