@@ -2,7 +2,7 @@
   <!-- change padding to more when done! -->
   <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto py-8 px-8 lg:flex-row">
     <!-- copy these classes -->
-    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md">
+    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" action="https://formspree.io/xknorayl" method="POST">
       <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
         Checkout
       </h1>
@@ -11,13 +11,27 @@
           <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-first-name">
             First Name
           </label>
-          <input id="grid-first-name" autocomplete="fName" class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Jane">
+          <input
+            id="grid-first-name"
+            autocomplete="fName"
+            class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            type="text"
+            placeholder="Jane"
+            name="First Name"
+          >
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
             Last Name
           </label>
-          <input id="grid-last-name" autocomplete="lName" class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Doe">
+          <input
+            id="grid-last-name"
+            autocomplete="lName"
+            class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            type="text"
+            placeholder="Doe"
+            name="Last Name"
+          >
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
@@ -25,7 +39,14 @@
           <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="grid-password">
             Address
           </label>
-          <input id="grid-password" autocomplete="new-password" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="1234 Crystal Lake Dr.">
+          <input
+            id="grid-password"
+            autocomplete="new-password"
+            class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            type="text"
+            placeholder="1234 Crystal Lake Dr."
+            name="Address"
+          >
           <p class="text-gray-600 text-xs italic">
             Enter your full shipping address.
           </p>
@@ -36,14 +57,21 @@
           <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-city">
             City
           </label>
-          <input id="grid-city" autocomplete="newcity" class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Albuquerque">
+          <input
+            id="grid-city"
+            autocomplete="newcity"
+            class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+            type="text"
+            placeholder="Albuquerque"
+            name="City/Province"
+          >
         </div>
         <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
           <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-state">
             State
           </label>
           <div class="relative">
-            <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+            <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
               <option>New Mexico</option>
               <option>Missouri</option>
               <option>Texas</option>
@@ -58,7 +86,7 @@
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
             Zip
           </label>
-          <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210">
+          <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
           <p class="text-red-500 text-xs italic">
             Please fill out this field.
           </p>
@@ -70,7 +98,7 @@
           <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
             Need Help?
           </a>
-          <button class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline" type="button">
+          <button type="submit" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
             Continue
           </button>
         </div>
