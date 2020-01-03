@@ -32,6 +32,11 @@ export default {
   components: {
     SplashHeader
   },
+  computed: {
+    userAccount () {
+      return (this.$store.state.user ? this.$store.state.user.id : 'none')
+    }
+  },
   mounted () {
     const vm = this
     if (process.browser) {
@@ -47,9 +52,7 @@ export default {
             errorElement.textContent = result.error.message
           } else {
           // Send the token to your server.
-            firebase.firestore().collection('rug_customers').doc(vm.$store.state.user.id).collection('tokens').add({ token: result.token }).then(() => {
-              console.log('Token created')
-            })
+            vm.stripeTokenHandler(result.token)
           }
         })
       })
@@ -59,6 +62,15 @@ export default {
       const card = elements.create('card')
       // Add an instance of the card Element into the `card-element` <div>
       card.mount('#card-element')
+    }
+  },
+  methods: {
+    stripeTokenHandler (token) {
+      firebase.firestore().collection('rug_customers').doc(this.userAccount).collection('tokens').add({
+        token: token.id
+      }).then(() => {
+        console.log('Token created')
+      })
     }
   }
 }
