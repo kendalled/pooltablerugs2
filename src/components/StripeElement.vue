@@ -1,7 +1,7 @@
 <template>
   <form id="payment-form" class="max-w-md mx-auto" method="post" style="display: block;">
     <div class="form-row">
-      <label for="card-element" class="text-base text-gray-800 font-medium">
+      <label for="card-element" class="text-base text-gray-800 font-medium hidden">
         Credit or Debit:
       </label>
       <div id="card-element" class="mt-4">
@@ -77,9 +77,11 @@ export default {
   },
   methods: {
     stripeTokenHandler (token) {
+      const vm = this
       firebase.firestore().collection('rug_customers').doc(this.userAccount).collection('tokens').add({
         token: token.id
       }).then(() => {
+        vm.$emit('token')
         console.log('Token created')
       })
     }
@@ -98,10 +100,9 @@ export default {
   height: 40px;
 
   padding: 10px 12px;
-
-  border: 1px solid transparent;
+  border: 1px solid #002d5d;
   border-radius: 4px;
-  background-color: white;
+  background-color: #fcfcfc;
 
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;

@@ -20,11 +20,13 @@
             </label>
             <input
               id="first-name"
+              v-model="fName"
               autocomplete="fName"
               class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="Jane"
               name="First Name"
+              required
             >
           </div>
           <div class="w-full md:w-1/2 px-3">
@@ -33,38 +35,13 @@
             </label>
             <input
               id="last-name"
+              v-model="lName"
               autocomplete="lName"
               class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="Doe"
               name="Last Name"
-            >
-          </div>
-          <!-- TODO: FIX STYLING INCONSISTENCY remove mb-8 if no border-b -->
-          <div class="px-3 mb-0 w-full md:w-1/2 md:mb-8">
-            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
-              Phone Number
-            </label>
-            <input
-              id="phone-num"
-              autocomplete="phone"
-              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="(123) 456 7890"
-              name="Phone"
-            >
-          </div>
-          <div class="w-full md:w-1/2 px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="e-mail">
-              Email
-            </label>
-            <input
-              id="e-mail"
-              autocomplete="email"
-              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="you@email.com"
-              name="Email"
+              required
             >
           </div>
         </div>
@@ -75,11 +52,13 @@
             </label>
             <input
               id="shipping-address"
+              v-model="address"
               autocomplete="new-password"
               class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="1234 Crystal Lake Dr."
               name="Address"
+              required
             >
             <p class="text-gray-600 text-xs italic">
               Enter your full shipping address.
@@ -93,11 +72,13 @@
             </label>
             <input
               id="city"
+              v-model="city"
               autocomplete="newcity"
               class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
               placeholder="Albuquerque"
               name="City/Province"
+              required
             >
           </div>
           <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
@@ -105,7 +86,7 @@
               State
             </label>
             <div class="relative">
-              <select id="state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
+              <select id="state" v-model="state" required class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
                 <option>New Mexico</option>
                 <option>Missouri</option>
                 <option>Texas</option>
@@ -120,8 +101,17 @@
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="zip">
               Zip
             </label>
-            <input id="zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
-            <p class="text-red-500 text-xs italic absolute">
+            <!-- border border-red-500 -->
+            <input
+              id="zip"
+              v-model="zip"
+              class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="90210"
+              name="Postal Code"
+              required
+            >
+            <p class="text-red-500 text-xs italic absolute hidden">
               Please fill out this field.
             </p>
           </div>
@@ -144,7 +134,7 @@
         </div>
       </section>
     </form>
-    <form @submit.prevent="submitHandler" v-if="continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
+    <form @submit.prevent="submitHandler" v-show="continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
       <section id="payment-details">
         <div class="theHeader flex w-full justify-between">
           <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
@@ -154,56 +144,41 @@
             <span class="text-base text-gray-700 tracking-normal -mb-2">Payment Details</span>
           </div>
         </div>
-        <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
-          <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
-            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="2first-name">
-              First Name
+        <div class="border-t border-b w-auto h-auto pt-4 pb-8">
+          <StripeElement :clicked="checkedOut" @token="tokenHandler" />
+        </div>
+        <div class="border-b pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+          <!-- TODO: FIX STYLING INCONSISTENCY remove mb-8 if no border-b -->
+          <div class="px-3 mb-0 w-full md:w-1/2 md:mb-8">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
+              Phone Number
             </label>
             <input
-              id="2first-name"
-              autocomplete="fName"
+              id="phone-num"
+              v-model="phoneNum"
+              autocomplete="phone"
               class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
-              placeholder="Jane"
-              name="First Name"
+              placeholder="(123) 456 7890"
+              name="Phone"
             >
           </div>
           <div class="w-full md:w-1/2 px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="2last-name">
-              Last Name
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="e-mail">
+              Email
             </label>
             <input
-              id="2last-name"
-              autocomplete="lName"
+              id="e-mail"
+              v-model="email"
+              autocomplete="email"
               class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               type="text"
-              placeholder="Doe"
-              name="Last Name"
+              placeholder="you@email.com"
+              name="Email"
             >
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="text-xs font-bold mb-2 inline-block uppercase tracking-wide text-gray-700" for="2shipping-address">
-              Address
-            </label>
-            <input
-              id="2shipping-address"
-              autocomplete="new-password"
-              class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="1234 Crystal Lake Dr."
-              name="Address"
-            >
-            <p class="text-gray-600 text-xs italic">
-              Enter your full shipping address.
-            </p>
-          </div>
-        </div>
-        <div class="w-auto h-auto border-t pt-4 pb-4">
-          <StripeElement :clicked="checkedOut" />
-        </div>
-        <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
+        <div class="pt-6 mt-6 flex flex-wrap flex-row justify-between">
           <Checkbox class="checky" />
           <div class="controls">
             <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
@@ -289,6 +264,14 @@ export default {
   },
   data () {
     return {
+      fName: '',
+      lName: '',
+      phoneNum: '',
+      email: '',
+      address: '',
+      city: '',
+      state: 'New Mexico',
+      zip: '',
       continued: false,
       checkedOut: false
     }
@@ -328,6 +311,9 @@ export default {
     }
   },
   methods: {
+    tokenHandler () {
+      console.log('i see da taoken made')
+    },
     handleChange () {
       console.log('yah')
       console.log(this.priceList)
@@ -345,15 +331,15 @@ export default {
     continueHandler () {
       this.continued = true
       // Get user data from form fields
-      const state = document.getElementById('state').value
-      const city = document.getElementById('city').value
-      const zip = document.getElementById('zip').value
-      const phone = document.getElementById('phone-num').value
+      const state = this.state
+      const city = this.city
+      const zip = this.zip
+      const phone = this.phoneNum
       // const line2 = document.getElementById('line2').value
       // Concatenates name fields
-      const name = document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value
-      const email = document.getElementById('e-mail').value
-      const line1 = document.getElementById('shipping-address').value
+      const name = this.fName + (this.lName !== '' ? ' ' + this.lName : '')
+      const email = this.email
+      const line1 = this.address
 
       fireDb.collection('rug_customers').doc(this.userAccount).collection('details').add({
         name,
