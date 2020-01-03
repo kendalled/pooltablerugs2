@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper mx-auto py-12">
-    <StripeElement />
+    <ProductDetails />
   </div>
 </template>
 
 <script>
-import StripeElement from '~/components/StripeElement'
+import ProductDetails from '~/components/ProductDetails'
 export default {
   layout: 'checkout',
   components: {
-    StripeElement
+    ProductDetails
   }
 }
 </script>
