@@ -1,15 +1,18 @@
 <template>
   <!-- change padding to more when done! -->
-  <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto pb-8 pt-12 px-8 lg:flex-row justify-center">
+  <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto pb-8 pt-4 px-8 lg:flex-row justify-center">
     <!-- copy these classes -->
-    <form @submit.prevent="continueHandler" v-if="!continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
+    <div v-if="continued && checkedOut" class="loader">
+      <span class="text-xl text-black">Loading...</span>
+    </div>
+    <form @submit.prevent="continueHandler" v-show="!continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
       <section id="shipping-details">
         <div class="theHeader flex w-full justify-between">
           <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
             Checkout
           </h1>
           <div class="subHeading flex w-auto h-auto justify-center items-center">
-            <span class="text-base text-gray-700 tracking-normal -mb-2">Shipping & Contact Details</span>
+            <span class="text-base text-gray-700 tracking-normal -mb-2">Shipping & Payment Details</span>
           </div>
         </div>
         <div class="border-t pt-5 mt-1 -mx-3 flex flex-wrap">
@@ -128,7 +131,7 @@
               </div>
             </div>
           </div>
-          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
+          <div class="px-3 mb-60 w-full md:w-1/3 md:mb-6">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="zip">
               Zip
             </label>
@@ -147,38 +150,12 @@
             </p>
           </div>
         </div>
+        <div class="border-t w-auto h-auto pt-4 pb-4">
+          <client-only>
+            <StripeElement :clicked="checkedOut" @token="tokenHandler" />
+          </client-only>
+        </div>
         <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
-          <Checkbox class="checky" />
-          <div class="controls">
-            <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
-              Need Help?
-            </a>
-            <button type="submit" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
-              Continue
-            </button>
-          </div>
-        </div>
-        <div class="h-32 flex flex-col justify-end">
-          <nuxt-link to="/">
-            <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
-          </nuxt-link>
-        </div>
-      </section>
-    </form>
-    <form @submit.prevent="submitHandler" v-show="continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
-      <section id="payment-details">
-        <div class="theHeader flex w-full justify-between">
-          <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
-            Checkout
-          </h1>
-          <div class="subHeading flex w-auto h-auto justify-center items-center">
-            <span class="text-base text-gray-700 tracking-normal -mb-2">Payment Details</span>
-          </div>
-        </div>
-        <div class="border-t border-b w-auto h-auto pt-4 pb-8">
-          <StripeElement :clicked="checkedOut" @token="tokenHandler" />
-        </div>
-        <div class="pt-6 mt-6 flex flex-wrap flex-row justify-between">
           <Checkbox class="checky" />
           <div class="controls">
             <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
@@ -189,14 +166,14 @@
             </button>
           </div>
         </div>
-        <div class="h-40 flex flex-col justify-end">
+        <div class="h-16 flex flex-col justify-end">
           <nuxt-link to="/">
             <img class="h-auto w-48 ml-1 mb-4 opacity-25 hover:opacity-75 transition-opacity" alt="Pool Table Rugs Logo" src="~/static/logo.png">
           </nuxt-link>
         </div>
       </section>
     </form>
-    <section id="content" class="w-7/12 shadow-md rounded-r px-8 py-16 flex-col justify-between hidden lg:flex">
+    <section id="content" v-if="!continued" class="w-7/12 shadow-md rounded-r px-8 py-16 flex-col justify-between hidden lg:flex">
       <div class="firstHalf w-auto h-auto">
         <h2
           class="text-center text-3xl text-white font-medium leading-snug"
@@ -204,7 +181,6 @@
           Shopping Cart<span v-if="$store.state.cart.cartCount >= 1">: {{ $store.state.cart.cartCount }} item</span><span v-if="$store.state.cart.cartCount >= 2">s</span>
         </h2>
         <!-- use as footer text <p class="text-center text-lg text-gray-100 mt-2 px-6"> -->
-
         <div class="h-1 mt-4 w-56 mx-auto bg-gray-100 opacity-75 rounded" />
         <div v-for="(product, i) in skuList" :key="i" class="my-6 py-6 pl-6 px-6 w-full items-center justify-between flex h-auto bg-white rounded shadow-md">
           <div class="w-1/8">
@@ -312,11 +288,7 @@ export default {
   },
   methods: {
     tokenHandler () {
-      const description = this.skuList[0]
-      fireDb.collection('rug_customers').doc(this.userAccount).collection('charges').add({
-        amount: 51,
-        desc: description
-      })
+      console.log('i see da token')
     },
     handleChange () {
       console.log('yah')
@@ -356,11 +328,13 @@ export default {
       }).then(() => {
         console.log('Details created in firestore.')
       })
-    },
-    submitHandler () {
-      // TODO:
-      // changes prop on stripeElement, gets emit
-      // then charges customer
+      const description = this.skuList[0]
+      fireDb.collection('rug_customers').doc(this.userAccount).collection('charges').add({
+        amount: 51,
+        desc: description
+      }).then(() => {
+        console.log('checking out...')
+      })
       this.checkedOut = true
     }
   }

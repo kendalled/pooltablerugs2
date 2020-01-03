@@ -1,22 +1,20 @@
 <template>
-  <form id="payment-form" class="max-w-md mx-auto" method="post" style="display: block;">
-    <div class="form-row">
+  <form id="payment-form" class="w-full flex justify-between" method="post">
+    <div class="form-row w-2/3">
       <label for="card-element" class="text-base text-gray-800 font-medium hidden">
         Credit or Debit:
       </label>
-      <div id="card-element" class="mt-4">
+      <div id="card-element" class="w-full inline-block mt-4">
         <!-- A Stripe Element will be inserted here. -->
       </div>
       <!-- Used to display Element errors. -->
       <div id="card-errors" role="alert" />
+      <!-- TODO: change to flex -->
     </div>
-
-    <div class="col-12 col-12-xsmall hidden">
-      <br>
-      <ul class="actions" style="float: right;">
-        <li><input id="stripeSubmit" type="submit" class="text-center px-4 py-2 text-gray-700 rounded shadow hover:bg-gray-200 cursor-pointer transition-bg focus:outline-none" value="Continue"></li>
-      </ul>
-      <br>
+    <div class="button-row flex w-1/4 items-center justify-end mt-2">
+      <button id="stripeSubmit" type="submit" class="inline-block bg-transparent hover:bg-blue-600 text-blue-600 font-medium hover:text-white py-2 px-4 border border-blue-600 hover:border-transparent rounded transition-colors">
+        Save
+      </button>
     </div>
   </form>
 </template>
@@ -33,19 +31,6 @@ export default {
   computed: {
     userAccount () {
       return (this.$store.state.user ? this.$store.state.user.id : 'none')
-    }
-  },
-  watch: {
-    clicked () {
-      if (process.client) {
-        if (this.clicked) {
-          console.log('yeet')
-          const button = document.getElementById('stripeSubmit')
-          button.click()
-        } else {
-          console.log('yah')
-        }
-      }
     }
   },
   mounted () {
@@ -100,7 +85,7 @@ export default {
   height: 40px;
 
   padding: 10px 12px;
-  border: 1px solid #002d5d;
+  border: 1px solid #dfe3e6;
   border-radius: 4px;
   background-color: #fcfcfc;
 
