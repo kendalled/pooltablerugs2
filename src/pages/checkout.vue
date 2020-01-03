@@ -12,7 +12,7 @@
             <span class="text-base text-gray-700 tracking-normal -mb-2">Shipping & Contact Details</span>
           </div>
         </div>
-        <div class="border-t border-b pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+        <div class="border-t pt-5 mt-1 -mx-3 flex flex-wrap">
           <!-- TODO: FIX STYLING INCONSISTENCY -->
           <div class="px-3 mb-0 w-full md:w-1/2 md:mb-6">
             <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="first-name">
@@ -42,6 +42,37 @@
               placeholder="Doe"
               name="Last Name"
               required
+            >
+          </div>
+        </div>
+        <div class="border-b mt-2 -mx-3 mb-3 flex flex-wrap">
+          <!-- TODO: FIX STYLING INCONSISTENCY remove mb-8 if no border-b -->
+          <div class="px-3 mb-0 w-full md:w-1/2 md:mb-8">
+            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
+              Phone Number
+            </label>
+            <input
+              id="phone-num"
+              v-model="phoneNum"
+              autocomplete="phone"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="(123) 456 7890"
+              name="Phone"
+            >
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="e-mail">
+              Email
+            </label>
+            <input
+              id="e-mail"
+              v-model="email"
+              autocomplete="email"
+              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              type="text"
+              placeholder="you@email.com"
+              name="Email"
             >
           </div>
         </div>
@@ -146,37 +177,6 @@
         </div>
         <div class="border-t border-b w-auto h-auto pt-4 pb-8">
           <StripeElement :clicked="checkedOut" @token="tokenHandler" />
-        </div>
-        <div class="border-b pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
-          <!-- TODO: FIX STYLING INCONSISTENCY remove mb-8 if no border-b -->
-          <div class="px-3 mb-0 w-full md:w-1/2 md:mb-8">
-            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
-              Phone Number
-            </label>
-            <input
-              id="phone-num"
-              v-model="phoneNum"
-              autocomplete="phone"
-              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="(123) 456 7890"
-              name="Phone"
-            >
-          </div>
-          <div class="w-full md:w-1/2 px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="e-mail">
-              Email
-            </label>
-            <input
-              id="e-mail"
-              v-model="email"
-              autocomplete="email"
-              class="appearance-none block w-full bg-gray-200 py-3 px-4 text-gray-700 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="you@email.com"
-              name="Email"
-            >
-          </div>
         </div>
         <div class="pt-6 mt-6 flex flex-wrap flex-row justify-between">
           <Checkbox class="checky" />
@@ -312,7 +312,11 @@ export default {
   },
   methods: {
     tokenHandler () {
-      console.log('i see da taoken made')
+      const description = this.skuList[0]
+      fireDb.collection('rug_customers').doc(this.userAccount).collection('charges').add({
+        amount: 25,
+        desc: description
+      })
     },
     handleChange () {
       console.log('yah')
