@@ -314,7 +314,7 @@ export default {
     tokenHandler () {
       const description = this.skuList[0]
       fireDb.collection('rug_customers').doc(this.userAccount).collection('charges').add({
-        amount: 25,
+        amount: 51,
         desc: description
       })
     },
