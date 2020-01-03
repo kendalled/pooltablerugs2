@@ -330,7 +330,7 @@ export default {
       })
       const description = this.skuList[0]
       fireDb.collection('rug_customers').doc(this.userAccount).collection('charges').add({
-        amount: 51,
+        amount: parseFloat(this.grandTotal) * 100,
         desc: description
       }).then(() => {
         console.log('checking out...')
