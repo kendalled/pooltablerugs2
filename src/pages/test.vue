@@ -20,18 +20,13 @@
         <br>
       </div>
     </form>
-    <SplashHeader class="mt-64" />
   </div>
 </template>
 
 <script>
 import { firebase } from '~/plugins/firebase'
-import SplashHeader from '~/components/SplashHeader'
 export default {
   layout: 'checkout',
-  components: {
-    SplashHeader
-  },
   computed: {
     userAccount () {
       return (this.$store.state.user ? this.$store.state.user.id : 'none')
