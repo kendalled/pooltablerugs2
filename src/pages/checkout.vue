@@ -2,8 +2,8 @@
   <!-- change padding to more when done! -->
   <div class="h-auto w-screen flex flex-col max-w-6xl mx-auto pb-8 pt-12 px-8 lg:flex-row justify-center">
     <!-- copy these classes -->
-    <form class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" onsubmit="return false">
-      <section id="shipping-details" v-if="!continued">
+    <form @submit.prevent="continueHandler" v-if="!continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
+      <section id="shipping-details">
         <div class="theHeader flex w-full justify-between">
           <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
             Checkout
@@ -12,7 +12,7 @@
             <span class="text-base text-gray-700 tracking-normal -mb-2">Shipping & Contact Details</span>
           </div>
         </div>
-        <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
+        <div class="border-t border-b pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
           <!-- TODO: FIX STYLING INCONSISTENCY -->
           <div class="px-3 mb-0 w-full md:w-1/2 md:mb-6">
             <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="first-name">
@@ -40,7 +40,8 @@
               name="Last Name"
             >
           </div>
-          <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
+          <!-- TODO: FIX STYLING INCONSISTENCY remove mb-8 if no border-b -->
+          <div class="px-3 mb-0 w-full md:w-1/2 md:mb-8">
             <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="phone-num">
               Phone Number
             </label>
@@ -120,7 +121,7 @@
               Zip
             </label>
             <input id="zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
-            <p class="text-red-500 text-xs italic">
+            <p class="text-red-500 text-xs italic absolute">
               Please fill out this field.
             </p>
           </div>
@@ -131,7 +132,7 @@
             <a class="inline-block align-baseline font-semibold text-sm text-blue-500 hover:text-blue-800 transition-colors" href="#">
               Need Help?
             </a>
-            <button @click="continueHandler" type="button" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
+            <button type="submit" class="ml-4 font-bold py-2 px-4 transition-bg bg-blue-500 hover:bg-blue-700 text-white rounded focus:outline-none focus:shadow-outline">
               Continue
             </button>
           </div>
@@ -142,13 +143,17 @@
           </nuxt-link>
         </div>
       </section>
-      <section id="payment-details" v-if="continued">
-        <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
+    </form>
+    <form @submit.prevent="submitHandler" v-if="continued" class="w-full h-full pt-16 pb-10 px-16 bg-white rounded-l rounded-r lg: rounded-r-none shadow-md" method="POST">
+      <section id="payment-details">
+        <div class="theHeader flex w-full justify-between">
+          <h1 class="text-4xl -ml-1 tracking-tight font-bolder text-gray-700">
             Checkout
           </h1>
           <div class="subHeading flex w-auto h-auto justify-center items-center">
             <span class="text-base text-gray-700 tracking-normal -mb-2">Payment Details</span>
           </div>
+        </div>
         <div class="border-t pt-5 mt-1 -mx-3 mb-6 flex flex-wrap">
           <div class="px-3 mb-6 w-full md:w-1/2 md:mb-0">
             <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="2first-name">
@@ -195,45 +200,8 @@
             </p>
           </div>
         </div>
-        <div class="-mx-3 mb-2 flex flex-wrap">
-          <div class="w-full px-3 mb-6 md:w-1/3 md:mb-0">
-            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-city">
-              City
-            </label>
-            <input
-              id="grid-city"
-              autocomplete="newcity"
-              class="py-3 px-4 leading-tight appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
-              type="text"
-              placeholder="Albuquerque"
-              name="City/Province"
-            >
-          </div>
-          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
-            <label class="text-xs font-bold mb-2 block uppercase tracking-wide text-gray-700" for="grid-state">
-              State
-            </label>
-            <div class="relative">
-              <select id="grid-state" class="py-3 px-4 pr-8 block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="State">
-                <option>New Mexico</option>
-                <option>Missouri</option>
-                <option>Texas</option>
-                <option>Florida</option>
-              </select>
-              <div class="px-2 flex items-center absolute pointer-events-none inset-y-0 right-0 text-gray-700">
-                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-              </div>
-            </div>
-          </div>
-          <div class="px-3 mb-6 w-full md:w-1/3 md:mb-0">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-              Zip
-            </label>
-            <input id="grid-zip" class="py-3 px-4 mb-3 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded leading-tight focus:outline-none focus:bg-white" type="text" placeholder="90210" name="Postal Code">
-            <p class="text-red-500 text-xs italic">
-              Please fill out this field.
-            </p>
-          </div>
+        <div class="w-auto h-auto border-t pt-4 pb-4">
+          <StripeElement :clicked="checkedOut" />
         </div>
         <div class="border-t pt-6 mt-6 flex flex-wrap flex-row justify-between">
           <Checkbox class="checky" />
@@ -309,17 +277,20 @@
 
 <script>
 import { fireDb } from '~/plugins/firebase'
+import StripeElement from '~/components/StripeElement'
 import Checkbox from '~/components/Checkbox'
 import Counter from '~/components/Counter'
 export default {
   layout: 'checkout',
   components: {
     Checkbox,
-    Counter
+    Counter,
+    StripeElement
   },
   data () {
     return {
-      continued: false
+      continued: false,
+      checkedOut: false
     }
   },
   computed: {
@@ -395,6 +366,12 @@ export default {
       }).then(() => {
         console.log('Details created in firestore.')
       })
+    },
+    submitHandler () {
+      // TODO:
+      // changes prop on stripeElement, gets emit
+      // then charges customer
+      this.checkedOut = true
     }
   }
 }

@@ -11,10 +11,10 @@
       <div id="card-errors" role="alert" />
     </div>
 
-    <div class="col-12 col-12-xsmall">
+    <div class="col-12 col-12-xsmall hidden">
       <br>
       <ul class="actions" style="float: right;">
-        <li><input type="submit" class="text-center px-4 py-2 text-gray-700 rounded shadow hover:bg-gray-200 cursor-pointer transition-bg focus:outline-none" value="Continue"></li>
+        <li><input id="stripeSubmit" type="submit" class="text-center px-4 py-2 text-gray-700 rounded shadow hover:bg-gray-200 cursor-pointer transition-bg focus:outline-none" value="Continue"></li>
       </ul>
       <br>
     </div>
@@ -24,9 +24,28 @@
 <script>
 import { firebase } from '~/plugins/firebase'
 export default {
+  props: {
+    'clicked': {
+      type: Boolean,
+      default: false
+    }
+  },
   computed: {
     userAccount () {
       return (this.$store.state.user ? this.$store.state.user.id : 'none')
+    }
+  },
+  watch: {
+    clicked () {
+      if (process.client) {
+        if (this.clicked) {
+          console.log('yeet')
+          const button = document.getElementById('stripeSubmit')
+          button.click()
+        } else {
+          console.log('yah')
+        }
+      }
     }
   },
   mounted () {
