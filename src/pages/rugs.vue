@@ -3,7 +3,7 @@
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" @changeSize="changeSize" />
       <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden" mode="out-in">
-        <transition-group name="fade" mode="out-in">
+        <transition-group name="fade">
           <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible" :key="style.title" class="w-full">
             <div class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
@@ -19,14 +19,6 @@
                 <div v-for="item in styles[i].rugs" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
                   <RugCard :info="item" />
                 </div>
-
-                <!-- <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                  <RugCard :info="item" />
-                </div>
-
-                <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                  <RugCard :info="item" />
-                </div> -->
 
                 <!-- See more -->
               </div>
