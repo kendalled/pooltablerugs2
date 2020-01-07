@@ -2,9 +2,9 @@
   <div class="rugroot bg-gray-100 xl:flex xl:flex-col">
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" @changeSize="changeSize" />
-      <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
-        <transition v-for="(style, i) in styles" v-if="style.visible" :key="i" name="fade">
-          <div :class="{'mt-6': i > 0}" class="w-full">
+      <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden" mode="out-in">
+        <transition-group name="fade" mode="out-in">
+          <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible" :key="style.title" class="w-full">
             <div class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
                 {{ style.title }} Rugs {{ tableSize }}
@@ -13,28 +13,30 @@
                 {{ style.description }}
               </p>
             </div>
+            <!-- todo: fix shit architecture -->
             <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
               <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-                <div v-for="item in traditional" v-show="i === 0" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                <div v-for="item in styles[i].rugs" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
                   <RugCard :info="item" />
                 </div>
 
-                <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                <!-- <div v-for="item in shag" v-show="i === 1" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
                   <RugCard :info="item" />
                 </div>
 
                 <div v-for="item in modern" v-show="i === 2" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
                   <RugCard :info="item" />
-                </div>
+                </div> -->
 
                 <!-- See more -->
               </div>
             </div>
           </div>
-        </transition>
-        <transition v-for="(row, i) in doc2" v-if="true" :key="i" name="fade">
-          <div :class="{'mt-6': i > 0}" class="w-full">
-            <div :class="{'hidden': i > 0}" class="px-4 xl:px-8">
+        </transition-group>
+        <transition-group name="fade">
+          <div v-for="(row, i) in doc2" :key="row[3].sku" class="mt-6 w-full">
+            <!-- todo: hide conditionally -->
+            <div v-if="i === 0" class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
                 Your Personalized Rugs
               </h3>
@@ -44,13 +46,13 @@
             </div>
             <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
               <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-                <div v-for="(item, j) in doc2[i]" :key="j" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                  <RugCard :info="item" />
+                <div v-for="(rug, x) in doc2[i]" :key="rug.sku" :class="{'mt-10 sm:ml-4': x >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                  <RugCard :info="rug" />
                 </div>
               </div>
             </div>
           </div>
-        </transition>
+        </transition-group>
         <client-only>
           <infinite-loading @infinite="infiniteHandler" spinner="spiral">
             <div slot="no-more" class="mx-auto lg:-ml-16 mb-4">
@@ -90,26 +92,27 @@ export default {
       isStarted: false,
       scrollPosY: 0,
       shown: true,
-      traditional: [ { 'sku': 'A108-23', 'foldURL': '/traditional/fold/a108-23-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 255, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2' x 3'" }, { 'sku': 'A108-268', 'foldURL': '/traditional/fold/a108-268-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 900, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2'6\" x 8'" }, { 'sku': 'A108-3353', 'foldURL': '/traditional/fold/a108-3353-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 765, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "3' x 5' - 4' x 6'" }, { 'sku': 'A108-58', 'foldURL': '/traditional/fold/a108-58-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 1555, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "5' x 8'" } ],
-      shag: [ { 'sku': 'AAS2300-23', 'foldURL': '/shag/fold/aas2300-23-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 85, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'AAS2300-2773', 'foldURL': '/shag/fold/aas2300-2773-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 220, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2'6\" x 8'" }, { 'sku': 'AAS2300-5373', 'foldURL': '/shag/fold/aas2300-5373-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 375, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'AAS2300-710103', 'foldURL': '/shag/fold/aas2300-710103-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 780, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ],
-      modern: [ { 'sku': 'ABE8003-223', 'foldURL': '/modern/fold/abe8003-223-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 80, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'ABE8003-5276', 'foldURL': '/modern/fold/abe8003-5276-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 325, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'ABE8003-679', 'foldURL': '/modern/fold/abe8003-679-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 595, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "6' x 9' - 8' x 10'" }, { 'sku': 'ABE8003-76106', 'foldURL': '/modern/fold/abe8003-76106-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 645, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ],
       doc: [],
       doc2: [],
       styles: [
         {
           title: 'Traditional',
           description: 'Vivid colors, bold designs, and sharp lines. Our traditional rugs will match any 21st century space.',
-          visible: true
+          visible: true,
+          rugs: [ { 'sku': 'A108-23', 'foldURL': '/traditional/fold/a108-23-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 255, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2' x 3'" }, { 'sku': 'A108-268', 'foldURL': '/traditional/fold/a108-268-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 900, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "2'6\" x 8'" }, { 'sku': 'A108-3353', 'foldURL': '/traditional/fold/a108-3353-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 765, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "3' x 5' - 4' x 6'" }, { 'sku': 'A108-58', 'foldURL': '/traditional/fold/a108-58-fold.jpg', 'frontURL': '/traditional/room/roomrug.jpg', 'MSRP': 1555, 'styling': 'Traditional', 'romance': 'The Ancient Treasures Collection showcases traditional inspired designs that exemplify timeless styles of elegance, comfort, and sophistication. With their hand tufted construction, these rugs offer an affordable alternative to other handmade constructions while perserving the same natural demeanor and charm. Made with NZ Wool in India, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Ancient Treasures', 'rating': 5, 'reviewCount': 12, 'group': "5' x 8'" } ]
         },
         {
           title: 'Shag',
           description: 'Bright colors, psychedelic designs, and timeless shapes. Our shag rugs will make you feel like it\'s 1975.',
-          visible: true
+          visible: true,
+          rugs: [ { 'sku': 'AAS2300-23', 'foldURL': '/shag/fold/aas2300-23-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 85, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'AAS2300-2773', 'foldURL': '/shag/fold/aas2300-2773-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 220, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "2'6\" x 8'" }, { 'sku': 'AAS2300-5373', 'foldURL': '/shag/fold/aas2300-5373-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 375, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'AAS2300-710103', 'foldURL': '/shag/fold/aas2300-710103-fold.jpg', 'frontURL': '/shag/room/roomrug.jpg', 'MSRP': 780, 'styling': 'Shag', 'romance': 'The shag pieces from our Alaska Shag Collection emanate comfortability, merging both vintage and contemporary thought to create timeless works that both your eyes and feet can appreciate! The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polyester in Turkey, and has Plush Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Alaska Shag', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ]
+
         },
         {
           title: 'Modern',
           description: 'Vivid colors, bold designs, and sharp lines. Our modern rugs will match any 21st century space.',
-          visible: true
+          visible: true,
+          rugs: [ { 'sku': 'ABE8003-223', 'foldURL': '/modern/fold/abe8003-223-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 80, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "2' x 3'" }, { 'sku': 'ABE8003-5276', 'foldURL': '/modern/fold/abe8003-5276-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 325, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "5' x 8'" }, { 'sku': 'ABE8003-679', 'foldURL': '/modern/fold/abe8003-679-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 595, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "6' x 9' - 8' x 10'" }, { 'sku': 'ABE8003-76106', 'foldURL': '/modern/fold/abe8003-76106-fold.jpg', 'frontURL': '/modern/room/roomrug.jpg', 'MSRP': 645, 'styling': 'Modern', 'romance': 'The simplistic yet compelling rugs from the Aberdine Collection effortlessly serve as the exemplar representation of modern decor. The meticulously woven construction of these pieces boasts durability and will provide natural charm into your decor space. Made with Polypropylene in Turkey, and has Medium Pile. Spot Clean Only, One Year Limited Warranty.', 'collection': 'Aberdine', 'rating': 4, 'reviewCount': 11, 'group': "8' x 10'" } ]
         }
       ],
       newRugs: [
@@ -155,14 +158,6 @@ export default {
         $state.loaded()
       })
     },
-    truncateString (str, num) {
-      // just return str--don't truncate it.
-      if (str.length <= num) {
-        return str
-      }
-      // Return str truncated with '...' concatenated to the end of str.
-      return str.slice(0, num) + '...'
-    },
     changeCats (val) {
       if (val.includes('traditional')) {
         this.styles[0].visible = true
@@ -193,10 +188,37 @@ export default {
     height: calc(99vh - 61px) !important;
   }
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s ease-in-out;
+/* .fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+/* moving.fade-move {
+  transition: all 600ms ease-in-out 50ms;
+} */
+/* base */
+.fade {
+  backface-visibility: hidden;
+  z-index: 1;
+  transform-origin: 10% 50%;
+}
+.fade-move {
+  transition: all 600ms ease-in-out 50ms;
+}
+.fade-enter-active {
+  transition: all 300ms ease-out;
+}
+.fade-leave-active {
+  transition: all 200ms ease-in;
+  position: absolute;
+  z-index: 0;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter {
+  -webkit-transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 15px, 0);
 }
 </style>

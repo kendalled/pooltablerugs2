@@ -94,9 +94,8 @@
                 type="checkbox"
                 name="traditional"
                 value="traditional"
-                disabled
               >
-              <span class="ml-2 text-gray-500 text-sm">Traditional (Disabled)</span>
+              <span class="ml-2 text-gray-200 text-sm">Traditional</span>
             </label>
             <!-- shag -->
             <label class="mt-3 flex items-center sm:w-1/4 sm:px-2 lg:w-1/2 xl:w-full hover:cursor-pointer">
@@ -117,8 +116,9 @@
                 type="checkbox"
                 name="modern"
                 value="modern"
+                disabled
               >
-              <span class="ml-2 text-gray-200 text-sm">Modern</span>
+              <span class="ml-2 text-gray-500 text-sm">Modern (Disabled)</span>
             </label>
           </div>
         </div>
