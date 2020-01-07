@@ -172,7 +172,7 @@
         Spills and Scuffs
       </h2>
       <p class="text-sm text-gray-700">
-        On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't have to.
+        On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't.
       </p>
       <nuxt-link
         class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
@@ -280,7 +280,7 @@
         Shock Protection
       </h2>
       <p class="text-sm text-gray-700">
-        From moving your table easier to accidental bumps, our half-inch thick rugs make sure your table doesn't budge.
+        From moving your table easier to accidental bumps, our half-inch thick rugs make sure your table stays put.
       </p>
       <nuxt-link
         class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
@@ -301,26 +301,31 @@ export default {
 
 <style scoped>
 .rotate {
+  backface-visibility: hidden;
   will-change: transform;
   transition: all 1s ease-in-out;
   animation: rotation 3s infinite;
 }
 .rotate2 {
+  backface-visibility: hidden;
   will-change: transform;
   transition: all 1s ease-in-out;
   animation: rotation2 3s infinite;
 }
 .spilling {
+  backface-visibility: hidden;
   will-change: transform;
   transition: all 1s ease-in-out;
   animation: spill 3s infinite;
 }
 .shaking {
+  backface-visibility: hidden;
   will-change: transform;
   transition: all 1s ease-in-out;
   animation: shake 3s infinite;
 }
 .rolling {
+  backface-visibility: hidden;
   will-change: -transform;
   transition: all 1s ease-in-out;
   animation: roll 3s infinite;

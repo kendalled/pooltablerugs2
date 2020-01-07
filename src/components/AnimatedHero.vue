@@ -8,7 +8,7 @@
         <h2 class="text-2xl tracking-tight mb-6 text-gray-200 header-subtitle animate-pop-in">
           Thousands of designs, free shipping, 24/7 support.
         </h2>
-        <div class="mt-0">
+        <div class="mt-0 px-1">
           <button aria-label="About Our Rugs" class="header-button sCta animate-pop-in bg-gray-100 transition-bg hover:bg-white text-gray-800 font-medium py-3 px-6 border border-gray-400 rounded shadow">
             Learn More
           </button>
