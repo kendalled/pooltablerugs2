@@ -211,6 +211,10 @@ export default {
 }
 .fade-enter {
   -webkit-transform: translate3d(0, 30px, 0);
-  transform: translate3d(0, 15px, 0);
+  transform: translate3d(0, 30px, 0);
+}
+.fade-leave {
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
 }
 </style>
