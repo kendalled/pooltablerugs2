@@ -197,13 +197,13 @@ export default {
 }
 .fade-move {
   transition: all 600ms ease-in-out 50ms;
+  position: absolute;
 }
 .fade-enter-active {
   transition: all 300ms ease-out;
 }
 .fade-leave-active {
   transition: all 200ms ease-in;
-  position: absolute;
   z-index: 0;
 }
 .fade-enter, .fade-leave-to {
