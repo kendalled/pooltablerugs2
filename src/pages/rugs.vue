@@ -2,9 +2,9 @@
   <div class="rugroot bg-gray-100 xl:flex xl:flex-col">
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
       <SearchFilters :show="shown" @changeCats="changeCats" @changeSize="changeSize" />
-      <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden" mode="out-in">
+      <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
         <transition-group name="fade">
-          <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible" :key="style.title" class="w-full">
+          <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible" :key="style.title" class="w-full fade">
             <div class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
                 {{ style.title }} Rugs {{ tableSize }}
@@ -190,18 +190,50 @@ export default {
   transition: all 600ms ease-in-out 50ms;
 } */
 /* base */
+/* base */
 .fade {
   backface-visibility: hidden;
   z-index: 1;
+}
+
+/* moving */
+.fade-move {
+  transition: all 500ms ease-in-out 50ms;
+}
+
+/* appearing */
+.fade-enter-active {
+  transition: all 400ms ease-out;
+}
+
+/* disappearing */
+.fade-leave-active {
+  transition: all 200ms ease-in;
+  position: fixed;
+  z-index: 0;
+}
+
+/* appear at / disappear to */
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+/* .fade {
+  backface-visibility: hidden;
+  z-index: 1;
   transform-origin: 10% 50%;
+  -webkit-transform-origin: 10% 50%;
 }
 .fade-move {
+  -webkit-transition: all 300ms ease-out;
   transition: all 600ms ease-in-out 50ms;
 }
 .fade-enter-active {
+  -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
 }
 .fade-leave-active {
+  -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
   position: absolute;
   z-index: 0;
@@ -216,5 +248,5 @@ export default {
 .fade-leave {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
-}
+} */
 </style>
