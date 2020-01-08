@@ -26,7 +26,7 @@
           </div>
         </transition-group>
         <transition-group name="fade">
-          <div v-for="(row, i) in doc2" :key="row[3].sku" class="mt-6 w-full">
+          <div v-for="(row, i) in doc2" :key="row[3].sku" class="mt-6 w-full fade">
             <!-- todo: hide conditionally -->
             <div v-if="i === 0" class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
@@ -180,19 +180,8 @@ export default {
     height: calc(99vh - 61px) !important;
   }
 }
-/* .fade-enter-active, .fade-leave-active {
-  transition: opacity .2s ease;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-/* moving.fade-move {
-  transition: all 600ms ease-in-out 50ms;
-} */
-/* base */
 /* base */
 .fade {
-  backface-visibility: hidden;
   z-index: 1;
 }
 
