@@ -1,8 +1,8 @@
 <template>
-  <div class="w-4/5 md:w-3/5 p-8 mx-auto">
-    <h1 class="mb-4 text-gray-100">
-      Frequently Asked Questions
-    </h1>
+  <div class="w-4/5 md:w-3/5 p-3 lg:p-8 mx-auto">
+    <h3 class="mb-4 text-gray-100 hidden lg:block">
+      Need Assistance? <a href="https://pooltablerugs.com" class="underline hover:no-underline">Contact support</a>.
+    </h3>
     <AccordionElement
       v-for="(question, j) in questions"
       :key="j"

@@ -1,9 +1,9 @@
 <template>
-  <div id="content" class="py-20">
+  <div id="content" class="py-20 px-1">
     <h2
-      class="text-center text-3xl text-white font-semibold -mt-2 leading-snug"
+      class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >
-      Keep your game room spotless.
+      Keep your game room tidy.
     </h2>
     <p class="text-center text-lg text-gray-100 mt-2 px-6">
       Our rugs are both stylish and functional.

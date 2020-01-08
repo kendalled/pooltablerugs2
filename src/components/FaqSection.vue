@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full h-auto styleMe py-20">
+  <div class="w-full h-auto styleMe py-20 px-1">
     <h2
-      class="text-center text-3xl text-white font-semibold -mt-2 leading-snug"
+      class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >
       Frequently Asked Questions
     </h2>
