@@ -3,7 +3,7 @@
     <article :class="qKey == 2 ? 'border-b-0' : 'border-b'">
       <div :class="{'border-blue-600' : opened}" class="border-l-4 border-gray-500 transition-border">
         <header class="flex justify-between items-center p-5 pl-8 pr-8 cursor-pointer select-none">
-          <span :class="{'text-gray-800': opened}" class="text-gray-700 text-xl tracking-tight">{{ questionTitle }}</span>
+          <span :class="{'text-gray-800': opened}" class="text-gray-700 text-lg lg:text-xl tracking-tight">{{ questionTitle }}</span>
           <div :class="{'border-blue-600' : opened}" class="rounded-full border-2 border-gray-400 w-7 h-7 flex items-center justify-center hover:border-blue-600 transition-border">
             <!-- icon by feathericons.com -->
             <svg
