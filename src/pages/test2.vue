@@ -7,6 +7,7 @@
     <PanContainer />
     <ImageGroup />
     <HeroTest />
+    <ProductModal />
     <p class="text-sm text-black my-10">
       {{ computedGetter }}
     </p>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import ProductModal from '~/components/ProductModal'
 import SplashHeader from '~/components/SplashHeader'
 import ImageGroup from '~/components/ImageGroup'
 import AddToCartButton from '~/components/AddToCartButton'
@@ -32,7 +34,8 @@ export default {
     PanContainer,
     FaqSection,
     CartWidget,
-    AddToCartButton
+    AddToCartButton,
+    ProductModal
   },
   computed: {
     computedGetter () {
