@@ -35,7 +35,7 @@
           <div class="lg:absolute inset-0 flex items-center justify-center">
             <VerticalNav />
           </div>
-          <div class="ml-10 relative flex items-baseline">
+          <div class="relative flex items-baseline">
             <LoginModal @log-in="signIn" @log-out="signOut" />
             <!-- cart link -->
             <nuxt-link to="checkout" class="py-2 pl-3 pr-2 text-sm font-medium text-gray-100 bg-green-600 rounded transition-bg hover:bg-green-700 hover:text-white focus:outline-none">
@@ -222,3 +222,24 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.transition-medium {
+  transition-duration:.2s
+}
+.transition-slow {
+  transition-duration:.3s
+}
+.translate-x-full {
+  transform:translateX(100%)
+}
+.translate-x-0 {
+  transform:translateX(0)
+}
+.ease-in {
+  transition-timing-function:cubic-bezier(.4,0,1,1)
+}
+.ease-out {
+  transition-timing-function:cubic-bezier(0,0,.2,1)
+}
+</style>

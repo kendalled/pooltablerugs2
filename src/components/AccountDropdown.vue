@@ -25,12 +25,12 @@
     />
 
     <transition
-      enter-active-class="transition-all transition-fastest ease-out-quad"
-      leave-active-class="transition-all transition-fastest ease-in-quad"
-      enter-class="opacity-0 scale-70"
+      enter-class="opacity-0 scale-90"
+      enter-active-class="ease-out transition-fastest"
       enter-to-class="opacity-100 scale-100"
       leave-class="opacity-100 scale-100"
-      leave-to-class="opacity-0 scale-70"
+      leave-active-class="ease-in transition-fastest"
+      leave-to-class="opacity-0 scale-90"
     >
       <div
         v-if="opened"
@@ -116,3 +116,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.ease-in{transition-timing-function:cubic-bezier(.4,0,1,1)}
+.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}
+.opacity-0{opacity:0}
+.opacity-100{opacity:100}
+.scale-90{transform:scale(.9)}
+.scale-100{transform:scale(1.0)}
+.transition-fastest{transition-duration:100ms}
+.origin-top-right{transform-origin:top right}
+</style>
