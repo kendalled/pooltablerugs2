@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-12 pb-20 lg:pt-4 lg:px-24 bg-gray-100 text-2xl -mt-1">
+  <div class="pt-12 pb-20 lg:pt-4 lg:px-24 featured text-2xl -mt-1">
     <!-- bg-green-200 -->
     <div class="flex w-5/6 mx-auto h-auto py-2 lg:px-5 justify-between">
       <h2 class="font-semibold text-xl lg:text-3xl text-gray-800 leading-loose md:leading-normal">
@@ -22,3 +22,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.featured {
+  background: rgb(247,250,252);
+  background: linear-gradient(to bottom, rgba(247,250,252,1) 78%, rgba(255,255,255,1) 100%);
+}
+</style>
