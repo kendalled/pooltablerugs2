@@ -4,7 +4,7 @@
       <SearchFilters :show="shown" @changeCats="changeCats" @changeSize="changeSize" />
       <main class="pt-10 pb-6 px-0 sm:pl-2 md:pl-6 lg:pl-8 xl:flex-1 xl:overflow-x-hidden">
         <transition-group name="fade">
-          <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible" :key="style.title" class="w-full fade">
+          <div :class="{'mt-6': i > 0}" v-for="(style, i) in styles" v-if="style.visible && (val === '' || includesVal(style) )" :key="style.title" class="w-full fade">
             <div class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
                 {{ style.title }} Rugs {{ tableSize }}
@@ -16,7 +16,7 @@
             <!-- todo: fix shit architecture -->
             <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
               <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
-                <div v-for="item in styles[i].rugs" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
+                <div v-for="item in styles[i].rugs" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" v-show="val === '' || val === item.sku" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
                   <RugCard @flip="showFlip" :info="item" />
                 </div>
 
@@ -118,8 +118,25 @@ export default {
   },
   methods: {
     showFlip (val) {
-      this.val = val
+      if (this.val !== '') {
+        this.val = ''
+      } else {
+        this.val = val
+      }
       console.log('flipped!: ' + this.val)
+    },
+    includesVal (value) {
+      let element
+      const vm = this
+      for (let i = 0; i < value.rugs.length; i++) {
+        element = value.rugs[i]
+        if (element.sku === vm.val) {
+          console.log('done')
+          return true
+        }
+      }
+      console.log('donefalse')
+      return false
     },
     infiniteHandler ($state) {
       // Firestore index

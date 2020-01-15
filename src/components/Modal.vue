@@ -12,7 +12,7 @@
       appear
     >
       <div v-if="showBackdrop">
-        <div @click="close" class="absolute h-screen w-screen inset-0 bg-black opacity-25" />
+        <div @click="close" class="absolute inset-0 bg-black opacity-25" />
       </div>
     </transition>
 
@@ -27,7 +27,7 @@
       leave-to-class="opacity-0 scale-70"
       appear
     >
-      <div v-if="showContent" class="relative">
+      <div v-if="showContent" class="relative card">
         <slot />
       </div>
     </transition>
@@ -35,6 +35,9 @@
 </template>
 
 <style scoped>
+.card {
+  backface-visibility: hidden;
+}
 .origin-top-right {
   transform-origin: top right;
 }
@@ -60,7 +63,7 @@
   transition-timing-function: cubic-bezier(.55, .085, .68, .53);
 }
 .scale-70 {
-  transform: scale(.7);
+  transform: scale(.9);
 }
 .scale-100 {
   transform: scale(1);
