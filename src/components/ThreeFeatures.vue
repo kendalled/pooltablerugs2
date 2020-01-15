@@ -79,7 +79,7 @@
         Slips and Falls
       </h2>
       <p class="text-sm text-gray-700">
-        Prevent slips and falls, while protecting your floor from scuff marks and scratches with our indoor rugs.
+        Prevent accidents while protecting your floor from scuff marks and scratches with our indoor rugs.
       </p>
       <nuxt-link
         class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
@@ -172,7 +172,7 @@
         Spills and Scuffs
       </h2>
       <p class="text-sm text-gray-700">
-        On game night, food and drinks are often spilled. Let our waterproof rugs take the hit so your floor doesn't.
+        Having a game night? When food or drinks spill, let our waterproof rugs take the hit so your floor doesn't.
       </p>
       <nuxt-link
         class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"
@@ -280,7 +280,7 @@
         Shock Protection
       </h2>
       <p class="text-sm text-gray-700">
-        From moving your table easier to accidental bumps, our half-inch thick rugs make sure your table stays put.
+        From moving your table effortlessly to protection against impact, our half-inch thick rugs make sure your table stays put.
       </p>
       <nuxt-link
         class="text-center mt-8 mx-auto text-lg transition-bg font-semibold bg-blue-600 w-full text-white rounded-lg px-4 py-2 block shadow-xl hover:bg-blue-700"

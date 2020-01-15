@@ -3,7 +3,7 @@
     <section class="header-content w-full">
       <div class="mx-auto w-3/4 px-4 mb-16">
         <h1 class="mb-2 text-white leading-tight roboto font-black header-title animate-pop-in">
-          Protect your pool table<br class="hidden md:block"> in style with a durable rug.
+          Protect your game room in style<br class="hidden md:block"> with a durable pool table rug.
         </h1>
         <h2 class="text-2xl tracking-tight mb-6 text-gray-200 header-subtitle animate-pop-in">
           Thousands of designs, free shipping, 24/7 support.

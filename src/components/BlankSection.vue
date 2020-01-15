@@ -3,10 +3,10 @@
     <h2
       class="text-center text-2xl lg:text-3xl text-white font-semibold -mt-2 leading-snug"
     >
-      Keep your game room tidy.
+      Spruce up your game room.
     </h2>
     <p class="text-center text-lg text-gray-100 mt-2 px-6">
-      Our rugs are both stylish and functional.
+      Our rugs are both stylish and practical.
     </p>
 
     <div class="h-1 mx-auto bg-gray-100 w-40 opacity-75 mb-2 mt-4 rounded" />

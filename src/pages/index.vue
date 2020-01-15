@@ -4,6 +4,7 @@
     <SplashHeader class="md:hidden" />
     <FeaturedSection />
     <BlankSection />
+    <ContentSection />
     <TestimonialSection class="hidden md:block" />
     <FaqSection />
     <SubscribeEmail class="hidden md:block" />
@@ -17,6 +18,7 @@ import SplashHeader from '~/components/SplashHeader'
 import FeaturedSection from '~/components/FeaturedSection'
 import TestimonialSection from '~/components/TestimonialSection'
 import BlankSection from '~/components/BlankSection'
+import ContentSection from '~/components/ContentSection'
 import SubscribeEmail from '~/components/SubscribeEmail'
 import FaqSection from '~/components/FaqSection'
 import RespFooter from '~/components/RespFooter'
@@ -28,6 +30,7 @@ export default {
     FeaturedSection,
     TestimonialSection,
     BlankSection,
+    ContentSection,
     SubscribeEmail,
     FaqSection,
     RespFooter

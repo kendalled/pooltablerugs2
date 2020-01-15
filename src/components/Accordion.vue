@@ -23,7 +23,7 @@ export default {
   },
   data () {
     return {
-      questions: [{ title: 'How do you get rugs?', answer: 'We get our rugs directly from interior designers and trusted manufacturers. Our hand-picked selection will ensure you\'ll find something.' }, { title: 'How long does shipping take?', answer: 'Up to two weeks from ordering. Contact support for more details.' }, { title: 'Return Policy', answer: 'You have 14 days from receiving your rug to submit a return, for a full refund. Shipping Included.' }]
+      questions: [{ title: 'What sets your rugs apart?', answer: 'We work closely with interior designers and trusted manufacturers for our rugs. Our hand-picked selection guarantees you\'ll find something you love. From timeless classic styles to modern favorites, our indoor and outdoor rug selection has a design for your game room.' }, { title: 'When will I get my rug?', answer: 'Shipping takes up to two weeks from the time you order. Contact support for an estimate.' }, { title: 'Return Policy', answer: 'Not satisfied with your purchase? 14 days from receiving your rug you can submit a return form for a full refund. Shipping Included.' }]
     }
   }
 }
