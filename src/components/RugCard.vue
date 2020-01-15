@@ -85,7 +85,7 @@
           </div>
           <!-- commerce buttons -->
           <div class="flex pt-3 justify-between px-0">
-            <button @click="flip()" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-medium py-2 px-4 rounded focus:outline-none">
+            <button @click="flip(info)" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-medium py-2 px-4 rounded focus:outline-none">
               See Details
             </button>
             <button @click="addToCart(info)" class="bg-green-600 hover:bg-green-700 transition-bg shadow text-white font-medium py-2 px-4 rounded focus:outline-none">
@@ -93,7 +93,7 @@
             </button>
           </div>
         </div>
-        <div @click="flip()" class="back px-4 py-4 h-full w-full rounded-lg">
+        <div @click="flip(info)" class="back px-4 py-4 h-full w-full rounded-lg">
           <span class="uppercase font-bold text-xs text-left text-gray-800">Summary:</span>
           <br>
           <span class="text-sm text-left text-gray-800">
@@ -174,8 +174,9 @@ export default {
     addToCart (item) {
       this.$store.commit('cart/addToCart', item)
     },
-    flip () {
-      this.isFlipped = !this.isFlipped
+    flip (item) {
+      // this.isFlipped = !this.isFlipped
+      this.$emit('flip', item.sku)
     }
   }
 }

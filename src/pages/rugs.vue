@@ -17,7 +17,7 @@
             <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
               <div class="px-4 sm:inline-flex items-center sm:pt-2 sm:pb-8 xl:px-8">
                 <div v-for="item in styles[i].rugs" :key="item.sku" :class="{'mt-10 sm:ml-4': i >= 0 }" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 md:inline-block xl:mx-6">
-                  <RugCard :info="item" />
+                  <RugCard @flip="showFlip" :info="item" />
                 </div>
 
                 <!-- See more -->
@@ -78,6 +78,7 @@ export default {
   },
   data () {
     return {
+      val: '',
       loaded: 0,
       tableSize: null,
       lastVisible: null,
@@ -116,6 +117,10 @@ export default {
     }
   },
   methods: {
+    showFlip (val) {
+      this.val = val
+      console.log('flipped!: ' + this.val)
+    },
     infiniteHandler ($state) {
       // Firestore index
       const rugRef = fireDb.collection('Rugs').orderBy('Size Group').startAfter(this.lastVisible ? this.lastVisible : 0).limit(8)
