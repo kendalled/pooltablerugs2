@@ -17,7 +17,7 @@
           <p class="flex-grow text-gray-800">
             Most importantly, they’ll protect your floor against scratches and scuff marks. They serve to highlight your pool table, softening stone or wood floors, as well as balancing color in a room.
           </p>
-          <button class="bg-transparent hover:bg-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full my-6">
+          <button class="bg-transparent transition-colors hover:text-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full mt-6">
             Learn More
           </button>
         </div>
@@ -31,7 +31,7 @@
           <p class="flex-grow text-gray-800">
             Soft materials such as rugs can absorb the sound of clacking pool balls. Footsteps around the game tables are reduced drastically as well. Don't underestimate the impact!
           </p>
-          <button class="bg-transparent hover:bg-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full my-6">
+          <button class="bg-transparent transition-colors hover:text-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full mt-6">
             Learn More
           </button>
         </div>
@@ -45,7 +45,7 @@
           <p class="flex-grow text-gray-800">
             Our mission is to provide our customers with a high-quality, durable, and stylish rug that they are guaranteed to love. From traditional to more modern and psychedelic designs, we have curated a selection of rugs that will make the perfect addition to any game room. We are here to help you choose a rug that will not only look good, but will keep your game room safe.
           </p>
-          <button class="bg-transparent hover:bg-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full my-6">
+          <button class="bg-transparent transition-colors hover:text-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full mt-6">
             Learn More
           </button>
         </div>
@@ -59,7 +59,7 @@
           <p class="flex-grow text-gray-800">
             Our 24/7 support is available anytime you need help with the ordering process. Ask any time for design assistance, sizing recommendations, and order tracking. Get started with a livechat message, e-mail, or phone call. We have designers in-house to help you find the perfect rug. We are here to help you choose a rug that will not only look good, but will keep your game room safe from spills, scratches, and any other damage.
           </p>
-          <button class="bg-transparent hover:bg-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full my-6">
+          <button class="bg-transparent transition-colors hover:text-blue-700 text-blue-600 underline font-bold py-2 px-4 rounded w-full mt-6">
             Learn More
           </button>
         </div>
