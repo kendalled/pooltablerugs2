@@ -4,7 +4,7 @@
     <SplashHeader class="md:hidden" />
     <FeaturedSection />
     <BlankSection />
-    <ContentSection />
+    <ContentSection class="hidden lg:block" />
     <TestimonialSection class="hidden md:block" />
     <FaqSection />
     <SubscribeEmail class="hidden md:block" />

@@ -5,10 +5,25 @@
       Change
     </button>
     <br>
-    <svg :class="{ active: changed }" xmlns="http://www.w3.org/2000/svg" width="447" height="442" viewBox="0 0 447 442">
+    <div :class="{ active: changed }" width="447" height="442">
       <transition-group name="layout" tag="g">
-        <rect ref="rect" key="rect" class="items rect" width="171" height="171" />
-        <circle
+        <div key="rect" class="flex w-auto h-auto bg-transparent items-end ">
+          <img
+            id="rect"
+            ref="rect"
+            key="rect"
+            :src="require('~/static/roomrug.jpg')"
+            class="items rect w-1/5 h-auto"
+          >
+          <button class="items btn mt-20 absolute bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 h-12 rounded">
+            Buy Now
+          </button>
+        </div>
+
+        <p id="text" key="text" class="items text font-bold">
+          Agora - AGR1304
+        </p>
+        <!-- <circle
           id="profile"
           key="circ"
           class="items circ"
@@ -30,9 +45,9 @@
           height="19"
           rx="9.5"
           ry="9.5"
-        />
+        /> -->
       </transition-group>
-    </svg>
+    </div>
   </div>
 </template>
 
@@ -56,6 +71,10 @@ body {
 .items {
   transition: all 0.4s ease;
 }
+#rect {
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+}
 
 #text {
   -webkit-transform-origin: 50% 50%;
@@ -69,17 +88,17 @@ svg {
 .active {
   fill: #E63946;
 }
-.active .rect {
-  -webkit-transform: translate3d(0, 30px, 0);
-          transform: translate3d(0, 30px, 0);
+.active div .rect {
+  -webkit-transform: translate3d(500px, 100px, 0) scale(1.2);
+          transform: translate3d(500px, 100px, 0) scale(1.2);
 }
-.active .circ {
-  -webkit-transform: translate3d(30px, 0, 0) scale(0.5);
-          transform: translate3d(30px, 0, 0) scale(0.5);
+.active div .btn {
+  -webkit-transform: translate3d(1000px, 90px, 0) scale(1.2);
+          transform: translate3d(1000px, 90px, 0) scale(1.2);
 }
 .active .text {
-  -webkit-transform: rotate(90deg) scaleX(0.08) translate3d(-300px, -35px, 0);
-          transform: rotate(90deg) scaleX(0.08) translate3d(-300px, -35px, 0);
+  -webkit-transform: scale(1.8) translate3d(690px, -180px, 0);
+          transform: scale(1.8) translate3d(690px, -180px, 0);
 }
 .active .footer {
   -webkit-transform: translate3d(100px, 0, 0);

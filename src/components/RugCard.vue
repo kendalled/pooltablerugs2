@@ -5,10 +5,8 @@
       @mouseout="isHovering = false"
       class="relative pb-5/6"
     >
-      <hooper :wheel-control="false" class="focus:outline-none">
-        <!-- old slide markup <slide v-for="(slide, i) in slides" :key="i" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" class="bg-cover" /> -->
+      <!-- <hooper :wheel-control="false" class="focus:outline-none">
         <slide v-for="(slide, i) in slides" :key="i" :style="{ backgroundImage: 'url(' + (slide.image) + ')' }" class="bg-cover" />
-        <!-- <hooper-pagination slot="hooper-addons" /> -->
         <hooper-navigation slot="hooper-addons">
           <svg
             slot="hooper-next"
@@ -48,15 +46,15 @@
             </g>
           </svg>
         </hooper-navigation>
-      </hooper>
-      <!-- <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="info.imageUrl" alt=""> -->
+      </hooper> -->
+      <img :src="info.foldURL" class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" alt="">
     </div>
     <!-- start card -->
     <section class="container relative -mt-8 px-4 h-auto w-auto">
       <div :class="{ flipped: isFlipped }" class="card rounded-lg shadow-lg h-full absolute">
         <div class="front rounded-lg px-4 py-4 h-full w-full">
           <p class="tracking-tight text-sm font-medium text-gray-700">
-            {{ info.collection }} • {{ info.sku }}
+            {{ info.collection }} • {{ info.sku }} {{ flippy }} {{ isHovering }}
           </p>
           <!-- price spot -->
           <div class="mt-1 flex items-center">
@@ -106,18 +104,14 @@
 </template>
 
 <script>
-import {
-  Hooper,
-  Slide,
-  Navigation as HooperNavigation
-} from 'hooper'
+// import {
+//   Hooper,
+//   Slide,
+//   Navigation as HooperNavigation
+// } from 'hooper'
 
 export default {
-  components: {
-    Hooper,
-    Slide,
-    HooperNavigation
-  },
+  name: 'RugCard',
   props: {
     'info': {
       type: Object,
@@ -139,7 +133,8 @@ export default {
   data () {
     return {
       isFlipped: false,
-      isHovering: false
+      isHovering: false,
+      flippy: false
     }
   },
   computed: {
@@ -176,6 +171,7 @@ export default {
     },
     flip (item) {
       // this.isFlipped = !this.isFlipped
+      this.flippy = !this.flippy
       this.$emit('flip', item.sku)
     }
   }
