@@ -36,6 +36,7 @@
             <VerticalNav />
           </div>
           <div class="relative flex items-baseline">
+            <EmptyModal />
             <LoginModal @log-in="signIn" @log-out="signOut" />
             <!-- cart link -->
             <nuxt-link to="checkout" class="py-2 pl-3 pr-2 text-sm font-medium text-gray-100 bg-green-600 rounded transition-bg hover:bg-green-700 hover:text-white focus:outline-none">
@@ -180,12 +181,14 @@
 </style>
 
 <script>
+import EmptyModal from '~/components/EmptyModal'
 import VerticalNav from '~/components/VerticalNav'
 import LoginModal from '~/components/LoginModal'
 export default {
   components: {
     VerticalNav,
-    LoginModal
+    LoginModal,
+    EmptyModal
   },
   data () {
     return {

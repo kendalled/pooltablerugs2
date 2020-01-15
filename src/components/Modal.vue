@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showModal" class="fixed inset-0 flex items-center justify-center">
+  <div v-if="showModal" class="fixed inset-0 flex items-center justify-center">
     <transition
       @before-leave="backdropLeaving = true"
       @after-leave="backdropLeaving = false"
@@ -12,7 +12,7 @@
       appear
     >
       <div v-if="showBackdrop">
-        <div @click="close" class="absolute inset-0 bg-black opacity-25" />
+        <div @click="close" class="absolute h-screen w-screen inset-0 bg-black opacity-25" />
       </div>
     </transition>
 
@@ -27,7 +27,7 @@
       leave-to-class="opacity-0 scale-70"
       appear
     >
-      <div v-show="showContent" class="relative">
+      <div v-if="showContent" class="relative">
         <slot />
       </div>
     </transition>

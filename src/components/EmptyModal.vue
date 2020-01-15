@@ -4,7 +4,7 @@
     <button @click="openModal = true" class="bg-white transition-bg hover:bg-gray-300 shadow text-gray-700 font-medium py-2 px-4 rounded focus:outline-none">
       See Details
     </button>
-    <Modal2 :open="openModal" @close="openModal = false" class="modal">
+    <Modal :open="openModal" @close="openModal = false" class="modal">
       <div class="max-w-lg w-full bg-white rounded-lg shadow-2xl px-6 py-6">
         <!-- <h2 class="font-semibold text-gray-900 text-2xl leading-tight border-b-2 border-gray-200 pb-4">
             Sign in
@@ -36,17 +36,17 @@
               </button>
             </div> -->
       </div>
-    </Modal2>
+    </Modal>
   </div>
 </template>
 
 <script>
-import Modal2 from '~/components/Modal2'
+import Modal from '~/components/Modal'
 
 export default {
   name: 'LoginModal',
   components: {
-    Modal2
+    Modal
   },
   data () {
     return {
