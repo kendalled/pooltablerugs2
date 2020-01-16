@@ -26,7 +26,7 @@
           </div>
         </transition-group>
         <transition-group name="fade">
-          <div v-for="(row, i) in doc2" :key="row[3].sku" class="mt-6 w-full fade">
+          <div v-for="(row, i) in doc2" :key="row[3].sku" v-show="val === ''" class="mt-6 w-full fade">
             <!-- todo: hide conditionally -->
             <div v-if="i === 0" class="px-4 xl:px-8">
               <h3 class="antialiased text-gray-800 font-semibold text-xl">
