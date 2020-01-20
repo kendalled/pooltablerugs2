@@ -7,7 +7,7 @@
     <ContentSection class="hidden lg:block" />
     <TestimonialSection class="hidden md:block" />
     <FaqSection />
-    <SubscribeEmail class="hidden md:block" />
+    <SubscribeEmail class="hidden md:flex" />
     <RespFooter />
   </div>
 </template>

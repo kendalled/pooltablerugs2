@@ -58,7 +58,7 @@
           </p>
           <!-- price spot -->
           <div class="mt-1 flex items-center">
-            <span class="text-gray-900 text-xl">{{ formattedPrice }}</span>
+            <span class="text-gray-900 text-xl tnum">{{ formattedPrice }}</span>
           </div>
           <!-- tags / reviews -->
           <div class="flex items-end mt-2">
@@ -179,6 +179,11 @@ export default {
 </script>
 
 <style scoped>
+.tnum {
+  font-feature-settings: tnum 1;
+  -moz-font-feature-settings: tnum 1;
+  -webkit-font-feature-settings: tnum 1;
+}
 .hooper {
   position: absolute;
   overflow: hidden;
