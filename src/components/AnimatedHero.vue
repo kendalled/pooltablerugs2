@@ -2,7 +2,7 @@
   <header class="md:flex hidden">
     <section class="header-content w-full">
       <div class="mx-auto w-3/4 px-4 mb-16">
-        <h1 class="mb-2 text-white leading-tight roboto font-black header-title animate-pop-in">
+        <h1 class="mb-2 text-white leading-tight roboto font-extrabold header-title animate-pop-in">
           Protect your game room in style<br class="hidden md:block"> with a durable pool table rug.
         </h1>
         <h2 class="text-2xl tracking-tight mb-6 text-gray-200 header-subtitle animate-pop-in">
@@ -44,20 +44,19 @@ h1 {
   text-shadow: 0px 4px 3px rgba(0,0,0,0.2), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
   font-size: 2.8rem;
 }
-
 header:before {
   animation: fade-slide-down 1.5s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
   background: linear-gradient(105deg, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.2) 75%),
-              url('https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/original1920.jpg?alt=media&token=1db49c2c-603a-487a-9e49-f2b2527e858c') no-repeat bottom;
+    url('https://firebasestorage.googleapis.com/v0/b/pooltablerugs.appspot.com/o/original1920.jpg?alt=media&token=1db49c2c-603a-487a-9e49-f2b2527e858c') no-repeat bottom;
   background-size: cover;
   background-position: center;
   content: "";
   opacity: 0;
   position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -68,8 +67,8 @@ header:after {
   height: 12rem;
   left: -5%;
   position: absolute;
-    right: -5%;
-    top: 90%;
+  right: -5%;
+  top: 90%;
   transform-origin: 0 0;
   z-index: 0;
 }

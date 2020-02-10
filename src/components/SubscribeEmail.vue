@@ -21,12 +21,12 @@
 </template> -->
 
 <template>
-  <div class="flex w-full h-auto py-4 px-10 items-center bg-blue-600">
+  <div class="flex w-full h-auto py-4 px-10 items-center bg-blue-700">
     <div class="w-1/2 flex justify-center flex-col h-32">
-      <div class="m-0 py-0 pr-0 pl-2 text-3xl font-bold tracking-tight text-white antialiased">
+      <div class="m-0 py-0 pr-0 pl-20 text-3xl font-bold tracking-tight text-white antialiased">
         Subscribe for 10% off.
       </div>
-      <div class="tracking-tight m-0 py-0 pr-0 pl-2 text-xl text-gray-100 antialiased">
+      <div class="tracking-tight m-0 py-0 pr-0 pl-20 text-xl text-gray-100 antialiased">
         Find out about flash sales and other news by signing up for our newsletter.
       </div>
     </div>
