@@ -1,6 +1,13 @@
 <template>
   <div class="pb-4 flex w-5/6 mx-auto flex-wrap items-center justify-around">
-    <nuxt-link v-for="(style, i) in styles" :key="i" :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28)), url(' + require('@/static/'+style.imageSrc) + ')' }" to="rugs" class="product hover:cursor-pointer flex flex-col items-start flex-shrink-0 m-4 mx-3 bg-white max-w-xs w-full h-full rounded-lg shadow-xl px-6 bg-cover bg-center h-64 pt-4 pb-6">
+    <nuxt-link
+      v-for="(style, i) in styles"
+      :key="i"
+      :class="[i === styles.length - 1 ? 'hidden lastCard' : '']"
+      :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.28)), url(' + require('@/static/'+style.imageSrc) + ')' }"
+      to="rugs"
+      class="product hover:cursor-pointer flex flex-col items-start flex-shrink-0 m-4 mx-3 bg-white max-w-xs w-full h-full rounded-lg shadow-xl px-6 bg-cover bg-center h-64 pt-4 pb-6"
+    >
       <!-- bg-green-600 -->
       <div class="flex w-full h-12 justify-end items-center ">
         <div v-show="style.new" style="font-size: .7rem;" class="rounded-full bg-white text-black uppercase font-bold tracking-wide px-2 py-1">
@@ -17,6 +24,11 @@
 </template>
 
 <style>
+@media screen and (min-width: 1200px) {
+  .lastCard {
+    display: block;
+  }
+}
 .product {
   transition-duration:.3s;
   -webkit-transition-duration:.3s;
