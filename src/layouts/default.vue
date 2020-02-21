@@ -40,7 +40,7 @@ html {
 <script>
 import AdamNav from '~/components/AdamNav'
 export default {
-  name: 'Default',
+  name: 'default',
   components: {
     AdamNav
   }

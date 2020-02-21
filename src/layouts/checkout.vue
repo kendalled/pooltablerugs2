@@ -54,6 +54,6 @@ html {
 </style>
 <script>
 export default {
-  name: 'Checkout'
+  name: 'checkout'
 }
 </script>
