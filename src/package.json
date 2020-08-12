@@ -20,7 +20,7 @@
     "hooper": "^0.3.4",
     "nuxt": "^2.11.0",
     "nuxt-stripe-module": "^2.0.0",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "stripe": "^7.14.0",
     "tailwindcss-transitions": "^2.1.0",
     "vue-infinite-loading": "^2.4.4",
