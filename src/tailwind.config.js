@@ -37,7 +37,6 @@ module.exports = {
     outline: ['responsive', 'focus']
   },
   plugins: [
-    require('@tailwindcss/custom-forms'),
-    require('tailwindcss-transitions')()
+    require('@tailwindcss/custom-forms')
   ]
 }

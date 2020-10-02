@@ -54,9 +54,9 @@
       <div :class="{ flipped: isFlipped }" class="card rounded-lg shadow-lg h-full absolute">
         <div class="front rounded-lg px-4 py-4 h-full w-full">
           <p class="tracking-tight text-sm font-medium text-gray-700">
-            {{ info.collection }} • {{ info.sku }} {{ flippy }} {{ isHovering }}
+            {{ info.collection }} • {{ info.sku }}
           </p>
-          <!-- price spot -->
+          <!-- price spot {{ flippy }} {{ isHovering }} -->
           <div class="mt-1 flex items-center">
             <span class="text-gray-900 text-xl tnum">{{ formattedPrice }}</span>
           </div>
